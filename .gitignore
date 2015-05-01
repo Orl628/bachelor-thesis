@@ -1,0 +1,8 @@
+*.backup
+*.log
+*.aux
+*.auxlock
+*.bbl
+*.blg
+*~
+bachelorarbeit_felix_boes*
