@@ -1,0 +1,53 @@
+\section{Appendix A: Calculations}
+
+\subsection{Quasimodular Forms}
+
+\begin{calc} \label{almost-holomorphic-modular-form-no-constant-term}
+ This calculation follows the one found in \cite{Bloch-Okounkov}
+ Let $F(\tau)=\sum_{i=1}^Mf_i(\tau)Y^{-i}$ be an almost holomorphic modular form, $\gamma=
+ \bigl(\begin{smallmatrix}
+ a&b\\ c&d
+ \end{smallmatrix} \bigr)
+ \in \SL_n(\Zbb)$,
+ and $\tau \in \mc{H}$.
+ Write $j=c\tau+d$, and $a=6cj/2\pi i$. Then $Y^{-1}(\gamma\tau)=a+j^2Y(\tau)^{-1}$. Hence,
+ \begin{align*}
+  F(\gamma\tau)&=\sum_{i=1}^Mf_i(\gamma\tau)(a+j^2Y^{-1})^i\\
+               &=\sum_{i=1}^M\sum_{l=0}^i\binom{i}{l}f_i(\gamma\tau)a^{i-l}j^{2l}Y^{-l}\\
+               &=\sum_{i=1}^Mf_i(\gamma\tau)a^i + \sum_{l=1}^M\sum_{i=l}^M\binom{i}{l}f_i(\gamma\tau)a^{i-l}j^{2l}y^{-l}.
+ \end{align*}
+ On the other hand,
+ \[F(\gamma\tau)=\sum_{l=1}^Mf_l(\tau)j^kY^{-l},\]
+ by the modularity condition. By comparing the coefficients of $Y^{-l}$, one obtains the equalities
+ \begin{equation} \label{eq:coeff-zero}
+ \sum_{i=1}^Mf_i(\gamma\tau)a^i=0
+ \end{equation} and \[j^kf_l(\tau)=\sum_{i=l}^M\binom{i}{l}f_i(\gamma\tau)a^{i-l}j^{2l}.\]
+ Rewriting the second equality yields \[f_l(\gamma\tau)=f_l(\tau)j^{k-2l}-\sum_{i=l+1}^M\binom{i}{l}f_i(\gamma\tau)a^{i-l}.\]
+ The latter may be solved recursively, starting by $f_M$, to get equalities of the form
+ \begin{equation} \label{eq:coeff-l}
+  f_l(\gamma\tau)=\text{(a polynomial in the $f_{\geq l}(\tau)$ , $j$ and $c$)}.
+ \end{equation}
+ The first two equalities are
+ \begin{align*}
+  f_M(\gamma\tau)&=f_M(\tau)j^{k-2M}\\
+  f_{M-1}(\gamma\tau)&=f_{M-1}(\tau)j^{k-2M+2}-\text{const}\cdot f_M(\tau)j^{k-2M+1}c.
+ \end{align*}
+ In general, a straightforward inductive argument shows that in the summands of the expression \eqref{eq:coeff-l} for $f_l(\gamma\tau)$, the variable $j$ appears with a power lower than or equal to $k-2l$.
+ Now let $r$ be the greatest index such that $f_r \neq 0$. Equation \eqref{eq:coeff-zero} finally gives, after substituting back the expressions for $j$ and $a$ and using \eqref{eq:coeff-l} for $l=r$, the relation
+ \begin{align*}
+ 0&=\kappa_1 f_r(\gamma\tau)(c\tau+d)^rc^r+\sum_{l=r+1}^M\kappa_3 f_l(\gamma\tau)(c\tau+d)^lc^l\\
+  &=\kappa_1 f_r(\tau)(c\tau+d)^{k-r}c^r- \\
+  &- \sum_{i=r+1}^M\kappa_2\binom{i}{r}f_i(\gamma\tau)(c\tau+d)^{i-r}c^{i-r} + \sum_{l=r+1}^M\kappa_3 f_l(\gamma\tau)(c\tau+d)^lc^l,
+ \end{align*}
+ where the $\kappa_i$ are some nonzero constants.
+ To obtain a contradiction, choose a point $\tau$ in the upper half-plane and consider the last relation as a polynomial equation in $c$ and $d$, letting $P(c,d)$ denote the right-hand side of the equation. First look for the possible coefficients of monomials of the form $c^rd^{\geq1}$. This excludes the third summand from the picture, since there $c$ will always appear with a power greater than $r$. Next look for the possible coefficients of the monomial $c^rd^{k-r}$. As seen when recursively solving the equations for $f_l(\gamma\tau)$, the second summand will include only terms where $(c\tau+d)$ appears with a power lower than $k-r$. Hence the coefficient of $c^rd^{k-r}$ in $P(c,d)$ is $\kappa_1f_r(\tau)$.
+ 
+ Now, if $c\in \Zbb$, then there are infinitely many $d\in \Zbb$ such that $P(c,d)=0$. Indeed, there are infinitely many $d$ with $\gcd(c,d)=1$. For these $d$, find $a,b \in \Zbb$ such that $ad-bc=1$. Since
+ $\bigl(\begin{smallmatrix}
+ a&b\\ c&d
+ \end{smallmatrix} \bigr)
+ \in \SL_2(\Zbb)$,
+ it follows that $P(c,d)=0$. Similarly, for all $d\in \Zbb$, there are infinitely many $c$ such that $P(c,d)=0$. It this follows that $P(c,d)=0$ holds for all $c,d\in \Cbb$. These remarks may be summarized by the statement that the set of all $c,d$ belonging to the lower row of some matrix in $\SL_2(\Zbb)$ is Zariski-dense in $\Cbb^2$.
+ 
+ Concluding, since $P$ is zero as a function on $\Cbb^2$, it is also zero as a polynomial, hence the coefficient $\kappa_1f_r(\tau)$ is zero. Since $\tau$ was arbitrary, one finds $f_r=0$, a contradiction.
+\end{calc}

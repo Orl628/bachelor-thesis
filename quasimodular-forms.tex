@@ -1,0 +1,32 @@
+\section{Quasimodular Forms}
+
+This section introduces quasimodular forms as described in \cite{Kaneko-Zagier1995}.
+
+\subsection{The Space of Quasimodular Forms}
+
+Let $\mc{H}=\{\tau \in \Cbb \scl \Im(\tau)>0\}$ denote the upper half-plane. For $\tau \in \mc(H)$, define $q=\exp(2\pi\tau)$ and $Y=4\pi\Im(\tau)$. Further, let $\SL_2(\Zbb) \subset \SL_2(\Cbb)$ denote the full modular group. Then $\SL_2(\Zbb)$ operates on $\mc{H}$ by 
+
+\[\gamma\tau = \frac{a\tau + b}{c\tau + d}\text{, for }\gamma = 
+\begin{pmatrix}
+ a & b \\
+ c & d
+\end{pmatrix}
+\in \SL_2(\Zbb). \footnote{\text{To see that $\gamma \tau \in \mc{H}$, note that $\Im(\gamma\tau)=\Im(\tau)/|c\tau+d|^2$.}}
+\]
+
+\begin{defi} 
+  A \emph{modular form (of weight $k$)} is a holomorphic function $f$ on $\mc{H}$ satisfyting $f(\gamma\tau)=(c\tau+d)^kf(\tau)$ for all $\tau$ in $\mc{H}$, and growing at most polynomially in $1/Y$ as $Y \to 0$.
+\end{defi}
+
+The modular forms of weight $k$ form a vector space, denoted by $\M_k$. Multiplying two modular forms having the weights $k$ and $l$ yields a modular form of weight $k+l$, giving the space $\bigoplus_k \M_k$ the structure of a graded ring, denoted by $\M_{*}$.
+
+\begin{expl}
+ For an even integer $k\geq 2$, the \emph{Eisenstein series of weight $k$} is the function \[E_k(\tau)=1-\frac{2k}{b_k}\sum_{n\geq 1}\sigma_{k-1}(n)q^n,\] where $b_k$ is the $k$-th Bernoulli number, and $\sigma_{k-1}(n)=\sum_{m|n}m^{k-1}$. For $k\geq 4$, the Eisenstein series of weight $k$ is a modular form of weight $k$. One proves this for example by showing that for $k\geq 4$, the series $E_k$ is a multiple of the function $G_k(\tau)=\sum_{(a,b)\in\Zbb^2\smallsetminus(0,0)}(a\tau+b)^{-k}$, which is indeed modular of weight $k$.
+ 
+ The theory of modular forms is developed in more  detail in [Serre]. There one also finds a proof for the following proposition, which characterizes the space of modular forms.
+\end{expl}
+
+\begin{prop}
+ There is an isomorphism of graded rings $\Cbb[X_4, X_6]\to M_*$ mapping $X$ to $E_4$ and $Y$ to $E_6$, where the former ring is graded by assigning to $X_i$ the degree $i$.
+\end{prop}
+

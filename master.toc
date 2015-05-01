@@ -1,0 +1,9 @@
+\contentsline {section}{\numberline {1.}Quasimodular Forms}{2}{section.1}
+\contentsline {subsection}{\numberline {1.1.}The Space of Quasimodular Forms}{2}{subsection.1.1}
+\contentsline {section}{\numberline {2.}Basic Facts and Definitions}{3}{section.2}
+\contentsline {subsection}{\numberline {2.1.}Complex Curves}{3}{subsection.2.1}
+\contentsline {section}{\numberline {3.}Covers of an Elliptic Curve}{4}{section.3}
+\contentsline {subsection}{\numberline {3.1.}Connected Covers}{4}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2.}Covers}{5}{subsection.3.2}
+\contentsline {section}{\numberline {4.}Appendix A: Calculations}{7}{section.4}
+\contentsline {subsection}{\numberline {4.1.}Quasimodular Forms}{7}{subsection.4.1}

@@ -1,0 +1,75 @@
+\usepackage{amsmath} % math stuff
+\usepackage{amssymb} % math stuff
+\usepackage{amsthm} % math stuff
+\usepackage{enumitem} % for better enumerates
+\usepackage{mathtools} % math stuff
+\usepackage[centertableaux,boxsize=1.2em]{ytableau} % for young diagrams
+%\usepackage{xltxtra} % xelatex
+\usepackage{ellipsis} % right ellipsis when using \dots, include after xltxtra
+\usepackage{tikz} % for diagrams
+%\usepackage{fouriernc}
+%\usepackage{tgschola}
+\usepackage{lmodern}
+\usepackage{microtype}
+
+%\setmainfont{Linux Libertine O}
+
+\usetikzlibrary{external} % storing tikz figures externially to reduce build time
+\tikzexternalize[prefix=tikz/]
+\tikzset{external/system call={
+  xelatex \tikzexternalcheckshellescape
+  -halt-on-error -interaction=batchmode
+  -jobname "\image" "\texsource"}}
+
+\setlist[enumerate,1]{leftmargin=*} % deletes some leftmargin from enumerates
+
+\pagestyle{plain} % no pages
+\setlength{\parindent}{0cm} % no paragraph indentation
+\setlength{\parskip}{0.7em}
+
+% proposition-like enviroments
+\newcounter{propositions}
+\newtheorem{prop}[propositions]{Proposition}
+\newtheorem{lemma}[propositions]{Lemma}
+\newtheorem{thm}[propositions]{Theorem}
+\newtheorem{cor}[propositions]{Corollary}
+\newtheorem*{claim}{Claim}
+
+% more text-like enviroments
+\theoremstyle{definition}
+\newtheorem*{defi}{Definition}
+\newtheorem*{expl}{Example}
+\newtheorem*{expls}{Examples}
+\newtheorem*{rmk}{Remark}
+\newtheorem*{recall}{Recall}
+\newtheorem{calc}{Calculation}
+
+% numbers and fields
+\newcommand{\Nbb}{\mathbb{N}}
+\newcommand{\Zbb}{\mathbb{Z}}
+\newcommand{\Qbb}{\mathbb{Q}}
+\newcommand{\Rbb}{\mathbb{R}}
+\newcommand{\Cbb}{\mathbb{C}}
+\newcommand{\Fbb}{\mathbb{F}}
+\newcommand{\Abb}{\mathbb{A}}
+
+% macros for spaces
+\DeclareMathOperator{\Aut}{Aut}
+% macros for functions
+
+% fancy symbols and such
+
+% shortcuts for frequently used stuff
+\newcommand{\subideal}{\vartriangleleft}
+\newcommand{\mc}{\mathcal}
+\newcommand{\mf}{\mathfrak}
+\newcommand{\cl}{\colon}
+\newcommand{\scl}{\,;\;}
+
+% shortcuts that accept parameters
+\newcommand{\dblbrack}[1]{\left[\!\left[#1\right]\!\right]}
+\newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+
+%1.1 -> 1.1.
+\renewcommand{\thesection}{\arabic{section}.}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}

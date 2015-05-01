@@ -1,0 +1,37 @@
+\section{Basic Facts and Definitions}
+
+In this section we will fix some notation and recall the definitions and basic properties of the objects of this thesis. We will follow 
+\cite{Silverman2009}.
+
+\iffalse
+\subsection{Algebraic Curves}
+
+
+\begin{defi}
+ The \emph{$n$-dimensional affine space} is the set $\Abb^n$ of $n$-tuples with entries in $\Cbb$.
+\end{defi}
+
+\begin{defi}
+ For an ideal $J\subset \Cbb[x_1,\ldots,x_n]$ we define the \emph{zero set $V(J)$ of $J$} as the set of points $p \in \Cbb$. For a subset 
+$X\subset \Abb^n$ we define the \emph{ideal $I(V)$ of $X$} as usual.
+\end{defi}
+\fi
+
+\subsection{Complex Curves}
+
+\begin{prop} \label{prop:curves-to-fields}
+ The assignment $C\mapsto K(C)$ defines a contravariant equivalence of categories between the category of irreducible smooth curves over $\Cbb$ 
+and the 
+category of finitely generated, transcendence degree one, field extensions of $\Cbb$. By definition, degree $d$ maps of curves correspond 
+to degree $d$ field extensions.
+\end{prop}
+
+\begin{proof}
+ See \cite{Silverman2009} pp. 20-22.
+\end{proof}
+
+\begin{prop}[Riemann-Hurwitz formula] \label{prop:hurwitz}
+ Let $\varphi \cl C_1 \to C_2$ be a finite, degree $d$ map of smooth curves of genera $g_1$ and $g_2$, respectively. Then \[2g_1-2 = d(2g_2-2) + 
+\sum_{x\in C_1}(\e_{\varphi}(x)-1),\] where $\e_\varphi(x)$ is the ramification index of $\varphi$ at $x$.
+\end{prop}
+

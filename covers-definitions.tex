@@ -1,0 +1,106 @@
+\section{Covers of an Elliptic Curve}
+
+\subsection{Connected Covers}
+
+In the following, let $\Cbb$ be the ground field for all varieties considered.
+
+\begin{defi} Let $E$ be an elliptic curve. 
+ \begin{enumerate}
+  \item A \emph{(degree d, genus g, connected) cover of $E$} is a finite, degree $d$ morphism $p\cl C\to E$ of an irreducible smooth curve $C$ of genus $g$ onto $E$. Denote such a cover by $(C,p)$, possibly omitting the structure map $p$.
+
+  \item If $S={b_1,\dotsc,b_{2g-2}}$ is a set of $2g-2$ distinct points of $E$, call a cover $C$ \emph{simply branched over $S$}, if it is simply branched over each point of $S$. This means that for all points $b$ of $S$ there is exacly one point $x$ in $p^{-1}(b)$ with ramification index $\e_p(x)=2$, the others having a ramification index of one.
+  
+  It follows from the Riemann-Hurwitz formula of Proposition \ref{prop:hurwitz} that every point not in the pre-image of $S$ has a ramification index of one. This justifies the choice of the number of points in $S$.
+
+  \item Two covers $C_1, C_2$ are to be considered isomorphic, if there is an isomorphism $C_1\to C_2$ commuting with the respective structure maps into $E$. Accordingly, define the automorphism group $\Aut_p(C)=\Aut(C)$ of the cover $(C,p)$ to be the group of cover isomorphisms $C\to C$. 
+ \end{enumerate}
+\end{defi}
+
+\begin{prop}
+ Let $C$ be a connected cover of $E$. Then the automorphism group of $C$ is finite.
+\end{prop}
+
+\begin{proof}
+ By Proposition~\ref{prop:curves-to-fields}, if $C$ is a degree $d$ connected cover, the elements of $\Aut(C)$ correspond to the automorphisms of the degree $d$ field extension $K(C)/K(E)$, of which only finitely many exist.
+\end{proof}
+
+\begin{rmk}
+ The degree $d$ connected covers of an elliptic curve $E$ form a set. Indeed, they correspond by Proposition~\ref{prop:curves-to-fields} to elements of the power set of the algebraic closure of $K(E)$.
+\end{rmk}
+
+\begin{defi} Let $E$ be an elliptic curve, $S={b_1,\dotsc,b_{2g-2}}$ a set of $2g-2$ distinct points of $E$.
+ \begin{enumerate}
+  \item Denote the set of isomorphism classes of degree $d$, genus $g$, simply branched over $S$, connected covers of $E$ by $\Cov(E,S)^{\circ}_{g,d}$.
+  
+  \item Any isomorphism of two equivalent covers defines a bijection of their automorphism groups. This allows to define the \emph{weight} of the class $[(C,p)]$ to be the number $1/|\Aut_p(C)|$.
+  
+  \item Define $N_{g,d}$ to be the weighted count \[\sum_{C\in \Cov(E,S)^{\circ}_{g,d}} \frac{1}{|\Aut(C)|}.\] The elliptic curve $E$ and the set of points $S$ are omitted from the notation, a priori for brevity. It will turn out that $N_{g,d}$ is finite and does not depend on the choice of $E$ and $S$.
+ \end{enumerate}
+\end{defi}
+
+\begin{defi}
+ For any $g\geq 1$, define $F_g$ to be the generating series \[F_g(q)=\sum_{d\geq 1}N_{g,d}q^d\] counting covers of genus $g$.
+\end{defi}
+
+This thesis shall prove the following result.
+
+\begin{thm}[Dijkgraaf]
+ Let $g\geq 2$, and for $\tau\in\Cbb$ let $q(\tau)=\exp(2\pi i\tau)$. Then the function $F_g\circ q$ is a quasimodular form of weight $6g-6$.
+\end{thm}
+
+The strategy to prove the theorem will involve considering a larger class of curves covering the fixed elliptic curve, also allowing ``disconnected'' covers. The covers in this more general sense will be easier to count.
+
+\subsection{Covers}
+
+\begin{defi} Let $E$ be an elliptic curve, $S={b_1,\dotsc,b_{2g-2}}$ a set of $2g-2$ distinct points of $E$.
+ \begin{enumerate}
+  \item A \emph{(degree d, genus g,) cover} of $E$ is a finite, degree $d$ morphism $p\cl C\to E$ of a disjoint union $C=\cup_i C_i$ of $k$ irreducible smooth curves $C_i$ of genus $g$ onto $E$. Again, often a cover will be identified with its source $C$.
+  
+  \item A cover $C$ is \emph{simply branched over $S$}, if it is simply branched over each point of $S$. Hence the cover $C$ has $2g-2$ ramification points.
+  
+  \item We define the notion of isomorphic covers and the automorphism group $\Aut_p(C)$ of a cover as before.
+
+  \item For a cover $(\cup_i C_i,p)$ we define the maps $p_i$ to be the restrictions to the $C_i$ of the structure map $p$. These are finite maps, whose degrees we denote by $d_i$.
+ \end{enumerate}
+\end{defi}
+
+\begin{rmk}
+ By the Riemann-Hurwitz formula, the maps $p_i$ have $2g_i-2$ ramification points on $C_i$. Hence, the following relations hold:
+ \[\sum_i d_i=d\text{, and }\sum_i (2g_i-2)=2g-2.\]
+\end{rmk}
+
+\begin{rmk}
+ The automorphism group of a cover $C=C_1 \cup \dotsb \cup C_k$ is the semidirect product \[\Aut_p(C) = \prod_i \Aut_{p_i}(C_i) \rtimes \Gamma,\] where $\Gamma \subset \mathrm{S}_k$ is the subgroup of the permutations of the components such that each orbit is contained in an isomorphism class of connected covers over $E$.
+ 
+ Indeed, since cover isomorphisms must permute isomorphic components, there is a homomorphism of $\Aut(C)$ into $\Gamma$ which is the identity on $\Gamma$, viewed as a subset of $\Aut(C)$, having as kernel the product $\prod_i \Aut_{p_i}(C_i)$.
+ 
+ If the cover $C$ is simply branched over $\Gamma$, then no two components of genus greater than one are isomorphic as connected covers, since any isomorphism would have to preserve ramification indices (see for example \cite{Silverman2009}, prop. 2.6 c), but no two components share a branched point over $E$. In particular, if there are no components of genus one, then $\Gamma=1$.
+ 
+ On the other hand, each component of genus one is unramified over $E$, and could be isomorphic to other components of genus one, in which case $\Gamma$ is nontrivial.
+\end{rmk}
+
+\begin{defi} Let $E$ be an elliptic curve, $S={b_1,\dotsc,b_{2g-2}}$ a set of $2g-2$ distinct points of $E$.
+ \begin{enumerate}
+  \item Denote the set of isomorphism classes of degree $d$, genus $g$, simply branched over $S$, covers of $E$ by $\Cov(E,S)_{g,d}$.
+ 
+  \item Assign to an element $[(C,p)]$ of $\Cov(E,S)_{g,d}$ the \emph{weight} $1/\Aut_p(C)$. This is again well-defined.
+ 
+  \item Define $\hat{N}_{g,d}$ to be the weighted count of the elements of $\Cov(E,S)_{g,d}$ with the weighting defined above. As    before, the data $E$ and $S$ are omitted from the notation, since $\hat{N}_{g,d}$ will turn out not to depend on them. 
+ \end{enumerate}
+\end{defi}
+
+\begin{defi}
+ The generating functions $Z(q,\lam)$, respectively $\hat{Z}(q,\lam)$, for the quantities $N_{g,d}$, respectively $\hat{N}_{g,d}$, are defined as follows:
+ \[Z(q,\lam) = \sum_{g\geq 1}\sum_{d\geq 1} \frac{N_{g,d}}{(2g-2)!}q^d\lam^{(2g-2)} 
+ = \sum_{g\geq 1}\frac{F_g(q)}{(2g-2)!}\lam^{(2g-2)},\]
+ \[\hat{Z}(q,\lam) = \sum_{g\geq 1}\sum_{d\geq 1} \frac{\hat{N}_{g,d}}{(2g-2)!}q^d\lam^{(2g-2)}.\]
+\end{defi}
+
+\begin{lemma}
+ The generating functions are related by $\hat{Z}(q,\lam) = \exp(Z(Q,\lam)) - 1$.
+\end{lemma}
+
+\begin{proof}
+\end{proof}
+
+
