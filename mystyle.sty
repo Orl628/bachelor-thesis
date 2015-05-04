@@ -7,10 +7,11 @@
 %\usepackage{xltxtra} % xelatex
 \usepackage{ellipsis} % right ellipsis when using \dots, include after xltxtra
 \usepackage{tikz} % for diagrams
-%\usepackage{fouriernc}
-%\usepackage{tgschola}
-\usepackage{lmodern}
-\usepackage{microtype}
+\usepackage{subdepth} % consistent use of simultaneous subscripts and supscripts
+\usepackage{fouriernc} % math mode typeface for below typeface
+\usepackage{tgschola} % fancy, bookman-style typeface
+%\usepackage{lmodern} % standard computer modern typeface
+\usepackage{microtype} % better everything
 
 %\setmainfont{Linux Libertine O}
 
@@ -25,15 +26,14 @@
 
 \pagestyle{plain} % no pages
 \setlength{\parindent}{0cm} % no paragraph indentation
-\setlength{\parskip}{0.7em}
+\setlength{\parskip}{0.7em} % wider paragraph spacing
 
 % proposition-like enviroments
-\newcounter{propositions}
-\newtheorem{prop}[propositions]{Proposition}
-\newtheorem{lemma}[propositions]{Lemma}
-\newtheorem{thm}[propositions]{Theorem}
-\newtheorem{cor}[propositions]{Corollary}
-\newtheorem*{claim}{Claim}
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{lemma}[prop]{Lemma}
+\newtheorem{thm}[prop]{Theorem}
+\newtheorem{cor}[prop]{Corollary}
+
 
 % more text-like enviroments
 \theoremstyle{definition}
@@ -42,7 +42,8 @@
 \newtheorem*{expls}{Examples}
 \newtheorem*{rmk}{Remark}
 \newtheorem*{recall}{Recall}
-\newtheorem{calc}{Calculation}
+\newtheorem{calc}{Calculation}[section]
+\newtheorem*{claim}{Claim}
 
 % numbers and fields
 \newcommand{\Nbb}{\mathbb{N}}
@@ -73,3 +74,10 @@
 %1.1 -> 1.1.
 \renewcommand{\thesection}{\arabic{section}.}
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
+\renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\renewcommand{\theprop}{\arabic{section}.\arabic{prop}}
+\renewcommand{\thelemma}{\arabic{section}.\arabic{lemma}}
+\renewcommand{\thethm}{\arabic{section}.\arabic{thm}}
+\renewcommand{\thecor}{\arabic{section}.\arabic{cor}}
+\renewcommand{\thecalc}{\arabic{section}.\arabic{calc}}

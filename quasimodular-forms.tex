@@ -1,8 +1,8 @@
-\section{Quasimodular Forms}
+\section{Quasimodular forms}
 
 This section introduces quasimodular forms as described in \cite{Kaneko-Zagier1995}.
 
-\subsection{The Space of Quasimodular Forms}
+\subsection{The space of quasimodular forms}
 
 Let $\mc{H}=\{\tau \in \Cbb \scl \Im(\tau)>0\}$ denote the upper half-plane. For $\tau \in \mc(H)$, define $q=\exp(2\pi\tau)$ and $Y=4\pi\Im(\tau)$. Further, let $\SL_2(\Zbb) \subset \SL_2(\Cbb)$ denote the full modular group. Then $\SL_2(\Zbb)$ operates on $\mc{H}$ by 
 
@@ -15,18 +15,97 @@ Let $\mc{H}=\{\tau \in \Cbb \scl \Im(\tau)>0\}$ denote the upper half-plane. For
 \]
 
 \begin{defi} 
-  A \emph{modular form (of weight $k$)} is a holomorphic function $f$ on $\mc{H}$ satisfyting $f(\gamma\tau)=(c\tau+d)^kf(\tau)$ for all $\tau$ in $\mc{H}$, and growing at most polynomially in $1/Y$ as $Y \to 0$.
+  A \emph{modular form (of weight $k$)} is a holomorphic function $f$ on $\mc{H}$ satisfying the modular condition $f(\gamma\tau)=(c\tau+d)^kf(\tau)$ for all $\tau$ in $\mc{H}$, which is holomorphic at infinity.
+  
+  A function satisfying the modular condition is $\Zbb$-periodic, hence induces a map $f_{\infty}(\zeta)$, holomorphic for $\zeta\neq0$, such that $f(\tau)=f_{\infty}(q)$. The condition that $f$ should be holomorphic at infinity means that the function $f_{\infty}$ should be holomorphic at zero. 
 \end{defi}
+
+Note that if $k$ is odd, then any function satisfying the modular condition of $k$ is zero.
 
 The modular forms of weight $k$ form a vector space, denoted by $\M_k$. Multiplying two modular forms having the weights $k$ and $l$ yields a modular form of weight $k+l$, giving the space $\bigoplus_k \M_k$ the structure of a graded ring, denoted by $\M_{*}$.
 
-\begin{expl}
- For an even integer $k\geq 2$, the \emph{Eisenstein series of weight $k$} is the function \[E_k(\tau)=1-\frac{2k}{b_k}\sum_{n\geq 1}\sigma_{k-1}(n)q^n,\] where $b_k$ is the $k$-th Bernoulli number, and $\sigma_{k-1}(n)=\sum_{m|n}m^{k-1}$. For $k\geq 4$, the Eisenstein series of weight $k$ is a modular form of weight $k$. One proves this for example by showing that for $k\geq 4$, the series $E_k$ is a multiple of the function $G_k(\tau)=\sum_{(a,b)\in\Zbb^2\smallsetminus(0,0)}(a\tau+b)^{-k}$, which is indeed modular of weight $k$.
+\begin{expls}
+ For an even integer $k\geq 2$, the \emph{Eisenstein series of weight $k$} is the function \[E_k(\tau)=1-\frac{2k}{b_k}\sum_{n\geq 1}\sigma_{k-1}(n)q^n,\] where $b_k$ is the $k$-th Bernoulli number, and $\sigma_{k-1}(n)=\sum_{m|n}m^{k-1}$. By definition, these functions are holomorphic at infinity. For $k\geq 4$, the Eisenstein series of weight $k$ is a modular form of weight $k$. One proves this for example by showing that for $k\geq 4$, the series $E_k$ is a multiple of the function $G_k(\tau)=\sum_{(m,n)\in\Zbb^2\smallsetminus(0,0)}(m\tau+n)^{-k}$, which is indeed modular of weight $k$.
  
- The theory of modular forms is developed in more  detail in [Serre]. There one also finds a proof for the following proposition, which characterizes the space of modular forms.
-\end{expl}
+ The function $\Delta=2^{-6}3^{-3}(E_4^3-E_6^2)$ is a modular form of weight $12$. By a theorem of Jacobi, one has \[\Delta(\tau)=q\prod_{n=1}^{\infty}(1-q)^{24}.\]
+ 
+ The theory of modular forms, including the above equality, is developed in more  detail in \cite{Serre1973}. Therein, one also finds a proof of the following proposition, which characterizes the space of modular forms.
+\end{expls}
 
 \begin{prop}
- There is an isomorphism of graded rings $\Cbb[X_4, X_6]\to M_*$ mapping $X$ to $E_4$ and $Y$ to $E_6$, where the former ring is graded by assigning to $X_i$ the degree $i$.
+ There is an isomorphism of graded rings $\Cbb[X_4, X_6]\to \M_*$ mapping $X_i$ to $E_i$, where the former ring is graded by assigning to $X_i$ the degree $i$. In particular, there are no nonzero modular forms of negative weight.
 \end{prop}
+
+\begin{defi}
+ An \emph{almost holomorphic modular form (of weight $k$)} is a function $F$ on $\mc{H}$ of the form
+ \[F(\tau)=\sum_{m=0}^Mf_m(\tau)Y^{-m}\]
+ satisfying the modular condition $F(\gamma\tau)=(c\tau+d)^kF(\tau)$, where the $f_m$ are holomorphic functions, holomorphic at infinity.
+\end{defi}
+
+Even though $Y$ is $\Zbb$-periodic, it is not a priori clear whether the modular condition already implies that the $f_m$ are $\Zbb$-periodic, which is required to justify the above definition. Nevertheless, this is a consequence of the following proposition, which allows comparing $Y$-coefficients.
+
+\begin{prop}
+ Let $F$ be a function of the form $F(\tau)=\sum_{m=0}^Mf_m(\tau)Y^{-m}$, for some holomorphic $f_m$. If $F=0$ on $\mc{H}$, then all the coefficients $f_m$ are zero on $\mc{H}$.
+\end{prop}
+\begin{proof}
+ For the differential operator $\frac{\dif}{\dif\conj{\tau}}$ one has $\frac{\dif}{\dif\conj{\tau}}Y^{-m}=-2\pi imY^{-m-1}$ and $\frac{\dif}{\dif\conj{\tau}}f_m=0$, hence \[0=\frac{\dif}{\dif\conj{\tau}}F(\tau)=-2\pi i\sum_{m=1}^{M}f_m(\tau)Y^{-m-1}=-2\pi iY^{-2}(\sum_{m=0}^{M-1}f_{m+1}{\tau}Y^{-m}).\]
+ By induction this implies that the $f_m$ are zero for $m\geq 1$, hence also $f_0=0$.
+\end{proof}
+
+\begin{cor}
+ Let $F(\tau)=\sum_{m=0}^Mf_m(\tau)Y^{-m}$ be an almost holomorphic modular form. Then the leading coefficient $f_M$ is a modular form of weight $k-2M$. In particular, if $f_M \neq 0$, then $2M \leq k$.
+\end{cor}
+\begin{proof}
+ This follows after comparing the coefficients of $Y^{-M}$ in both sides of the modularity condition $F(\gamma\tau)=(c\tau+d)^kF(\tau)$, using the equality \[Y^{-1}(\gamma\tau)=(c\tau+d)^2Y(\tau)^{-1}+\frac{c(c\tau+d)}{2\pi i}\]
+ for $\gamma=
+ \bigl(\begin{smallmatrix}
+ a&b\\ c&d
+ \end{smallmatrix} \bigr)
+ \in \SL_n(\Zbb).$
+\end{proof}
+
+
+The almost holomorphic modular forms of weight $k$ form a vector space, denoted by $\widehat{\M}_k$. Let $\widehat{\M}_*$ denote the associated graded ring.
+
+\begin{defi}
+ An element in the image of the map $\widehat{\M}_k\to\mc{O}(\Cbb)$ taking an almost holomorphic modular form $F=\sum_{m=0}^Mf_mY^{-m}$ of weight $k$ to $f_0$ is called a \emph{quasimodular form of weight $k$}. Hence a quasimodular form is a holomorphic function on the upper plane appearing as the constant term of an almost holomorphic modular form.
+\end{defi}
+
+Again, denote the vector space of quasimodular forms of weight $k$ by $\widetilde{\M}_k$ and the associated graded ring by $\widetilde{\M}_*$. The definition gives a surjective graded ring homomorphism $\widehat{\M}_*\to\widetilde{\M}_*$ and one has $\widehat{\M}_k \cap \widetilde{\M}_k = \M_k$.
+
+\begin{expl}
+
+Consider the second Eisenstein series \[E_2(\tau)=1-24\sum_{n\geq1}\sigma_1(n)q^n,\] where $\sigma_1(n)=\sum_{d|n}d$. For the weight $12$ modular form $\Delta(\tau)=q\prod_{n=1}^{\infty}(1-q)^{24}$, one has the identity $2\pi iE_2(\tau)=\frac{\dif}{\dif\tau}\log(\Delta(\tau))$, which is proven by a straightforward computation. Using the modularity of $\Delta$, one then computes \[E_2(\gamma\tau)=(c\tau+d)^2 E_2(\tau) + \frac{6c(c\tau+d)}{\pi i},\]
+
+for $\gamma=
+ \bigl(\begin{smallmatrix}
+ a&b\\ c&d
+ \end{smallmatrix} \bigr)
+ \in \SL_n(\Zbb)$.
+
+Now, since $Y^{-1}(\gamma\tau)=(c\tau+d)^2Y(\tau)^{-1}+\frac{c(c\tau+d)}{2\pi i}$, it follows that $E_2^*=E_2-12/Y$ is an almost holomorphic modular form of weight $2$. Hence, $E_2$ is a quasimodular form of weight $2$.
+
+\end{expl}
+
+\begin{prop} The space $\widetilde{\M}_*$ of quasimodular forms satisfies the following properties.
+ \begin{enumerate}
+  \item The canonical graded homomorphism $\widehat{\M}_* \to \widetilde{\M}_*$ is an isomorphism.
+  \item There is an isomorphism of graded rings $\M_* \otimes \Cbb[X_2] \simeq \Cbb[X_2, X_4, X_6]\to \widetilde{\M}_*$ mapping $X_i$ to $E_i$, where the former ring is graded by assigning to $X_i$ the degree $i$.
+  \item Quasimodular forms are closed under taking derivatives.
+ \end{enumerate}
+\end{prop}
+\begin{proof}
+ \begin{enumerate}
+  \item The map $\widehat{\M}_* \to \widetilde{\M}_*$ is surjective by definition. Injectivity follows from Calculation \ref{cp:almost-holomorphic-modular-form-no-constant-term}. Given an almost holomorphic modular form $F(\tau)=\sum_{m=1}^Mf_m(\tau)Y^{-m}$ with constant term zero, the strategy is to solve the modularity equation for the coefficients $f_m$. This way, one finds for a fixed argument $\tau$ a polynomial equation in the lower row components  $c,d$ of any transformation $\gamma \in \SL_2(\Zbb)$, involving the coefficients $f_m(\tau)$. By varying the transformation $\gamma$, one may force these coefficients to be zero.
+  \item Express the map $\Cbb[X_2, X_4, X_6]\to \widetilde{\M}_*$ as the composition \[\Cbb[X^*_2, X_4, X_6]\to \widehat{\M}_* \to \widetilde{\M}_*,\] where the first map takes $X^*_2$ to $E_2^*$ and $X_i$ to $E_i$, and the second map is the canonical map, which is an isomorphism by the first point above.
+  
+  To prove the surjectivity of the first map, let $F(\tau)=\sum_{m=0}^Mf_m(\tau)Y^{-m}$ be an almost holomorphic modular form. Then $f_M (E_2^*/12)^M$ is an almost holomorphic modular form of weight $k$, since $f_M$ is modular of weight $k-2M$, and the difference $F - f_M (E_2^*/12)^M$ has degree smaller than $M$. Now use induction on $M$.
+  
+  To get injectivity, let $F=\sum_{\alpha=0}^{k/2}(E_2^*)^\alpha f_{k-2\alpha}$ be an almost holomorphic modular form of weight $k$, in the image of the first map, where the $f_m$ are modular of weight $m$. If $F=0$, then by comparing the coefficients of $Y^{-k/2}$ one obtains $0=f_0$. Now it follows by induction on $k$ that the other coefficients $f_m$ are zero. Hence $F$ was the image of the zero element in $\M_* \otimes \Cbb[X^*_2]$.
+  \item To prove the last assertion, one verifies that $(6/\pi i) E'_2-E_2^2$ is modular of weight $4$, and that if $f$ is modular of weight $k$, then $(6/\pi i)f' - kE_2f$ is modular of degree $2+k$. Now use the second point above.
+ \end{enumerate}
+
+\end{proof}
+
+%\subsection{A criterium for being quasimodular}
 

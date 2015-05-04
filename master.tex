@@ -1,4 +1,5 @@
-\documentclass[a4paper,10pt]{article}
+\documentclass[a4paper,10pt,draft]{article}
+%remember to add: twoside,
 %\documentclass[a4paper,10pt]{scrartcl}
 
 \usepackage{mystyle}
@@ -8,7 +9,9 @@
 \DeclareMathOperator{\ord}{ord}
 \DeclareMathOperator{\e}{e}
 \DeclareMathOperator{\SL}{SL}
-\DeclareMathOperator{\M}{M}
+\newcommand{\M}{\mathrm{M}}
+\newcommand*\conj[1]{\bar{#1}}
+\newcommand{\dif}{\mathrm{d}}
 \newcommand{\lam}{\lambda}
 
 \title{\textsc{Counting Covers of Elliptic Curves}}
