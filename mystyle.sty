@@ -3,24 +3,27 @@
 \usepackage{amsthm} % math stuff
 \usepackage{enumitem} % for better enumerates
 \usepackage{mathtools} % math stuff
+\usepackage{stmaryrd} % mapsfrom
 \usepackage[centertableaux,boxsize=1.2em]{ytableau} % for young diagrams
 %\usepackage{xltxtra} % xelatex
 \usepackage{ellipsis} % right ellipsis when using \dots, include after xltxtra
-\usepackage{tikz} % for diagrams
+\usepackage{tikz-cd}
 \usepackage{subdepth} % consistent use of simultaneous subscripts and supscripts
-\usepackage{fouriernc} % math mode typeface for below typeface
-\usepackage{tgschola} % fancy, bookman-style typeface
-%\usepackage{lmodern} % standard computer modern typeface
+%\usepackage{fouriernc} % math mode typeface for below typeface
+%\usepackage{tgschola} % fancy, bookman-style typeface
+\usepackage{lmodern} % standard computer modern typeface
 \usepackage{microtype} % better everything
 
 %\setmainfont{Linux Libertine O}
 
+\if
 \usetikzlibrary{external} % storing tikz figures externially to reduce build time
 \tikzexternalize[prefix=tikz/]
 \tikzset{external/system call={
   xelatex \tikzexternalcheckshellescape
   -halt-on-error -interaction=batchmode
   -jobname "\image" "\texsource"}}
+\fi
 
 \setlist[enumerate,1]{leftmargin=*} % deletes some leftmargin from enumerates
 

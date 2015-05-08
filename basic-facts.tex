@@ -17,6 +17,37 @@ $X\subset \Abb^n$ we define the \emph{ideal $I(V)$ of $X$} as usual.
 \end{defi}
 \fi
 
+\subsection{Covering spaces} \label{sec:covering-spaces}
+
+\begin{defi}
+ Let $X$ be a topological space, $F$ a set, $G$ a group operating on both $X$ and $F$. Define the fibred product $X \times_{G} F$ to be the topological space $(X\times F)\; /\sim$, where $(x,f)\sim (gx,gf)$ for all $g$ in $G$.
+\end{defi}
+
+\begin{prop}
+
+ Let $X$ be a connected, locally pathwise connected, and semi-locally simply connected topological space. Let $p:\widetilde{X}\to X$ be a universal cover. Furthermore, choose a point $\widetilde{x}_0$ of $\widetilde{X}$, and let $x_0$ be the image of $\widetilde{x}_0$ in $X$. Then there is an eqivalence of categories
+ \[
+ \begin{tikzcd}
+  \{\text{Unbranched covers } of X\} \arrow{r} & \{\pi_1(X,x_0)\text{-sets}\},
+ \end{tikzcd}
+ \]
+ defined by the pair of quasi-inverse functors \[(p_Y\cl Y\to X) \mapsto p^{-1}_Y(x_0)\;\text{ and }\;F \mapsto \widetilde{X} \times_{\pi_1} F.\]
+\end{prop}
+\begin{proof}
+ One verifies by hand that the given functors are mutually quasi-inverse, by using elementary covering theory. Nonetheless, the needed isomorphisms between objects are given below.
+ 
+ Let $F$ be a $\pi_1$-set and $p_F\cl \widetilde{X} \times_{\pi_1} F \to X$ the associated covering. Define a map $\zeta_F: F\to p_F^{-1}(x_0)$ by sending an element $f$ to the class of $(\widetilde{x}_0,f)$. This map is surjective by definition, and is injective since the $\pi_1$-action on $\widetilde{X}$ is free.
+ 
+ On the other hand, let $p_Y\cl Y\to X$ be a cover of $X$. Define a map \[\eta_Y: \widetilde{X}\times_{\pi_1} p_Y^{-1} \to Y\] as follows. For a given class $(\widetilde{x},f)$, let $\beta\cl [0,1] \to \widetilde{X}$ be a path starting in $\widetilde{x}_0$ and ending in $\widetilde{x}$. Consider the projection $p\beta$ of $\beta$ to $X$ and lift the path $p\beta$ to a path $\widetilde{\beta}_f$ in $Y$, with starting point $f$. Finally, set $\eta_Y(\widetilde{x},f)=\widetilde{\beta}_f(1)$. Note that since $\widetilde{X}$ is simply connected, this is independent of the choice of the path $\beta$. Also, the map is well-defined, since $p\beta \widetilde{\gamma} = p\beta$ for any lift $\widetilde{\gamma}$ of a loop in $X$.
+ 
+ $\eta_Y$ is surjective: for $y \in Y$, let $\beta$ be a path in $X$ with starting point $p_Y(y)$ and endpoint $x_0$. Let $f=\widetilde{\beta}_{y}(1)$, be the endpoint of the lift of $\beta$ to $Y$ with starting point $y$. Then $y$ is the image of $(\widetilde{\beta}_{\widetilde{x}_0}(1),f)$ under $\eta_Y$, where $\widetilde{\beta}_{\widetilde{x}_0}$ is a lift of $\beta$ to $\widetilde{X}$ with starting point $\widetilde{x}_0$. To see that the map is injective, given any two points $(\widetilde{x}_1,f),(\widetilde{x}_2,g)$ mapping to the same point in $Y$, define a path in $\widetilde{X}$ connecting $\widetilde{x}_1$ to $\widetilde{x}_2$, and use the paths given by the definition of $\eta_Y$ to construct the loop in $X$ that will take $(\widetilde{x}_1,f)$ to $(\widetilde{x}_2,g)$
+\end{proof}
+
+\begin{rmk}
+ In the above proposition, if $X$ has the structure of a Riemann surface, then the first category may be taken to be the category of unbranched covers of Riemann surfaces over $X$. Indeed, every cover inherits a complex structure from $X$ such that the structure map becomes holomorphic, and morphisms of covers of $X$ are automatically holomorphic: in general, if $fg$ and $f$ are holomorphic, then $g$ is.
+\end{rmk}
+
+
 \subsection{Complex curves}
 
 \begin{prop} \label{prop:curves-to-fields}

@@ -1,0 +1,26 @@
+\section{Classifying covers via the fundamental group}
+
+Let $E$ be an elliptic curve, $S=\{b_1,\dotsc,b_{2g-2}\}$ a set of $2g-2$ distinct points of $E$. Fix a basis point $b_0\in E\smallsetminus S$, and denote the fundamental group $\pi_1(E\smallsetminus S, b_0)$ by $\pi_1$.
+Recall the equivalence of categories from \ref{sec:covering-spaces}:
+
+\[
+ \begin{tikzcd}
+  \{\text{Unbranched covers } of E\smallsetminus S\} \arrow{r} & \{\pi_1\text{-sets}\}.
+ \end{tikzcd}
+\]
+
+The goal of this section is to use this equivalence of categories to classify those $\pi_1$-sets giving rise to unbranched covers that, after filling adding the branched points, become the covers we are interested in, i.e. the over $S$ simply branched, genus $g$, degree $d$ covers. To obtain natural $\pi_1$-actions on the set of $d$ fibre points of $b_0$, it is convenient to introduce markings on the set of fibres.
+
+\subsection{Marked covers}
+
+\begin{defi}
+ A \emph{marked (degree $d$, genus $g$, simply branched over $S$) cover} of $E$ is a triple $(C,p,m)$, where $(C,p)\in \Cov(E,S)_{g,d}$ and $m\cl p^{-1}(b_0)\to \{1,\dotsc,d\}$ is a bijective map, the \emph{marking} of $(C,p,m)$.
+ 
+ Two marked covers $(C_1,p_1,m_1)$ and $(C_2,p_2,m_2)$ are considered equivalent, if there is an isomorphism of covers $\phi\cl C_1 \to C_2$ such that $m_1=m_2\phi$. Let $\widetilde{\Cov}(E,S)_{g,d}$ denote the set of equivalence classes of marked covers with respect to this relation.
+\end{defi}
+
+\begin{defi}
+ Denote the group operation of $\pi_1$ on the fiber of $b_0$ in any cover by $(\gamma,x)\mapsto \gamma\ldot x$. Define the monodromy map \[\text{mon}\cl \widetilde{\Cov}(E,S)_{g,d} \to \Hom(\pi_1, S_d)\]
+ by $\text{mon}(C,p,m)(\gamma)(i)=m(\gamma\ldot m^{-1}(i))$.
+\end{defi}
+
