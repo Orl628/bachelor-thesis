@@ -20,7 +20,18 @@ The goal of this section is to use this equivalence of categories to classify th
 \end{defi}
 
 \begin{defi}
- Denote the group operation of $\pi_1$ on the fiber of $b_0$ in any cover by $(\gamma,x)\mapsto \gamma\ldot x$. Define the monodromy map \[\text{mon}\cl \widetilde{\Cov}(E,S)_{g,d} \to \Hom(\pi_1, S_d)\]
+ Let $(C,p)$ be a cover of $E$. Denote the group operation of $\pi_1$ on the fibre of $p^{-1}(b_0)$ by $(\gamma,x)\mapsto \gamma\ldot x$. Define the monodromy map \[\text{mon}\cl \widetilde{\Cov}(E,S)_{g,d} \to \Hom(\pi_1, S_d)\]
  by $\text{mon}(C,p,m)(\gamma)(i)=m(\gamma\ldot m^{-1}(i))$.
 \end{defi}
 
+Let the symmetric group $S_d$ operate on the first set by $\sigma \ldot (C,p,m)=(C,p,\sigma m)$, and on the second by $\sigma \ldot \psi = \inn(\sigma) \psi$.
+
+The fundamental group $\pi_1$ of $E\smallsetminus S$ is described by the following generating set and relation:
+
+\[\pi_1=\gen{\gamma_1,\dotsc,\gamma_{2g-2},\alpha_1,\alpha_2\scl \gamma_1\dotsm\gamma_{2g-2}=\alpha_1\alpha_2\alpha_1^{-1}\alpha_2^{-1}}.\]
+
+For over $S$ simply branched covers, the image of each loop $\gamma_i$ under the monodromy map is a simple transposition $\tau_i$. Namely, there is over $b_i$ exactly one branch point of index $2$, and $\tau_i$ interchanges the two fiber points corresponding to the two sheets of the branching, leaving the other fiber points unchanged.
+
+\begin{prop}
+ The image of $\text{mon}$ is isomorphic as a $S_d$-set to \begin{align*}\widehat{T}_{g,d} = \{(\tau_1,\dotsc,\tau_{2g-2},\sigma_1,\sigma_2)\in S_d^{2g}\scl\\ \text{ each }\tau_i\text{ is a simple transposition, }\tau_1\dotsm\tau_{2g-2}=\sigma_1\sigma_2\sigma_1^{-1}\sigma_2^{-1}\}.\end{align*}
+\end{prop}
