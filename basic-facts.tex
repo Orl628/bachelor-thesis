@@ -1,7 +1,6 @@
 \section{Basic facts and definitions}
 
-In this section we will fix some notation and recall the definitions and basic properties of the objects of this thesis. We will follow 
-\cite{Silverman2009}.
+In this section we will fix some notation and recall the definitions and basic properties of the objects of this thesis.
 
 \iffalse
 \subsection{Algebraic Curves}
@@ -28,7 +27,7 @@ $X\subset \Abb^n$ we define the \emph{ideal $I(V)$ of $X$} as usual.
  Let $X$ be a connected, locally pathwise connected, and semi-locally simply connected topological space. Let $p:\widetilde{X}\to X$ be a universal cover. Furthermore, choose a point $\widetilde{x}_0$ of $\widetilde{X}$, and let $x_0$ be the image of $\widetilde{x}_0$ in $X$. Then there is an eqivalence of categories
  \[
  \begin{tikzcd}
-  \{\text{Unbranched covers } of X\} \arrow{r} & \{\pi_1(X,x_0)\text{-sets}\},
+  \{\text{Unbranched covers of X}\} \arrow{r} & \{\pi_1(X,x_0)\text{-sets}\},
  \end{tikzcd}
  \]
  defined by the pair of quasi-inverse functors \[(p_Y\cl Y\to X) \mapsto p^{-1}_Y(x_0)\;\text{ and }\;F \mapsto \widetilde{X} \times_{\pi_1} F.\]
@@ -45,6 +44,8 @@ $X\subset \Abb^n$ we define the \emph{ideal $I(V)$ of $X$} as usual.
 
 \begin{rmk}
  In the above proposition, if $X$ has the structure of a Riemann surface, then the first category may be taken to be the category of unbranched covers of Riemann surfaces over $X$. Indeed, every cover inherits a complex structure from $X$ such that the structure map becomes holomorphic, and morphisms of covers of $X$ are automatically holomorphic: in general, if $fg$ and $f$ are holomorphic, then $g$ is.
+ 
+ Furthermore, let $X$ be a Riemann surface, let $S\subset X$ be a finite set. Then putting $(C,p)\mapsto (C\ssm p^{-1}(S),p)$ defines an equivalence of categories between the category of finite covers of $X$ with ramification locus $S$ and the category of finite unbranched covers of $X\ssm S$. The reason is roughly that the local data of an unbranched cover around a ``missing'' branch point uniquely characterizes that of any extention of that cover to a ramified one, e.g. the local degree of the cover map will correspond to the ramification index. The topic of extending unbranched covers to branched ones is discussed in detail in \cite{Lamotke2005}, 4.6.
 \end{rmk}
 
 
@@ -66,3 +67,8 @@ to degree $d$ field extensions.
 \sum_{x\in C_1}(\e_{\varphi}(x)-1),\] where $\e_\varphi(x)$ is the ramification index of $\varphi$ at $x$.
 \end{prop}
 
+\subsection{Further definitions}
+
+\begin{defi}
+ Let $X$ be a set. A \emph{weighting} on $X$ is a function $w\cl X\to\Rbb$. For an element $x$ of $X$, the value $w(x)$ is called the \emph{weight} of $x$. The \emph{weighted count of the elements of $X$} is defined as the sum $\sum_{x\in X}w(x)$. 
+\end{defi}

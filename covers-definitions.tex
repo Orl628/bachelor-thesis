@@ -70,11 +70,11 @@ The strategy to prove the theorem will involve considering a larger class of cur
 \end{rmk}
 
 \begin{rmk}
- The automorphism group of a cover $C=C_1 \cup \dotsb \cup C_k$ is the semidirect product \[\Aut_p(C) = \prod_i \Aut_{p_i}(C_i) \rtimes \Gamma,\] where $\Gamma \subset \mathrm{S}_k$ is the subgroup of the permutations of the components such that each orbit is contained in an isomorphism class of connected covers over $E$.
+ The automorphism group of a cover $C=C_1 \cup \dotsb \cup C_k$ is the semidirect product \[\Aut_p(C) = \prod_i \Aut_{p_i}(C_i) \rtimes \Gamma,\] where $\Gamma \subset \Sym_k$ is the subgroup of the permutations of the components such that each orbit is contained in an isomorphism class of connected covers over $E$.
  
  Indeed, since cover isomorphisms must permute isomorphic components, there is a homomorphism of $\Aut(C)$ into $\Gamma$ which is the identity on $\Gamma$, viewed as a subset of $\Aut(C)$, having as kernel the product $\prod_i \Aut_{p_i}(C_i)$.
  
- If the cover $C$ is simply branched over $\Gamma$, then no two components of genus greater than one are isomorphic as connected covers, since any isomorphism would have to preserve ramification indices (see for example \cite{Silverman2009}, prop. 2.6 c), but no two components share a branched point over $E$. In particular, if there are no components of genus one, then $\Gamma=1$.
+ If the cover $C$ is simply branched over $S$, then no two components of genus greater than one are isomorphic as connected covers, since any isomorphism would have to preserve ramification indices (see for example \cite{Silverman2009}, prop. 2.6 c), but no two components share a branched point over $E$. In particular, if there are no components of genus one, then $\Gamma=1$.
  
  On the other hand, each component of genus one is unramified over $E$, and could be isomorphic to other components of genus one, in which case $\Gamma$ is nontrivial.
 \end{rmk}
@@ -83,7 +83,7 @@ The strategy to prove the theorem will involve considering a larger class of cur
  \begin{enumerate}
   \item Denote the set of isomorphism classes of degree $d$, genus $g$, simply branched over $S$, covers of $E$ by $\Cov(E,S)_{g,d}$.
  
-  \item Assign to an element $[(C,p)]$ of $\Cov(E,S)_{g,d}$ the \emph{weight} $1/\Aut_p(C)$. This is again well-defined.
+  \item Assign to an element $[(C,p)]$ of $\Cov(E,S)_{g,d}$ the \emph{weight} $1/|\Aut_p(C)|$. This is again well-defined.
  
   \item Define $\widehat{N}_{g,d}$ to be the weighted count of the elements of $\Cov(E,S)_{g,d}$ with the weighting defined above. As before, the data $E$ and $S$ are omitted from the notation, since $\widehat{N}_{g,d}$ will turn out not to depend on them. 
  \end{enumerate}
