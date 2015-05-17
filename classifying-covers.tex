@@ -30,7 +30,7 @@ Furthermore, for an element $\psi=\mon(C,p,m)$ of the image of $\mon$, the group
  \begin{align*}
  \widehat{T}_{g,d} = \{(\tau_1,\dotsc,\tau_{2g-2},\sigma_1,\sigma_2)\in \Sym_d^{2g} \scl &\text{each }\tau_i\text{ is a simple transposition,}\\ &\tau_1\dotsm\tau_{2g-2}=\sigma_1\sigma_2\sigma_1^{-1}\sigma_2^{-1}\},
  \end{align*}
-  where the $\Sym_d$-action is defined by conjugation in each component.
+  where the $\Sym_d$-action is defined by conjugation in each component, after noting that conjugates of transpositions are transpositions.
 \end{defi}
 
 \begin{prop} \label{prop:classifying-set}
@@ -79,10 +79,10 @@ By the above discussion, we get an algebraic description of the weighted count $
  Let $\phi_t$ be the group homomorphism $\pi_1\to \Sym_d$ corresponding to $t$. By the equivalence of categories, $\Aut_p(C)$ is isomorphic to the group of automorphisms of the $\pi_1$-action on $\{1,\dotsc,d\}$ defined by $\psi_t$, i.e. those elements $\sigma$ in the symmetry group $\Sym_d$ commuting with $\psi_t$, i.e. such that $\psi_t = \inn(\sigma)\psi_t$. This condition translates under the isomorphism of $\Sym_d$-sets in \ref{prop:classifying-set}
 \end{proof}
 
-\begin{lemma}
+\begin{lemma} \label{prop:first-reduction-step}
  The following equality for the weighted count $\what{N}_{g,d}$ holds: \[\what{N}_{g,d}=|\what{T}_{g,d}|/d!.\]
 \end{lemma}
 
 \begin{proof}
- By propositions \ref{prop:classification-of-covers} and \ref{prop:correspondence-automorphism-group}, the weighted count $\what{N}_{g,d}$ is equal to the weighted count of the $S_d$-orbits of $\what{T}_{g,d}$, where each orbit is weighted by $1/|\Stab(t)|$, for any element $t$ in the orbit (this is well-defined since elements of the same orbits have isomorphic stabilizer subgroups). Now, it follows from the formula $|\Orb(t)|=|\Sym_d|/|\Stab(t)|$ that this weighted count equals $|\what{T}_{g,d}|/d!$.
+ By propositions \ref{prop:classification-of-covers} and \ref{prop:correspondence-automorphism-group}, the weighted count $\what{N}_{g,d}$ is equal to the weighted count of the $\Sym_d$-orbits of $\what{T}_{g,d}$, where each orbit is weighted by $1/|\Stab(t)|$, for any element $t$ in the orbit (this is well-defined since elements of the same orbits have isomorphic stabilizer subgroups). Now, it follows from the formula $|\Orb(t)|=|\Sym_d|/|\Stab(t)|$ that this weighted count equals $|\what{T}_{g,d}|/d!$.
 \end{proof}

@@ -1,4 +1,5 @@
 \documentclass[a4paper,12pt]{article}
+\usepackage[margin=1.3in]{geometry}
 %\documentclass[a4paper,10pt]{scrartcl}
 
 \usepackage{mystyle}
@@ -14,6 +15,8 @@
 \DeclareMathOperator{\Sym}{S}
 \DeclareMathOperator{\Stab}{Stab}
 \DeclareMathOperator{\Orb}{Orb}
+\DeclareMathOperator{\partit}{part}
+\DeclareMathOperator{\Tr}{Tr}
 \newcommand{\M}{\mathrm{M}}
 \newcommand*\conj[1]{\bar{#1}}
 \newcommand{\dif}{\mathrm{d}}
@@ -22,13 +25,13 @@
 \newcommand*\what[1]{\widehat{#1}}
 \newcommand*\wtilde[1]{\widetilde{#1}}
 \newcommand{\ssm}{\smallsetminus}
+\newcommand*\abs[1]{|#1|}
 
 \title{\textsc{Counting Covers of Elliptic Curves}}
 \author{Orlando Marigliano}
 \date{\today}
 
 \begin{document}
-
 \maketitle
 \tableofcontents
 
@@ -36,6 +39,7 @@
 \include{basic-facts}
 \include{covers-definitions}
 \include{classifying-covers}
+\include{conjugation-classes}
 \include{calculations}
 
 \bibliography{bachelor-thesis-bib}{}
