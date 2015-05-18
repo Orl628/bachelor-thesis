@@ -28,7 +28,7 @@ Our aim is now to rewrite this definition using conjugacy classes. Note that the
  Let $\mc{R}=(\sigma_2^{(1)},\dotsc,\sigma_2^{(r)})$ be a system of (distinct) representatives of the conjugacy classes of $\Sym_d$. Then \[\abs{\widehat{T}_{g,d}}=\sum_{\sigma_2\in\mc{R}}d!\abs{P_{g,d}(\sigma_2)}.\]
 \end{prop}
 \begin{proof}
- Let $\sigma_2 \in \Sym_d$, let $(\tau_1,\dotsc,\tau_{2g-2}) \in P_{g,d}(\sigma_2)$ and let $\sigma'_1$ be an element such that $(\tau_1 \dotsm \tau_{2g-2})\sigma_2=\sigma'_1\sigma_2(\sigma'_1)^{-1}$. Then there is a bijection of the set of elements $\sigma_1$ satisfying \eqref{eq:conj-cond} onto the set of elements commuting with $\sigma_2$, given by sending $\sigma_1$ to $(\sigma'_1)^{-1}\sigma_1$. The number of elements commuting with $\sigma_2$ is given by the cardinality of the stabilizer $\abs{\Stab(\sigma_2)}=\abs{\Sym_d}/\abs{c(\sigma_2)}=d!/\abs{c(\sigma_2)}$. Thus, one obtains 
+ Let $\sigma_2 \in \Sym_d$, let $(\tau_1,\dotsc,\tau_{2g-2}) \in P_{g,d}(\sigma_2)$ and let $\sigma\pr_1$ be an element such that $(\tau_1 \dotsm \tau_{2g-2})\sigma_2=\sigma\pr_1\sigma_2(\sigma\pr_1)^{-1}$. Then there is a bijection of the set of elements $\sigma_1$ satisfying \eqref{eq:conj-cond} onto the set of elements commuting with $\sigma_2$, given by sending $\sigma_1$ to $(\sigma\pr_1)^{-1}\sigma_1$. The number of elements commuting with $\sigma_2$ is given by the cardinality of the stabilizer $\abs{\Stab(\sigma_2)}=\abs{\Sym_d}/\abs{c(\sigma_2)}=d!/\abs{c(\sigma_2)}$. Thus, one obtains 
  \[
   \abs{\widehat{T}_{g,d}}=\sum_{\sigma\in\Sym_d}\frac{d!}{\abs{c(\sigma)}}\abs{P_{g,d}(\sigma)}.
  \]
@@ -76,7 +76,7 @@ From now on, let $\mc{R}=(\sigma_2^{(1)},\dotsc,\sigma_2^{(r)})$ be a fixed syst
  \]
  as follows: for a given element $((\tau_1,\dotsc,\tau_k),\tau_0)$, let $\sigma\in\Sym_d$ be the unique element such that $\tau_1\dotsm\tau_k\sigma_2^{(i)}=\sigma\sigma_2^{(l)}\sigma^{-1}$, and define the image of $((\tau_1,\dotsc,\tau_k),\tau_0)$ to be $(\sigma\tau_0\sigma^{-1},\tau_1,\dotsc,\tau_k)$. By the definition of matrix multiplication, it suffices to prove that this function is a bijection.
  
- Injectivity is clear by the uniqueness of $\sigma$ in the definition. For surjectivity, given an element $(\tau'_0,\tau_1,\dotsc,\tau_k)$ in the target, choose an $l$ such that $\tau_1\dotsm\tau_k\sigma_2^{(i)}$ is conjugate to $\sigma_2^{(l)}$, say $\tau_1\dotsm\tau_k\sigma_2^{(i)}=\sigma\sigma_2^{(l)}\sigma^{-1}$. Then $(\sigma^{-1}\tau_0\sigma)\sigma_2^{(l)}$ is conjugate to $\sigma_2^{(j)}$.
+ Injectivity is clear by the uniqueness of $\sigma$ in the definition. For surjectivity, given an element $(\tau^{\textrm{,}}_0,\tau_1,\dotsc,\tau_k)$ in the target, choose an $l$ such that $\tau_1\dotsm\tau_k\sigma_2^{(i)}$ is conjugate to $\sigma_2^{(l)}$, say $\tau_1\dotsm\tau_k\sigma_2^{(i)}=\sigma\sigma_2^{(l)}\sigma^{-1}$. Then $(\sigma^{-1}\tau_0\sigma)\sigma_2^{(l)}$ is conjugate to $\sigma_2^{(j)}$.
 \end{proof}
 
 \begin{lemma}
@@ -94,5 +94,4 @@ From now on, let $\mc{R}=(\sigma_2^{(1)},\dotsc,\sigma_2^{(r)})$ be a fixed syst
   &=\sum_{d\geq1}\sum_{i=1}^r\sum_{g\geq1}\frac{\mu_{i,d}^{2g-2}}{(2g-2)!}\lam^{2g-2}q^d\\
   &=\sum_{d\geq1}\sum_{i=1}^r \exp(\mu_{i,d}\lambda)q^d.
  \end{align*}
-
 \end{proof}

@@ -1,0 +1,49 @@
+\section{Subsets of the half integers}
+
+In this section, we use a formula of Frobenius to express the function $\widehat{Z}_{(q,\lam)}$ as the constant term of a certain product of Laurent series. This is exactly what is needed in the next section to prove that ${Z}_g$ is quasimodular for $g\geq 2$. The formula also exhibits a way to concretely compute the number of disconnected covers of given genus and degree.
+
+Recall that the irreducible characters of $\Sym_d$ are parametrized by Young diagrams of size $d$. For example, ...
+
+\begin{defi}
+ Define the \emph{positive half integers} $\Zbb_{\geq0}+\frac{1}{2}$ by
+ \[
+  \pai=\left\{\frac{2k+1}{2}\scl k\in\{0,1,2\dotsc\}\right\}
+ \]
+\end{defi}
+
+\begin{prop}
+ There is a bijection between the set of Young diagrams of size $d$ and the set of pairs $(U,V)$ of finite subsets of $\pai$ such that $\abs{U}=\abs{V}$ and $d=\sum_{u\in U}u + \sum_{v\in V}v$.
+\end{prop}
+\begin{proof}
+ Consider any a Young diagram of size $d$. Starting with the upper left corner, cut it diagonally in two pieces. This gives $s$ ``cut'' columns in the lower piece and $s$ ``cut'' rows in the upper piece. Let $u_i\in\pai$ denote the number of squares in the $i$-th cut row and $v_i$ the number of squares in the $i$-th cut column. Define $U=\{u_1,\dotsc,u_s\}$ and $V=\{v_1,\dotsc,v_s\}$. Then $|U|=|V|$ and $d=\sum_{u\in U}u + \sum_{v\in V}v$. Conversely, let two such $U$ and $V$ be given. The associated Young diagram is obtained by arranging both $U$ and $V$ in ascending order and then iteratively gluing the rows with $u_i$ squares to the columns with $v_i$ squares, for the appropriate elements $u_i \in U$ and $v_i \in V$ respectively.
+\end{proof}
+
+\begin{prop}
+ Let $\chi$ be the character associated to the Young diagram corresponding to the subsets $U,V\in\pai$ of equal cardinality $s$. Then
+ \[
+  \frac{\binom{d}{2} \chi(t)}{\dim(\chi)} = \frac{1}{2}\left(\sum_{i=1}^s u_i^2 - \sum_{i=1}^s v_i^2\right).
+ \]
+\end{prop}
+\begin{proof}
+ See \cite{Fulton-Harris91}, p. 52.
+\end{proof}
+
+\begin{defi}
+ Define the Laurent series $\theta(\zeta,q,\lam)$ in $\zeta$ with coefficients formal power series in $q$ and $\lam$, defined as follows:
+ \[
+  \theta(\zeta,q,\lam) = \prod_{u\in\pai} \left(1+\zeta q^u e^{u^2\lam/2}\right) \prod_{v\in\pai} \left(1+\zeta^{-1} q^v e^{-v^2\lam/2}\right).
+ \]
+\end{defi}
+
+\begin{lemma}
+ The counting function $\what{Z}(q,\lam)$ is the coefficient of $\zeta^0$ in $\theta(\zeta,q,\lam)-1$.
+\end{lemma}
+\begin{proof}
+ By expanding the product, one finds that $\theta(\zeta,q,\lam)=\sum_{U,V\subset\pai}a_{U,V}$, where \[a_{U,V}=\zeta^k q^d \exp(\mu_{U,V}\lam).\] Here, \begin{enumerate} \item $k=\abs{U}-\abs{V}$
+ \item $d=\sum_{u\in U}u + \sum_{v\in V}v$
+ \item $\mu_{U,V}=\frac{1}{2}\left(\sum_{i=1}^s u_i^2 - \sum_{i=1}^s v_i^2\right)$.
+ \end{enumerate}
+The statement follows by ...
+\end{proof}
+
+
