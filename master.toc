@@ -8,15 +8,16 @@
 \contentsline {section}{\numberline {3.}Covers of an elliptic curve}{9}{section.3}
 \contentsline {subsection}{\numberline {3.1.}Connected covers}{9}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2.}Covers}{10}{subsection.3.2}
-\contentsline {section}{\numberline {4.}Classifying covers via the fundamental group}{12}{section.4}
-\contentsline {subsection}{\numberline {4.1.}Marked covers and the monodromy map}{12}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2.}Counting covers}{13}{subsection.4.2}
-\contentsline {section}{\numberline {5.}Conjugacy classes of the symmetric group}{15}{section.5}
-\contentsline {subsection}{\numberline {5.1.}Conjugacy cycles}{15}{subsection.5.1}
-\contentsline {subsection}{\numberline {5.2.}Adjacency matrices}{16}{subsection.5.2}
-\contentsline {section}{\numberline {6.}The group algebra of the symmetric group}{18}{section.6}
-\contentsline {subsection}{\numberline {6.1.}The centre of the group algebra}{18}{subsection.6.1}
-\contentsline {subsection}{\numberline {6.2.}Irreducible characters of the symmetric group}{19}{subsection.6.2}
-\contentsline {section}{\numberline {7.}Subsets of the half integers}{21}{section.7}
-\contentsline {section}{\numberline {8.}Appendix A: Calculations}{23}{section.8}
-\contentsline {subsection}{\numberline {8.1.}Quasimodular forms}{23}{subsection.8.1}
+\contentsline {section}{\numberline {4.}Classifying covers via the fundamental group}{13}{section.4}
+\contentsline {subsection}{\numberline {4.1.}Marked covers and the monodromy map}{13}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2.}Counting covers}{14}{subsection.4.2}
+\contentsline {section}{\numberline {5.}Conjugacy classes of the symmetric group}{16}{section.5}
+\contentsline {subsection}{\numberline {5.1.}Conjugacy cycles}{16}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2.}Adjacency matrices}{17}{subsection.5.2}
+\contentsline {section}{\numberline {6.}The group algebra of the symmetric group}{19}{section.6}
+\contentsline {subsection}{\numberline {6.1.}The centre of the group algebra}{19}{subsection.6.1}
+\contentsline {subsection}{\numberline {6.2.}Irreducible characters of the symmetric group}{20}{subsection.6.2}
+\contentsline {section}{\numberline {7.}Subsets of the half integers}{22}{section.7}
+\contentsline {section}{\numberline {8.}Quasimodularity of the generating function}{24}{section.8}
+\contentsline {section}{\numberline {9.}Appendix A: Calculations}{26}{section.9}
+\contentsline {subsection}{\numberline {9.1.}Quasimodular forms}{26}{subsection.9.1}

@@ -1,4 +1,4 @@
-\section{Covers of an elliptic curve}
+\section{Covers of an elliptic curve} \label{sec:covers-definitions}
 
 \subsection{Connected covers}
 
@@ -41,6 +41,13 @@ In the following, let $\Cbb$ be the ground field for all varieties considered.
 \begin{defi}
  For any $g\geq 1$, define $F_g$ to be the generating series \[F_g(q)=\sum_{d\geq 1}N_{g,d}q^d\] counting covers of genus $g$.
 \end{defi}
+
+\begin{expl}
+ By the theory of elliptic curves, $N_{1,d}=\sum_{j|d}1/j$. Indeed, Let $E$ be defined by the lattice $\Omega=\gen{1,i}$. The set of divisors of $d$ classify the covers of $E$ by assigning to some $j|d$ the elliptic curve $C_j$ defined by $\Omega_j=\left<1,di/j^2\right>$ and the cover map $C_j\to E\cl z\mapsto jz$. There are $j$ automorphisms $C_j\to C_j$ of this cover, given by $z\mapsto z+k/j, k=0,1,\dotsc,j-1$.
+ 
+ Further, by using the Mercator series expansion for the logarithm, one finds that $-\sum_{n\geq 1}\log(1-q^n)=\sum_{d\geq 1}\sum_{j|d}\frac{1}{j}q^d.$
+ Hence, the first generating function is given by \[F_1(q)=-\sum_{n\geq 1}\log(1-q^n).\]
+\end{expl}
 
 This thesis shall prove the following result.
 
@@ -96,7 +103,7 @@ The strategy to prove the theorem will involve considering a larger class of cur
  \[\widehat{Z}(q,\lam) = \sum_{g\geq 1}\sum_{d\geq 1} \frac{\widehat{N}_{g,d}}{(2g-2)!}q^d\lam^{(2g-2)}.\]
 \end{defi}
 
-\begin{lemma}
+\begin{lemma} \label{prop:connection-reduction}
  The generating functions are related by $\widehat{Z}(q,\lam) = \exp(Z(Q,\lam)) - 1$.
 \end{lemma}
 

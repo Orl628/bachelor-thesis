@@ -1,0 +1,49 @@
+\section{Quasimodularity of the generating function}
+
+In this section, we use the theorem of Kaneko and Zagier about the generalized Jacobi function found in \cite{Kaneko-Zagier1995} to prove that the generating function $F_g$ counting connected covers of genus $g$ is quasimodular for $g\geq 2$. Recall that $F_g$ was defined as the series
+
+ \[Z(q,\lam) = \sum_{g\geq 1}\frac{F_g(q)}{(2g-2)!}\lam^{2g-2}.\]
+ 
+For an element $\tau$ of the upper half plane, set $q(\tau)=exp(2\pi i \tau)$. For convenience, we sometimes write $q$ instead of $q(\tau)$. Also, sometimes $q$ will be viewed as a formal variable.
+
+\begin{prop} \label{prop:exp-quasimodular}
+ Let $a(x)=\sum_{k\geq 1} a_k x^k$ be a formal power series in $x$, with holomorphic functions $a_k$ on the upper half plane as coefficients. Let $\exp(a(x))=\sum_{k\geq 1} b_k x^k$ be its formal exponential. Assume that each of the coefficients $b_k$ is quasimodular of weight $kr$, for some $r$. Then the $a_k$ are also quasimodular of weight $kr$.
+\end{prop}
+\begin{proof}
+ This essentially follows from the identity
+ \[
+  \exp(\sum_{n\geq 1}\frac{a_n}{n!}x^n)=\sum_{n\geq 1}\frac{B_n(a_1,\dotsc,a_n)}{n!}
+ \]
+ expressing the coefficients $b_k$ in terms of the complete Bell polynomials $B_n$.
+\end{proof}
+
+\begin{defi}
+ Define the Laurent series $\Theta(\zeta,q,\lam)$ in $\zeta$ with coefficients formal power series in $q$ and $\lam$ as follows:
+ \[
+  \Theta(\zeta,q,\lam)=(\prod_{n\geq 1}(1-q^n))\theta(\zeta,q,\lam).
+ \]
+ Further, let $\Theta_0(q,\lam)$ denote the coefficient of $\zeta^0$ in $\Theta(\zeta,q,\lam)$.
+\end{defi}
+
+The following theorem about the quasimodularity of the coefficients of $\Theta_0$ is proved in \cite{Kaneko-Zagier1995}.
+
+\begin{thm}
+ Let $\Theta_0(q,\lam)=\sum_{k}A_k(q)\lam^k$ be the constant $\zeta$-coefficient of $\Theta$. Then the coefficient $A_k(q)$ is a quasimodular form of weight $3k$.
+\end{thm}
+
+We may now prove the main result:
+
+\begin{thm}
+ For $g\geq 2$, the function $F_g\circ q$ is a quasimodular form of weight $6g-6$.
+\end{thm}
+\begin{proof}
+ Lemma \ref{prop:theta-expansion} gives the equality
+ \[
+  \Theta_0(q,\lam)=(\prod_{n\geq 1}(1-q^n))(\what{Z}(q,\lam)+1).
+ \]
+ By the previous theorem, the coefficient of $\lambda^{2g-2}$ in this product is quasimodular of weight $6g-6$. By Lemma \ref{prop:connection-reduction} one obtains, after taking the logarithm of both sides of the above equality,
+ \[
+  \log\Theta_0(q,\lam)=\sum_{n\geq 1}\log(1+q^n) + Z(q,\lam).
+ \]
+ As seen in section \ref{sec:covers-definitions}, $F_1=-\sum_{n\geq 1}\log(1+q^n)$. Hence, in $\log\Theta_0(q,\lam)$ the coefficient of $\lambda^0$ is zero. Thus, we may apply proposition \ref{prop:exp-quasimodular} and the previous theorem to find that the coefficient of $\lambda^{2g-2}$ in $\log\Theta_0(q,\lam)$, that is $F_g(q)/(2g-2)!$, is a quasimodular form of weight $6g-6$. This concludes the proof.
+\end{proof}
