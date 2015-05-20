@@ -104,8 +104,40 @@ The strategy to prove the theorem will involve considering a larger class of cur
 \end{defi}
 
 \begin{lemma} \label{prop:connection-reduction}
- The generating functions are related by $\widehat{Z}(q,\lam) = \exp(Z(Q,\lam)) - 1$.
+ The above generating functions satisfy the relation \[\widehat{Z}(q,\lam) = \exp(Z(q,\lam)) - 1.\]
 \end{lemma}
-
 \begin{proof}
+The proof is subdivided into three parts. First, some notation and terminology is introduced. Second, the coefficient of $q^{d}\lam^{2g-2}$ in $\exp(Z(Q,\lam)) - 1$ is expressed in terms of the new notation. Third, combinatorial arguments are used to prove that this coefficient is equal to $\what{N}_{g,d}/(2g-2)!$.
+\begin{enumerate}
+
+ \item Let $C$ be a degree $d$, genus $g$ cover. The \emph{combinatorial type} of $C$ is the tuple $\kappa=(k_j,g_j,d_j)_{j=1}^r$ of natural numbers, such that for each $j$, the space $C$ contains exactly $k_j$ connected components $C_j$ of genus $g_j$ such that the cover map $C_j\to E$ is of degree $d_j$. For simplicity, denote the Euler characteristics $2g-2$ and $2g_j-2$ by $\chi$ and $\chi_j$, respectively. Then
+ \[\sum_j d_j=d\text{, and }\sum_j \chi_j=\chi.\]
+ Further, define $\what{N}_\kappa$ to be the weighted count of the covers of combinatorial type $\kappa$. Then
+ \[
+  \what{N}_{g,d}=\sum_{\abs{\kappa}=(\chi,d)}\what{N}_\kappa,
+ \]
+ where $\abs{\kappa}$ is defined as the tuple $(\sum_j k_j\chi_j,\;\sum_j k_jd_j)$, for $\kappa=(k_j,g_j,d_j)_j$.
+ Finally, note that the relation
+ \[
+  q^d\lam^\chi=\prod_{j=1}^r q^{k_jd_j}\lam^{k_j\chi_j}
+ \]
+ holds for each $\kappa=(k_j,g_j,d_j)_j$ such that $\abs{\kappa}=(\chi,d)$.
+ 
+ \item The exponential of $Z(q,\lam)$ is given by 
+ \[
+  \exp(Z(q,\lam))=\prod_{g\geq 1}\prod_{d\geq 1}\sum_{k\geq 0}\frac{N^k_{g,d}}{k!\chi!}q^{kd}\lam^{k\chi}.
+ \]
+ Expanding, one finds that the expression for $\exp(Z(q,\lambda))$ is a sum over terms of the form
+ \[
+  \prod_{j=1}^{<\infty}\left(\frac{N_{g_j,d_j}}{\chi_j!}\right)^{k_j}\frac{1}{k_j}q^{k_jd_j}\lam^{k_j\chi_j},
+ \]
+ for some choices of parameters $g_j, d_j, k_j$. Such choices may be collected to form combinatorial types $\kappa=(g_j,d_j,k_j)_j$. Now, by collecting the summands arising from choices that induce combinatorial types of the same absolute value $\abs\kappa$, one obtains that the coefficient of $q^d\lam^\chi$ in $\exp(Z(q,\lam))$ is equal to the sum $\sum_{\abs\kappa=(\chi,d)}a_\kappa$, where 
+ \[
+  a_\kappa=\prod_{j=1}^{r}\left(\frac{N_{g_j,d_j}}{\chi_j!}\right)^{k_j}\frac{1}{k_j}q^{k_jd_j}\lam^{k_j\chi_j}.
+ \]
+ 
+ \item It remains to prove that $a_\kappa$ = $\what{N}_\kappa$ for each combinatorial type $\kappa$.
+ ...
+\end{enumerate}
+
 \end{proof}

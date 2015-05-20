@@ -10,11 +10,7 @@ For an element $\tau$ of the upper half plane, set $q(\tau)=exp(2\pi i \tau)$. F
  Let $a(x)=\sum_{k\geq 1} a_k x^k$ be a formal power series in $x$, with holomorphic functions $a_k$ on the upper half plane as coefficients. Let $\exp(a(x))=\sum_{k\geq 1} b_k x^k$ be its formal exponential. Assume that each of the coefficients $b_k$ is quasimodular of weight $kr$, for some $r$. Then the $a_k$ are also quasimodular of weight $kr$.
 \end{prop}
 \begin{proof}
- This essentially follows from the identity
- \[
-  \exp(\sum_{n\geq 1}\frac{a_n}{n!}x^n)=\sum_{n\geq 1}\frac{B_n(a_1,\dotsc,a_n)}{n!}
- \]
- expressing the coefficients $b_k$ in terms of the complete Bell polynomials $B_n$.
+ This follows essentially by computing by hand the coefficients $b_i$.
 \end{proof}
 
 \begin{defi}
@@ -27,13 +23,13 @@ For an element $\tau$ of the upper half plane, set $q(\tau)=exp(2\pi i \tau)$. F
 
 The following theorem about the quasimodularity of the coefficients of $\Theta_0$ is proved in \cite{Kaneko-Zagier1995}.
 
-\begin{thm}
+\begin{thm}[Kaneko, Zagier]
  Let $\Theta_0(q,\lam)=\sum_{k}A_k(q)\lam^k$ be the constant $\zeta$-coefficient of $\Theta$. Then the coefficient $A_k(q)$ is a quasimodular form of weight $3k$.
 \end{thm}
 
 We may now prove the main result:
 
-\begin{thm}
+\begin{thm}[Dijgraaf]
  For $g\geq 2$, the function $F_g\circ q$ is a quasimodular form of weight $6g-6$.
 \end{thm}
 \begin{proof}
