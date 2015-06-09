@@ -1,5 +1,7 @@
 \section{Covers of an elliptic curve} \label{sec:covers-definitions}
 
+In this section we define the central notions and objects of interest, \ie finite covers of an elliptic curve with simple ramification type, the weighted counts of isomorphism classes thereof, and the generating functions associated to such weighted counts.
+
 \subsection{Connected covers}
 
 In the following, let $\Cbb$ be the ground field for all varieties considered.
@@ -136,8 +138,15 @@ The proof is subdivided into three parts. First, some notation and terminology i
   a_\kappa=\prod_{j=1}^{r}\left(\frac{N_{g_j,d_j}}{\chi_j!}\right)^{k_j}\frac{1}{k_j}q^{k_jd_j}\lam^{k_j\chi_j}.
  \]
  
- \item It remains to prove that $a_\kappa$ = $\what{N}_\kappa$ for each combinatorial type $\kappa$.
- ...
+ \item It remains to prove that $a_\kappa$ = $\what{N}_\kappa$ for each combinatorial type $\kappa$. Sketch:
+ \begin{itemize}
+  \item The product $N_{g_1,d_1}^{k_1}\dotsm N_{g_r,d_r}^{k_r}$ represents a choice of connected components of a cover. One has to modify this product to account for the automorphisms of the components and the choice of ramification points.
+  \item There are $\binom{\chi}{\chi_1,\chi_1\dotsc,\chi_r}=\chi\prod_{j=1}^r 1/(\chi_j!)^{k_j}$ ways to subdivide $S$ into subsets that serve as the ramification locus of the connected components. Here, each $\chi_j$ appears in the binomial coefficient $k_j$ times.
+  \item For components of genus $\geq 2$, we get a factor of $1/k_j!$ to account for overcounting.
+  \item For components of genus $1$ we also get a factor of $1/k_j!$, since we either overcount (if some genus $1$ covers are non-isomorphic) or get extra automorphisms as permutations (if some genus $1$ covers are isomorphic).
+  \item Putting this all together, we get that the weighted count of covers of type $\kappa$ is $a_\kappa$.
+ \end{itemize}
+
 \end{enumerate}
 
 \end{proof}

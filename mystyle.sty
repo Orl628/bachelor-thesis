@@ -28,7 +28,7 @@
   -jobname "\image" "\texsource"}}
 \fi
 
-\setlist[enumerate,1]{leftmargin=*} % deletes some leftmargin from enumerates
+\setlist[enumerate,1]{topsep=0pt} % deletes some leftmargin from enumerates
 
 \pagestyle{plain} % no pages
 \setlength{\parindent}{0cm} % no paragraph indentation
@@ -43,13 +43,14 @@
 
 % more text-like enviroments
 \theoremstyle{definition}
-\newtheorem*{defi}{Definition}
-\newtheorem*{expl}{Example}
-\newtheorem*{expls}{Examples}
-\newtheorem*{rmk}{Remark}
+\newtheorem{defi}[prop]{Definition}
+\newtheorem{expl}[prop]{Example}
+\newtheorem{expls}[prop]{Examples}
+\newtheorem{rmk}[prop]{Remark}
 \newtheorem*{recall}{Recall}
-\newtheorem{calc}{Calculation}[section]
-\newtheorem*{claim}{Claim}
+\newtheorem{calc}[prop]{Calculation}
+\newtheorem{claim}[prop]{Claim}
+\newtheorem{joke}[prop]{Joke}
 
 % numbers and fields
 \newcommand{\Nbb}{\mathbb{N}}
@@ -76,6 +77,12 @@
 \newcommand{\nscms}{\!,\,} % negative space-comma-space
 \newcommand{\pr}{^\textrm{\,,}} % better ``prime'' symbol for small letters.
 \newcommand{\prpr}{^{\textrm{\,,}\textrm{,}}} % prime prime
+\newcommand{\ie}{i.\,e.\ }
+\newcommand{\eg}{e.\,g.\ }
+\newcommand*{\defeq}{\mathrel{\rlap{%
+                     \raisebox{0.3ex}{$\m@th\cdot$}}%
+                     \raisebox{-0.3ex}{$\m@th\cdot$}}%
+                     =}
 
 % shortcuts that accept parameters
 \newcommand{\dblbrack}[1]{\left[\!\left[#1\right]\!\right]}
@@ -86,8 +93,11 @@
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}.}
 \renewcommand{\thesubsubsection}{\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
 
-\renewcommand{\theprop}{\arabic{section}.\arabic{subsection}.\arabic{prop}}
+
+\renewcommand{\theprop}{\arabic{section}.\arabic{prop}}
+\if 0
 \renewcommand{\thelemma}{\arabic{section}.\arabic{subsection}.\arabic{lemma}}
 \renewcommand{\thethm}{\arabic{section}.\arabic{subsection}.\arabic{thm}}
 \renewcommand{\thecor}{\arabic{section}.\arabic{subsection}.\arabic{cor}}
 \renewcommand{\thecalc}{\arabic{section}.\arabic{subsection}.\arabic{calc}}
+\fi

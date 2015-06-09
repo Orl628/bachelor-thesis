@@ -10,7 +10,7 @@
 \contentsline {subsection}{\numberline {3.2.}Covers}{10}{subsection.3.2}
 \contentsline {section}{\numberline {4.}Classifying covers via the fundamental group}{14}{section.4}
 \contentsline {subsection}{\numberline {4.1.}Marked covers and the monodromy map}{14}{subsection.4.1}
-\contentsline {subsection}{\numberline {4.2.}Counting covers}{15}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.2.}Counting covers}{16}{subsection.4.2}
 \contentsline {section}{\numberline {5.}Conjugacy classes of the symmetric group}{17}{section.5}
 \contentsline {subsection}{\numberline {5.1.}Conjugacy cycles}{17}{subsection.5.1}
 \contentsline {subsection}{\numberline {5.2.}Adjacency matrices}{18}{subsection.5.2}
