@@ -87,6 +87,11 @@
 % shortcuts that accept parameters
 \newcommand{\dblbrack}[1]{\left[\!\left[#1\right]\!\right]}
 \newcommand{\gen}[1]{\left\langle #1 \right\rangle}
+\newcommand{\ses}[6]{
+ \begin{tikzcd}[ampersand replacement=\&]
+ #1 \arrow{r} \& {#2} \arrow{r}{#5} \& {#3} \arrow{r}{#6} \& {#4} \arrow{r} \& #1
+ \end{tikzcd}
+}
 
 %1.1 -> 1.1.
 \renewcommand{\thesection}{\arabic{section}.}

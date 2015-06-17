@@ -6,8 +6,6 @@
 \contentsline {subsection}{\numberline {2.2.}Complex curves}{8}{subsection.2.2}
 \contentsline {subsection}{\numberline {2.3.}Further definitions}{8}{subsection.2.3}
 \contentsline {section}{\numberline {3.}Covers of an elliptic curve}{9}{section.3}
-\contentsline {subsection}{\numberline {3.1.}Connected covers}{9}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2.}Covers}{10}{subsection.3.2}
 \contentsline {section}{\numberline {4.}Classifying covers via the fundamental group}{14}{section.4}
 \contentsline {subsection}{\numberline {4.1.}Marked covers and the monodromy map}{14}{subsection.4.1}
 \contentsline {subsection}{\numberline {4.2.}Counting covers}{16}{subsection.4.2}
