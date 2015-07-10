@@ -1,0 +1,57 @@
+\section{Modular curves}
+
+\newcommand{\jrm}{\mathrm{j}}
+
+One may weaken the definition of a modular form by requiring that modular condition be met only for transformations lying in certain subgroups $\Gamma$ of $\SL_2(\Zbb)$. In this section we will calculate the dimension of the associated space of weight $k$ modular forms $\M_k(\Gamma)$ using the fact that modular forms can be seen as section of a certain line bundle on a special Riemann surface, the modular curve associated to the subgroup $\Gamma$.
+
+\begin{defi} TODO Cusp forms \end{defi}
+
+\begin{defi}
+ Let $N\in \Zbb$.
+ 
+ 1. The \emph{principal congruence subgroup} of \emph{level} $N$ is the subgroup
+ \[\Gamma(N)=\left\{\begin{pmatrix} a & b \\ c & d \end{pmatrix}\in\SL_2(\Zbb)\scl \begin{pmatrix}a & b \\ c & d\end{pmatrix} \equiv \begin{pmatrix}1 & 0 \\ 0 & 1\end{pmatrix} \pmod{N}\right\}.\]
+ 
+ 2. A \emph{congruence subgroup} is a subgroup $\Gamma\subset\SL_2(\Zbb)$ such that $\Gamma(N)\subset\Gamma$ for some $N\in\Zbb$. We then say that $\Gamma$ has \emph{level} $N$. 
+\end{defi}
+
+\begin{rmk}
+ The subgroup $\Gamma(N)$ is the kernel of the component-wise congruence map $\SL_2(\Zbb)\to\SL_2(\Zbb/N\Zbb)$. It is hence normal in $\SL_2(\Zbb)$ and of finite index. Consequently, each congruence subgroup has finite index in $\SL_2(\Zbb)$, while not being necessarily normal.
+\end{rmk}
+
+\begin{defi}
+ Let $\gamma = \left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)$ be an element of $\GL_2(\Cbb)$ and let $f\cl\mc{H}\to\what{\Cbb}$ be a holomorphic function. For $\tau\in\mc{H}$ define the \emph{factor of automorphy}
+ \[\mathrm{j}(\gamma,\tau)\defeq c\tau+d\]
+ and for $k\in \Zbb$ the function $f[\gamma]_k\cl\mc{H}\to\Cbb$ by
+ \[f[\gamma]_k(\tau) \defeq \det(\gamma)^{k/2}\jrm(\gamma,\tau)^{-k}f(\gamma\tau).\]
+\end{defi}
+
+\begin{remark}
+ Let $\gamma,\gamma'\in\SL_2(\Zbb)$ and $\tau\in\mc{H}$.
+ 
+ 1. The factor of automorphy satisfies $\jrm(\gamma\gamma',\tau) = \jrm(\gamma,\gamma'(\tau))\jrm(\gamma',\tau)$.
+ 
+ 2. For all holomorphic functions $f:\mc{H}\to\Cbb$, we have $f[\gamma\gamma']_k=(f[\gamma]_k)[\gamma']_k$.
+\end{remark}
+
+\begin{defi} Let $f\cl \mc{H} \to \Cbb$ be a function, let $\Gamma$ be a congruence subgroup. Hence $\Gamma$ contains an element of the form $\left(\begin{smallmatrix}1 & *\\0 & 1\end{smallmatrix}\right)\in\Gamma$. Let $h\in\Nbb$ be minimal with the property that $\left(\begin{smallmatrix}1 & h\\0 & 1\end{smallmatrix}\right)\in\Gamma$. For $\tau\in\mc{H}$, set $q_h=\exp(2\pi i\tau/h)$.
+
+  1. The function $f$ is \emph{$h\Zbb$-periodic}, if it satisfies $f(\tau + h) = f(\tau)$ for all $\tau \in \mc{H}$. Analogously to the case $h=1$, there exists a function $\tilde f\cl B\setminus \{0\} \to \Cbb$ such that $f(\tau)=\tilde f(q_h)$ for all $\tau$. Now let $f$ be holomorphic, so that $\tilde f$ is also holomorphic. We say that $f$ is \emph{holomorphic at infinity}, if $\tilde f$ has a holomorphic continuation to the whole of $B$.
+  
+  2. The function $f$ is said to satisfy the \emph{modular condition of weight $k$ with respect to $\Gamma$}, if $f[\gamma]_k=f$ for all $\gamma \in \Gamma$. Such a function is $h\Zbb$-periodic, since $\left(\begin{smallmatrix}1 & h\\0 & 1\end{smallmatrix}\right)\in\Gamma$.
+  
+  3. Let $\alpha\in\SL_2(\Zbb)$. Since the principal conjugation subgroups are normal, the group $\alpha^{-1}\Gamma\alpha$ is again a conjugation subgroup. Now let the function $f$ satisfy the modular condition of weight $k$ with respect to $\Gamma$, so that for all $\alpha$, the function $f[\alpha]_k$ satisfies the modular condition of the same weight with respect to $\alpha^{-1}\Gamma\alpha$, and is hence $h_\alpha\Zbb$-periodic for some $h_\alpha$. We define $f$ to be \emph{holomorphic at all cusps of $\Gamma$}, if for all $\alpha\in\SL_2(\Zbb)$, the function $f[\alpha]_k$ is holomorphic at $\infty$.
+  
+  4. The function $f$ is a \emph{modular form (of weight $k$) with respect to $\Gamma$} if it is holomorphic, satisfies the modular condition and is holomorphic at all cusps of $\Gamma$.
+  
+  5. A modular form $f$ is a \emph{cusp form of weight $k$ with respect to $\Gamma$}, if the associated holomorphic function $\tilde{f}$ satisfies $\tilde{f}(0)=0$ after its holomorphic continuation. 
+\end{defi}
+
+\begin{remark}
+  The group $\SL_2(\Zbb)$ acts transitively on $P^1(\Qbb)\subset\what\Cbb$. $_G\backslash A$ 
+\end{remark}
+
+
+
+
+
