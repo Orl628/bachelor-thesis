@@ -4,5 +4,15 @@
 *.auxlock
 *.bbl
 *.blg
+*.bcf
+*.dvi
+*.out
+*.phf
+*.xml
+*.gz
+*.tcp
+*.toc
+*.tps
+*.gz
 *~
 bachelorarbeit_felix_boes*
