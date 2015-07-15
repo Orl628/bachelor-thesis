@@ -7,7 +7,7 @@
 *.bcf
 *.dvi
 *.out
-*.phf
+*.pdf
 *.xml
 *.gz
 *.tcp
