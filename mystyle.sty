@@ -81,6 +81,7 @@
 \newcommand{\prpr}{^{\textrm{\,,}\textrm{,}}} % prime prime
 \newcommand{\ie}{i.\,e.\ }
 \newcommand{\eg}{e.\,g.\ }
+\newcommand{\cf}{cf.\ }
 \newcommand*{\defeq}{\mathrel{\rlap{%
                      \raisebox{0.3ex}{$\m@th\cdot$}}%
                      \raisebox{-0.3ex}{$\m@th\cdot$}}%
@@ -95,6 +96,9 @@
  \end{tikzcd}
 }
 \newcommand{\itemrm}[1]{\begin{rm}#1\end{rm}}
+\newcommand{\closure}[2][3]{%
+  {}\mkern#1mu\overline{\mkern-#1mu#2}}
+\newcommand{\smatrix}[1]{\left(\begin{smallmatrix}#1\end{smallmatrix}\right)}
 
 %1.1 -> 1.1.
 \renewcommand{\thesection}{\arabic{section}.}
