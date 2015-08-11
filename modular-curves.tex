@@ -2,9 +2,9 @@
 
 \newcommand{\jrm}{\mathrm{j}}
 
-One may weaken the definition of a modular form by requiring that modular condition be met only for transformations lying in certain subgroups $\Gamma$ of $\SL_2(\Zbb)$. In this section we will calculate the dimension of the associated space of weight $k$ modular forms $\M_k(\Gamma)$ using the fact that modular forms can be seen as section of a certain line bundle on a special Riemann surface, the modular curve associated to the subgroup $\Gamma$. We will roughly follow \cite[Ch. 1-3]{diamond2006}.
+One may weaken the definition of a modular form by requiring that modular condition be met only for transformations lying in certain subgroups $\Gamma$ of $\SL_2(\Zbb)$. In this section we will calculate the dimension of the associated space of weight $k$ modular forms $\Mrm_k(\Gamma)$ using the fact that modular forms can be seen as section of a certain line bundle on a special Riemann surface, the modular curve associated to the subgroup $\Gamma$. We will roughly follow \cite[Ch. 1-3]{diamond2006}.
 
-\subsection{Congruence subgroups and modular forms}
+\subsection{Congruence subgroups and modular curves}
 
 \begin{defi}
  Let $N\in \Zbb$.
@@ -19,37 +19,11 @@ One may weaken the definition of a modular form by requiring that modular condit
  The subgroup $\Gamma(N)$ is the kernel of the component-wise congruence map $\SL_2(\Zbb)\to\SL_2(\Zbb/N\Zbb)$. It is hence normal in $\SL_2(\Zbb)$ and of finite index. Consequently, each congruence subgroup has finite index in $\SL_2(\Zbb)$, while not being necessarily normal.
 \end{rmk}
 
-\begin{defi}
- Let $\gamma = \left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)$ be an element of $\GL_2(\Cbb)$ and let $f\cl\mc{H}\to\what{\Cbb}$ be a holomorphic function. For $\tau\in\mc{H}$ define the \emph{factor of automorphy}
- \[\mathrm{j}(\gamma,\tau)\defeq c\tau+d\]
- and for $k\in \Zbb$ the function $f[\gamma]_k\cl\mc{H}\to\Cbb$ by
- \[f[\gamma]_k(\tau) \defeq \det(\gamma)^{k/2}\jrm(\gamma,\tau)^{-k}f(\gamma\tau).\]
-\end{defi}
+\begin{rmk} \label{pr:smallest-h}
+ Since $\Gamma(N)\subset\Gamma$ for some $N$, each congruence subgroup $\Gamma$ contains an element of the form $\left(\begin{smallmatrix}1 & *\\0 & 1\end{smallmatrix}\right)$.
+\end{rmk}
 
-\begin{remark}
- Let $\gamma,\gamma'\in\SL_2(\Zbb)$ and $\tau\in\mc{H}$.
- 
- 1. The factor of automorphy satisfies $\jrm(\gamma\gamma',\tau) = \jrm(\gamma,\gamma'(\tau))\jrm(\gamma',\tau)$.
- 
- 2. For all holomorphic functions $f:\mc{H}\to\Cbb$, we have $f[\gamma\gamma']_k=(f[\gamma]_k)[\gamma']_k$.
-\end{remark}
-
-\begin{defi} \label{df:modular-forms} Let $f\cl \mc{H} \to \Cbb$ be a function, let $\Gamma$ be a congruence subgroup. Hence $\Gamma$ contains an element of the form $\left(\begin{smallmatrix}1 & *\\0 & 1\end{smallmatrix}\right)\in\Gamma$. Let $h\in\Nbb$ be minimal with the property that $\left(\begin{smallmatrix}1 & h\\0 & 1\end{smallmatrix}\right)\in\Gamma$. For $\tau\in\mc{H}$, set $q_h=\exp(2\pi i\tau/h)$.
-
-  1. The function $f$ is \emph{$h\Zbb$-periodic}, if it satisfies $f(\tau + h) = f(\tau)$ for all $\tau \in \mc{H}$. Analogously to the case $h=1$, there exists a function $\tilde f\cl B\setminus \{0\} \to \Cbb$ such that $f(\tau)=\tilde f(q_h)$ for all $\tau$. Now let $f$ be holomorphic, so that $\tilde f$ is also holomorphic. We say that $f$ is \emph{holomorphic at infinity}, if $\tilde f$ has a holomorphic continuation to the whole of $B$.
-  
-  2. The function $f$ is said to satisfy the \emph{modular condition of weight $k$ with respect to $\Gamma$}, if $f[\gamma]_k=f$ for all $\gamma \in \Gamma$. Such a function is $h\Zbb$-periodic, since $\left(\begin{smallmatrix}1 & h\\0 & 1\end{smallmatrix}\right)\in\Gamma$.
-  
-  3. For all $\alpha\in\SL_2(\Zbb)$, the group $\alpha^{-1}\Gamma\alpha$ is a conjugation subgroup. Now assume that the function $f$ is holomorphic and that it satisfies the modular condition of weight $k$ with respect to $\Gamma$. Hence, for all $\alpha$, the function $f[\alpha]_k$ satisfies the modular condition of the same weight with respect to $\alpha^{-1}\Gamma\alpha$, and is hence $h_\alpha\Zbb$-periodic for some $h_\alpha$. We define $f$ to be \emph{holomorphic at all cusps of $\Gamma$}, if for all $\alpha\in\SL_2(\Zbb)$, the function $f[\alpha]_k$ is holomorphic at $\infty$.
-  
-  4. The function $f$ is a \emph{modular form (of weight $k$) with respect to $\Gamma$} if it is holomorphic, satisfies the modular condition and is holomorphic at all cusps of $\Gamma$.
-  
-  5. The function $f$ is a \emph{cusp form of weight $k$ with respect to $\Gamma$}, if it is a modular form of weight $k$, and if the associated holomorphic function $\tilde{f}$ satisfies $\tilde{f}(0)=0$ after its holomorphic continuation. 
-\end{defi}
-
-\subsection{The topology of modular curves}
-
-For this and the following sections, let $\Gamma$ be a congruence subgroup.
+For the rest of the section, fix a congruence subgroup $\Gamma$.
 
 \begin{defi} \ 
 
@@ -139,8 +113,9 @@ The modular curve $X(\Gamma)$ may be given the structure of a Riemann surface. T
 \begin{rmk}
  There are only two elliptic points on $X(\SL_2(\Zbb))$, namely the $\SL_2(\Zbb)$-classes of $i$ and $\mu_3$, where $\mu_3=\exp(2\pi i/3)$. Their periods are $2$ and $3$, respectively. Since $\Gamma_\tau\subseteq\SL_2(\Zbb)_\tau$, each elliptic point $\tau$ for $\Gamma$ has period $2$ or $3$, and lies in one of the classes $\Gamma i$ or $\Gamma \mu_3$, according to wether its period is $2$ or $3$. Since $\Gamma$ has finite index in $\SL_2(\Zbb)$, it follows that there are only finitely many elliptic points on $X(\Gamma)$.
 \end{rmk}
+
 \begin{rmk} \label{pr:width}
- The only cusp of $\SL_2(\Zbb)$ is $\infty$, whose isotropy subgroup is the group generated by $\smatrix{1&1\\0&1}$. Hence the width of $\infty$ with respect to $\Gamma$ is generally the smallest $h$ such that $\smatrix{1&h\\0&1}\in\Gamma$, \cf Definition \ref{df:modular-forms}. The only exception is when $-\smatrix{1&h\\0&1}\in\Gamma_\infty$ but $\smatrix{1&h\\0&1}\notin\Gamma_\infty$, in which case if $h$ is the width, then $2h$ is minimal such that $\smatrix{1&2h\\0&1}\in\Gamma$. However, if $k$ is even then $h$ is still the period of a modular form of weight $k$. If $k$ is odd, then $h$ is only the skew period, while $2h$ is the period.
+ The only cusp of $\SL_2(\Zbb)$ is $\infty$, whose isotropy subgroup is the group generated by $\smatrix{1&1\\0&1}$. Hence the width of $\infty$ with respect to $\Gamma$ is generally the smallest $h$ such that $\smatrix{1&h\\0&1}\in\Gamma$, \cf Remark \ref{pr:smallest-h}. The only exception is when $-\smatrix{1&h\\0&1}\in\Gamma_\infty$ but $\smatrix{1&h\\0&1}\notin\Gamma_\infty$, in which case if $h$ is the width, then $2h$ is minimal such that $\smatrix{1&2h\\0&1}\in\Gamma$. However, if $k$ is even then $h$ is still the period of a modular form of weight $k$. If $k$ is odd, then $h$ is only the skew period, while $2h$ is the period.
 \end{rmk}
 
 For $\tau\in\mc{H}^*$, let $U_\tau$ be an open neighborhood of $\tau$ such that for all $\gamma\in\mc{H}$, if $\gamma(U_\tau)$ meets $U_\tau$ then $\gamma\in\Gamma_\tau$, as per Corollary \ref{pr:chart-nhood}. If $\tau$ is an elliptic point or a cusp for $\Gamma$, we may assume that $U_\tau$ contains no further preimages of elliptic points or cusps. If $\pi(\tau)$ is neither, we may assume that $U_\tau$ contains no ellliptic points or cusps altogether.
@@ -175,43 +150,77 @@ The ramification locus of $f$ is contained in the set ${y_1,y_2,y_\infty}$. Now 
  The statement follows from the Riemann--Hurwitz formula, the previous discussion, and the fact that $X(\SL_2(\Zbb))$ has genus $0$, which will be proved later in Example \ref{ex:j-invariant}.
 \end{proof}
 
-\subsection{Automorphic forms}
+\begin{cor} \label{pr:inequality}
+ We have the inequality \[2g-2+\frac{1}{2}\varepsilon_2+\frac{2}{3}\varepsilon_3+\varepsilon_\infty\geq0.\]
+\end{cor}
+
+\subsection{Automorphic forms and modular forms}
 
 \begin{defi}
- Let $f\cl \mc{H} \to \Cbb$ be a \emph{meromorphic} function. Again, let $h\in\Nbb$ be minimal with the property that $\left(\begin{smallmatrix}1 & h\\0 & 1\end{smallmatrix}\right)\in\Gamma$. For $\tau\in\mc{H}$, set $q_h=\exp(2\pi i\tau/h)$.
-
-  1. Assume that $f$ is $h\Zbb$-periodic. If $f$ has no poles in the subset $\mc{N}_C$ for some $C>0$, then there exists a meromorphic function $\tilde f\cl B\setminus \{0\} \to \Cbb$ such that $f(\tau)=\tilde f(q_h)$ for all $\tau$. We say that $f$ is \emph{meromorphic at infinity,} if it has no poles in some $\mc{N}_C$ and if the associated function $\tilde f$ has a meromorphic continuation to the whole of $B$. In this case, we may write $f(\tau)=\sum_{n=m}^\infty a_n q_h^n$, with $m\in\Zbb$ and $a_m\neq 0$. We call $m$ the \emph{order of $f$ at infinity}, and we denote it by $\nu_\infty(f)$. As usual, one may also consider the order of $f$ at other points $\tau$ of $\mc{H}$, which we denote by $\nu_\tau(f)$.
-  
-  2. Similarly to the discussion in Definition \ref{df:modular-forms}, assume that the function $f$ satisfies the modular condition of weight $k$ with respect to $\Gamma$, and is hence $h\Zbb$-periodic. For all $\alpha\in\SL_2(\Zbb)$, the function $f[\alpha]_k$ is meromorphic and again periodic with some integral period. Let $s\in\Qbb\cup\{\infty\}$ be a cusp for $\Gamma$. We define $f$ to be \emph{meromorphic at $s$}, if for some $\alpha\in\SL_2(\Zbb)$ with $\alpha (\infty)=s$, the function $f[\alpha]_k$ is meromorphic at infinity.
-  
-  3. The function $f$ is an \emph{automorphic form (of weight $k$) with respect to $\Gamma$} if it satisfies the modular condition and is meromorphic at all cusps of $\Gamma$.
+ Let $\gamma = \left(\begin{smallmatrix}a & b \\ c & d\end{smallmatrix}\right)$ be an element of $\GL_2(\Cbb)$ and let $f\cl\mc{H}\to\what{\Cbb}$ be a holomorphic function. For $\tau\in\mc{H}$ define the \emph{factor of automorphy}
+ \[\mathrm{j}(\gamma,\tau)\defeq c\tau+d\]
+ and for $k\in \Zbb$ the function $f[\gamma]_k\cl\mc{H}\to\Cbb$ by
+ \[f[\gamma]_k(\tau) \defeq \det(\gamma)^{k/2}\jrm(\gamma,\tau)^{-k}f(\gamma\tau).\]
 \end{defi}
 
-We denote the space of automorphic forms of weight $k$ by $\mc{A}_k(\Gamma)$.
+\begin{remark}
+ Let $\gamma,\gamma'\in\SL_2(\Zbb)$ and $\tau\in\mc{H}$.
+ 
+ 1. The factor of automorphy satisfies $\jrm(\gamma\gamma',\tau) = \jrm(\gamma,\gamma'(\tau))\jrm(\gamma',\tau)$.
+ 
+ 2. For all holomorphic functions $f:\mc{H}\to\Cbb$, we have $f[\gamma\gamma']_k=(f[\gamma]_k)[\gamma']_k$.
+\end{remark}
+
+\begin{defi}
+ Let $f\cl \mc{H} \to \Cbb$ be a meromorphic function. Let $h\in\Nbb$ be minimal with the property that $\left(\begin{smallmatrix}1 & h\\0 & 1\end{smallmatrix}\right)\in\Gamma$. For $\tau\in\mc{H}$, set $q_h=\exp(2\pi i\tau/h)$.
+ 
+  1. The function $f$ is \emph{$h\Zbb$-periodic}, if it satisfies $f(\tau+h)=f(\tau)$ for all $\tau\in\mc{H}$.
+
+  2. Assume that the function $f$ is $h\Zbb$-periodic. If $f$ has no poles in the subset $\mc{N}_C$ for some $C>0$, then there exists a meromorphic function $\tilde f\cl B\setminus \{0\} \to \Cbb$ such that $f(\tau)=\tilde f(q_h)$ for all $\tau$. We say that $f$ is \emph{meromorphic at infinity,} if it has no poles in some $\mc{N}_C$ and if the associated function $\tilde f$ has a meromorphic continuation to the whole of $B$. In this case, we may write $f(\tau)=\sum_{n=m}^\infty a_n q_h^n$, with $m\in\Zbb$ and $a_m\neq 0$. We call $m$ the \emph{order of $f$ at infinity}, and we denote it by $\nu_\infty(f)$. The function $f$ is \emph{holomorphic at infinity} if $\nu_\infty(f)\geq 0$. We denote the order of $f$ at a point $\tau$ of $\mc{H}$ by $\nu_\tau(f)$.
+  
+  3. The function $f$ is said to satisfy the \emph{modular condition of weight $k$ with respect to $\Gamma$}, if $f[\gamma]_k=f$ for all $\gamma \in \Gamma$. Such a function is $h\Zbb$-periodic, since $\left(\begin{smallmatrix}1 & h\\0 & 1\end{smallmatrix}\right)\in\Gamma$.
+  
+  For all $\alpha\in\SL_2(\Zbb)$, the group $\alpha^{-1}\Gamma\alpha$ is a conjugation subgroup. Now assume that the function $f$ satisfies the modular condition of weight $k$ with respect to $\Gamma$. For all $\alpha$, the function $f[\alpha]_k$ satisfies the modular condition of the same weight with respect to the subgroup $\alpha^{-1}\Gamma\alpha$, and is hence $h_\alpha\Zbb$-periodic for some $h_\alpha$.
+  
+  4. Let $s\in\Qbb\cup\{\infty\}$ be a cusp for $\Gamma$. We define $f$ to be \emph{meromorphic at $s$}, if for some $\alpha\in\SL_2(\Zbb)$ with $\alpha (\infty)=s$, the function $f[\alpha]_k$ is meromorphic at infinity. The \emph{order} $\nu_s(f)$ of $f$ at $s$ is the order of the function $f[\alpha]_k$ at infinity. The function $f$ is \emph{holomorphic at $s$}, if $\nu_s(f)\geq 0$; it \emph{vanishes at $s$}, if $\nu_s(f)>0$. These notions do not depend on the choice of $\alpha$. 
+  
+  5. The function $f$ is an \emph{automorphic form} with respect to $\Gamma$, if it satisfies the modular condition of some weight $k$ with respect to $\Gamma$ and is meromorphic at all cusps of $\Gamma$. We call $k$ the \emph{weight} of $f$.
+  
+  6. An automorphic form $f$ is a \emph{modular form}, if it is holomorphic and is holomorphic at all cusps of $\Gamma$.
+  
+  7. A modular form $f$ is a \emph{cusp form}, if it vanishes at all cusps of $\Gamma$. 
+\end{defi}
+
+We denote the space of automorphic forms of weight $k$ by $\mathrm{A}_k(\Gamma)$, the space of modular forms of weight $k$ by $\Mrm_k(\Gamma)$, and the space of cusp forms of weight $k$ by $\mc{S}_k(\Gamma)$.
 
 \begin{rmk}
- The $\Cbb$-algebra $\mc{A}_0(\Gamma)$ of automorphic forms of weight $0$ is isomorphic to the algebra $\Cbb(X(\Gamma))$ of meromorphic functions on the modular curve $X(\Gamma)$. To see this, note that the two notions of meromorphy at a cusp are equivalent.
+ The $\Cbb$-algebra $\mathrm{A}_0(\Gamma)$ of automorphic forms of weight $0$ is isomorphic to the algebra $\Cbb(X(\Gamma))$ of meromorphic functions on the modular curve $X(\Gamma)$. To see this, note that the two notions of meromorphy at a cusp are equivalent. Similarly the space $\Mrm_0(\Gamma)$ is the space of holomorphic functions on $X(\Gamma)$, so $\Mrm_0(\Gamma)\simeq\Cbb$. Accordingly, $\mc{S}_0(\Gamma)=\{0\}$
 \end{rmk}
 
 \begin{expl} \label{ex:j-invariant}
  Let $\Delta$ and $G_2$ be the cusp form of weight $12$, respectively the modular form of weight $3$ of Example \ref{ex:delta}. The \emph{j-invariant} is the automorphic form of weight $0$ defined as $j=1728 G_2^3 / \Delta$. The function $\Delta$ has no zero on $\mc{H}$, but it is a cusp form with a nontrivial Fourier coefficient at place $1$ in its expansion at infinity. Hence the automorphic form $j$ has only one pole, which is simple. Therefore the j-invariant may be seen as a holomorphic function $j\cl X(\SL_2(\Zbb)) \to\what\Cbb$ of degree $1$. It follows that the modular curve $X(\SL_2(\Zbb))$ is isomorphic to the sphere $\what \Cbb$.
 \end{expl}
 
-\begin{rmk}
- The derivative $j'$ of the j-invariant is a nonzero element of $\mc{A}_2(\Gamma)$. Hence for $k$ even, the algebra $\mc{A}_k(\Gamma)$ contains nonzero elements. Furthermore, if $f$ is a nonzero element of $\mc{A}_k(\Gamma)$, then division by $f$ yields an isomorphism \[\mc{A}_k(\Gamma)\simeq\mc{A}_0(\Gamma)f\simeq\Cbb(X(\Gamma))f.\]
+\begin{rmk} \label{pr:nonzero-elt}
+ The derivative $j'$ of the j-invariant is a nonzero element of $\mathrm{A}_2(\Gamma)$. Hence for $k$ even with $k\geq 2$, the algebra $\mathrm{A}_k(\Gamma)$ contains nonzero elements. Furthermore, if $f$ is a nonzero element of $\mathrm{A}_k(\Gamma)$, then division by $f$ yields an isomorphism \[\mathrm{A}_k(\Gamma)\simeq\mathrm{A}_0(\Gamma)f\simeq\Cbb(X(\Gamma))f.\]
 \end{rmk}
 
+Since the factor of holomorphy $\jrm(\gamma,\tau)$ has no zeroes or poles at non-cusp points, the order of an automorphic form at a point $\tau$ of $\mc{H^*}$ does not depend on the $\Gamma$-class of $\tau$. Hence we may define the order of an automorphic form at points of a modular curve, while taking the local coordinates into account.
 \begin{defi}
  Let $f$ be an automorphic form of weight $k$; let $\tau\in\mc{H^*}$. The \emph{order} $\nu_{\pi(\tau)}(f)$ of $f$ at the point $\pi(\tau)$ of the modular curve $X(\Gamma)$ is defined as the number
- \[\nu_{\pi(\tau)}=\begin{dcases*}\frac{\nu_{\tau}(f)}{h_\tau} & if $\tau\in\mc{H}$, \\
+ \[\nu_{\pi(\tau)}(f)=\begin{dcases*}\frac{\nu_{\tau}(f)}{h_\tau} & if $\tau\in\mc{H}$, \\
                                   \frac{\nu_{\tau}(f)h_\tau}{p_\alpha} & if $\tau$ is a cusp,\end{dcases*}\]
- where in the second case $\alpha$ is some element of $\SL_2(\Zbb)$ with $\alpha(\infty)=\tau$, and $p_\alpha$ is the period of the function $f[\alpha]_k$. As seen in Remark \ref{pr:width}, the number $p_\alpha$ is in most cases equal to the width $h_\tau$, the exception takes place when $k$ is odd and $(\alpha\Gamma\alpha^{-1})_\infty=\gen{-\smatrix{1&h_\tau \\ 0&1}}$, in which case $p_\alpha=2h_\tau$.
+ where in the second case $\alpha$ is some element of $\SL_2(\Zbb)$ with $\alpha(\infty)=\tau$, and $p_\alpha$ is the period of the function $f[\alpha]_k$. The order at $\pi(\tau)$ does not depend on the choice of the representative $\tau$ or of $\alpha$. As seen in Remark \ref{pr:width}, the number $p_\alpha$ is in most cases equal to the width $h_\tau$, the exception takes place when $k$ is odd and $(\alpha\Gamma\alpha^{-1})_\infty=\gen{-\smatrix{1&h_\tau \\ 0&1}}$, in which case $p_\alpha=2h_\tau$.
 \end{defi}
+
+\begin{rmk}
+ This definition does what one expects when looking at the Laurent expansion of the function induced by $f$ on the small neighborhoods $\pi(U)$ as in Proposition \ref{pr:charts}. If $\tau$ is a non-cusp, then writing $f|_U=f_{\text{local}}\circ\rho\circ\delta$ with $f_{\text{local}}\cl\varphi(U)\to V$ shows that the order $\nu_\tau(f)$ is just the order of $f_{\text{local}}$ at $\pi(\tau)$. If $\tau$ is a cusp, the extra factor accounts for possible discrepancies between the width of $\tau$ and the modified function $f[\alpha]_k$. In particular, the order function $\nu_{\pi(\tau)}$ satisfies the familiar rules \[\nu_{\pi(\tau)}(f_1+f_2)\geq\min\{\nu_{\pi(\tau)}(f_1),\nu_{\pi(\tau)}(f_2)\}\] and \[\nu_{\pi(\tau)}(f_1f_2)=\nu_{\pi(\tau)}(f_1) + \nu_{\pi(\tau)}(f_2).\]
+\end{rmk}
 
 \subsection{The dimension formula}
 
 \begin{defi}
- Let $Y$ be a Riemann surface. Let $\T^*(Y)$ denote the cotangent bundle of $Y$. For $n\in\Nbb$, define the sheaf of \emph{$n$-fold meromorphic differentials} $\Omega(Y)^{\otimes n}$ to be the sheaf of sections into the bundle $\T^*(Y)^{\otimes n}$.
+ Let $Y$ be a Riemann surface. Let $\Trm^*\!(Y)$ denote the cotangent bundle of $Y$. For $n\in\Nbb$, define the sheaf of \emph{$n$-fold meromorphic differentials} $\Omega(Y)^{\otimes n}$ to be the sheaf of sections into the bundle $\Trm^*\!(Y)^{\otimes n}$.
 \end{defi}
 
 The natural morphism $\pi\cl\mc{H}\to X(\Gamma)$ gives rise to the pullback map \[\pi^*\cl\Omega(X(\Gamma))^{\otimes n}\to\Omega(\mc{H})^{\otimes n}.\]
@@ -239,10 +248,12 @@ If $U$ is the domain of some chart for some Riemann surface, then the $n$-fold m
  Let $\gamma\in\Gamma$. Then $\gamma^* \pi^* \omega = \pi^* \omega$, since $\pi \gamma = \gamma$. On the other hand, $\gamma^* \pi^* \omega = (\gamma')^n(f\circ\gamma)$. Hence we have $f=f[\gamma]_{2n}$, so that the $f$ satisfies the modular condition. Furthermore, $f$ is meromorphic at each cusp because $\omega$ is.
 \end{proof}
 
-By this proposition we get a map of $\Cbb$-vector spaces \[\pi^*\cl\Omega(X(\Gamma)^{\otimes n})\to\mc{A}_{2n}(\Gamma).\]
+By this proposition we get a map of $\Cbb$-vector spaces \[\pi^*\cl\Omega(X(\Gamma))^{\otimes n}\to\mathrm{A}_{2n}(\Gamma).\]
 
-\begin{prop}
- The map $\pi^*$ is bijective.
+\begin{prop} \label{pr:bijection}
+ The map $\pi^*$ is bijective. If $\omega\in\Omega(X(\Gamma))^{\otimes n}$ and $f=\pi^*(\omega)$, then the orders of $f$ and $\omega$ at a point $\pi(\tau)\in X(\Gamma)$ are related by the formula
+ \[\nu_{\pi(\tau)}(\omega)=\begin{dcases*}\nu_{\pi(\tau)}(f)-n\left(1-\frac{1}{h}\right) & if $\tau\in\mc{H}$ and $\tau$ has period $h$, \\
+ \nu_{\pi(\tau)}(f)-n & if $\tau\in\Qbb\cup\{\infty\}$\end{dcases*}.\]
 \end{prop}
 
 \begin{proof}
@@ -265,12 +276,79 @@ By this proposition we get a map of $\Cbb$-vector spaces \[\pi^*\cl\Omega(X(\Gam
  
  The case where $\tau_0$ is a cusp is treated analogously: here, $V$ is the open unit ball, now the extended isotropy group $\pm(\delta\Gamma\delta^{-1})_\infty/\{\pm\id\}$ is generated by the matrix $\smatrix{1&h\\0&1}$, where $h$ is the width of $\tau_0$, and the function $\lambda$ is $h\Zbb$-periodic. Hence there is a meromorphic function $g$ on $V\ssm\{0\}$ such that $g(e^{2\pi i z / h})=\lambda(z)$ for all $z$. Since $f$ is holomorphic at the cusp $\tau_0$, the function $g$ has a meromorphic continuation on all of $V$. Its order at $0$ is given by $\nu_0(g)=\nu_{\pi(\tau_0)}(f)$.
  
- Define the $n$-fold differential $\theta$ on $U$ by putting $\theta(z)=g(z)/(2\pi i q / h)^n$, and set again $\omega_{\pi(U)}=\psi^*\theta$, an $n$-fold differential on $\pi(U)$. Another calculation shows that $\rho^*\theta=\lambda$, hence $\pi^*\omega_{\pi(U)}=f|_{U\cup \mc{H}}$.
+ Define the $n$-fold differential $\theta$ on $V$ by putting $\theta(z)=h^ng(z)/(2\pi i z)^n$, and set again $\omega_{\pi(U)}=\psi^*\theta$, an $n$-fold differential on $\pi(U)$. Another calculation shows that $\rho^*\theta=\lambda$, hence $\pi^*\omega_{\pi(U)}=f|_{U\cap \mc{H}}$.
  
- Now we put everything together: by \ref{pr:gluing-differentials}, the collection $\{\omega_{\pi(U)}\}_U$ forms an $n$-fold differential on $X(\Gamma)$, as required.
+ Now we put everything together: by Proposition \ref{pr:gluing-differentials}, the collection $\{\omega_{\pi(U)}\}_U$ forms an $n$-fold differential on $X(\Gamma)$, as required.
+ 
+ By construction, we obtain the orders of the differential as in the statement.
 \end{proof}
 
+We now come to the Riemann–Roch theorem, stated here without proof, and its application to computing the dimension of $\Mrm_k(\Gamma)$ for $k$ even.
+Let $X$ be a compact Riemann surface. To a divisor $D\in\Div(X)$ we associate its \emph{linear space} $L(D)$, a finite-dimensional vector space over $\Cbb$ whose dimension we denote by $\ell(D)$, defined as
+\[L(D)=\{f\in\Cbb(X)\scl \divi(f)+D\geq 0\}\cup\{0\}.\]
+\begin{thm}[Riemann–Roch]
+ Let $X$ be a compact Riemann surface, $g$ its genus. Let $K$ be a canonical divisor on $X$. If $D\in\Div^0(X)$, then
+ \[\ell(D)=\deg(D)-g+1+\ell(K-D).\]
+\end{thm}
 
+\begin{rmk} \label{pr:rrcor} From the Riemann–Roch theorem follow:
+ 
+ 1. We have $\ell(K) = g$ and $\deg(K) = 2g-2$.
 
+ 2. If $\deg(D)<0$, then $\ell(D)=0$.
+ 
+ 3. If $\deg(D)>2g-2$, then $\ell(D)=\deg(D)-g+1$.
+\end{rmk}
 
+\begin{defi}
+ Let $X$ be a Riemann surface, $k$ an even integer.
+ 
+ 1. Define the group $\Div_\Qbb(X)$ of \emph{rational divisors} on $X$ by $\Div_\Qbb(X)=\Div(X)\otimes\Qbb$. This group is equipped with a relation $\leq$, which extends the relation on $\Div(X)$.
+ 
+ 2. Let $f\in\mathrm{A}_k(\Gamma)$ be a nonzero automorphic form. The \emph{rational divisor} $\divi(f)$ of $f$ is the rational divisor $\divi(f)=\sum_{x\in X(\Gamma)}\nu_x(f)x$.
+ 
+ 3. The floor function $\floor{\ }\cl\Div_\Qbb(X)\to\Div(X)$ is defined by applying the floor function coefficient-wise.
+\end{defi}
+
+\begin{rmk}
+ Any differential in $\Omega(X(\Gamma))^{\otimes n}$ has degree $2n(g-1)$. To see this, choose a nonzero element $f$ of $\mathrm{A}_2(\Gamma)$, and let $\lambda\in\Omega(X(\Gamma))^{\otimes 1}$ be the preimage of $f$ under $\pi^*$. The divisor $\divi(\lambda)$ is a canonical divisor and has hence degree $2(g-1)$ by the previous remark. The element $\lambda^n$ of $\Omega(X(\Gamma))^{\otimes n}$ has degree $2n(g-1)$. Since we may write $\Omega(X(\Gamma))^{\otimes n}=\Cbb(X(\Gamma))\lambda^{n}$, it follows that all elements of $\Omega(X(\Gamma))^{\otimes n}$ have the same degree as $\lambda^{n}$.
+\end{rmk}
+
+\begin{thm}
+ Let $k$ be an even integer, set $n=k/2$. Let $g$ be the genus of the modular curve $X(\Gamma)$; for $h\in\{2,3\}$, let $\varepsilon_h$ denote the number of elliptic points in $X(\Gamma)$ of period $h$. Let $\varepsilon_\infty$ be the number of cusps. The following formula for the dimension of the space $\Mrm_k(\Gamma)$ of modular forms with respect to the congruence subgroup $\Gamma$ holds:
+ \[
+  \dim(\Mrm_k(\Gamma))=\begin{dcases}
+                      (k-1)(g-1)+\floor{\frac{k}{4}}\varepsilon_2+\floor{\frac{k}{3}}\varepsilon_3+\frac{k}{2}\,\varepsilon_\infty & \text{ if $k\geq 2$ ,}\\
+                      1 & \text{ if $k=0$,}\\
+                      0 & \text{ if $k\leq 0$}
+                     \end{dcases}.
+ \]
+\end{thm}
+\begin{proof}
+ First let $k\leq 0$. We have $\Mrm_0(\Gamma)\simeq\Cbb$ and $\mc{S}_0(\Gamma)=\{0\}$. If $k<0$ and $f\in\Mrm_{k}(\Gamma)$, then $f^{12}\Delta^{-k}$ lies in $\mc{S}_0(\Gamma)$, where $\Delta$ is the usual weight $12$ cusp form. Hence $f=0$.
+ 
+ Now let $k\geq 2$. By Remark \ref{pr:nonzero-elt}, there is a nonzero element $f$ of $\mathrm{A}_k(\Gamma)$. Let $\omega\in\Omega(X(\Gamma))^{\otimes n}$ be the preimage of $f$ under $\pi^*$. Using the isomorphism $\mathrm{A}_k\simeq\Cbb(X(\Gamma))f$, we obtain an isomorphism
+ \[
+ \Mrm_k(\Gamma)\simeq\{f_0\in\Cbb(X(\Gamma))\scl \divi(f_0)+\divi(f)\geq 0\} \cup \{0\}.
+ \]
+ Since $\divi(f_0)$ is integral, the above condition is equivalent to $\divi(f_0)+\floor{\divi(f)}\geq 0$, hence there is an isomorphism $\Mrm_{k}(\Gamma)\simeq L(\floor{\divi(f)})$, and $\dim(\Mrm_k(\Gamma))=\ell(\floor{\divi(f)})$.
+ 
+ Using the formula for the orders found in Proposition \ref{pr:bijection}, we obtain
+ \[
+  \divi(\omega)=\floor{\divi(f)}-\left(\sum_{x_2}\floor{\frac{k}{4}} x_{2}+\sum_{x_{3}}\floor{\frac{k}{3}} x_3+\sum_{x_{\infty}}\frac{k}{2}x_{\infty}\right).
+ \]
+ Here the variables $x_2, x_3$ and $x_\infty$ run through the elliptic points of period $2$, the elliptic points of period $3$, and the cusps, respectively; all seen as points of $X(\Gamma)$. It follows with the previous remark that
+ \[
+  \deg(\floor{\divi(f)})=k(g-1) + \floor{\frac{k}{4}}\varepsilon_2 + \floor{\frac{k}{3}}\varepsilon_3 + \frac{k}{2}\varepsilon_\infty.
+ \]
+ We have $\floor{k/4}\geq(k-2)/4$ and $\floor{k/3}\geq(k-2)/3$. Together with Corollary \ref{pr:inequality}, this implies
+ \[
+  \deg(\floor{\divi(f)})>2g-2.
+ \]
+ Therefore, by Corollary \ref{pr:rrcor},
+ \[
+  \ell(\floor{\divi(f)})=(k-1)(g-1) + \floor{\frac{k}{4}}\varepsilon_2 + \floor{\frac{k}{3}}\varepsilon_3 + \frac{k}{2}\varepsilon_\infty.
+ \]
+ 
+\end{proof}
 

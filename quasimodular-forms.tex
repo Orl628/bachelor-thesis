@@ -36,10 +36,10 @@ Note that if $k$ is odd, then any function satisfying the modular condition of w
 \end{smallmatrix}\bigr).$
 There are several alternate conventions for handling the weights $k$. Some authors for instance replace $k$ by $2k$ throughout, so that ``modular forms of weight $2k$'' are considered. This is the convention used by \cite{Serre1973}.
 
-The modular forms of weight $k$ form a vector space, denoted\footnotemark by $\M_k$. Multiplying two modular forms of weights $k$ respectively $l$ yields a modular form of weight $k+l$, giving the space $\bigoplus_k \M_k$ the structure of a graded ring, denoted by $\M_{*}$.
+The modular forms of weight $k$ form a vector space, denoted\footnotemark by $\Mrm_k$. Multiplying two modular forms of weights $k$ respectively $l$ yields a modular form of weight $k+l$, giving the space $\bigoplus_k \Mrm_k$ the structure of a graded ring, denoted by $\Mrm_{*}$.
 
 \footnotetext{
-In \cite{Serre1973}, the space of modular forms of weight $2k$ is denoted by $\M_k$.
+In \cite{Serre1973}, the space of modular forms of weight $2k$ is denoted by $\Mrm_k$.
 }
 
 \begin{expls} \label{ex:delta}
@@ -53,7 +53,7 @@ In \cite{Serre1973}, the space of modular forms of weight $2k$ is denoted by $\M
 \footnotetext{In \cite{Serre1973}, the Eisenstein series of weight $k$ as defined below is denoted by $E_{k/2}$. A similar remark applies to the function $G_k$ below.}
 
 \begin{prop}
- There is an isomorphism of graded rings \[\Cbb[X_4, X_6]\xrightarrow{\sim} \M_*\] mapping $X_i$ to $E_i$, where the former ring is graded by assigning to $X_i$ the degree $i$. In particular, there are no nonzero modular forms of negative weight.
+ There is an isomorphism of graded rings \[\Cbb[X_4, X_6]\xrightarrow{\sim} \Mrm_*\] mapping $X_i$ to $E_i$, where the former ring is graded by assigning to $X_i$ the degree $i$. In particular, there are no nonzero modular forms of negative weight.
 \end{prop}
 \begin{proof}
  See \cite[Ch.~VII, 3.1, 3.2]{Serre1973}
@@ -95,13 +95,13 @@ Let $\mc{O}(\mc{H})$ denote the vector space of $\Cbb$-valued holomorphic functi
  \in \SL_n(\Zbb).$
 \end{proof}
 
-The almost holomorphic modular forms of weight $k$ form a vector space, denoted by $\widehat{\M}_k$. Let $\widehat{\M}_*$ denote the associated graded ring.
+The almost holomorphic modular forms of weight $k$ form a vector space, denoted by $\widehat{\Mrm}_k$. Let $\widehat{\Mrm}_*$ denote the associated graded ring.
 
 \begin{defi}
- An element in the image of the map $\widehat{\M}_k\to\mc{O}(\mc{H})$ taking an almost holomorphic modular form $F=\sum_{m=0}^Mf_mY^{-m}$ of weight $k$ to $f_0$ is called a \emph{quasimodular form of weight $k$}. Hence a quasimodular form is a holomorphic function on the upper plane appearing as the constant term of an almost holomorphic modular form.
+ An element in the image of the map $\widehat{\Mrm}_k\to\mc{O}(\mc{H})$ taking an almost holomorphic modular form $F=\sum_{m=0}^Mf_mY^{-m}$ of weight $k$ to $f_0$ is called a \emph{quasimodular form of weight $k$}. Hence a quasimodular form is a holomorphic function on the upper plane appearing as the constant term of an almost holomorphic modular form.
 \end{defi}
 
-Again, denote the vector space of quasimodular forms of weight $k$ by $\widetilde{\M}_k$ and the associated graded ring by $\widetilde{\M}_*$. The definition gives a surjective graded ring homomorphism $\widehat{\M}_*\to\widetilde{\M}_*$ and one has $\widehat{\M}_k \cap \widetilde{\M}_k = \M_k$.
+Again, denote the vector space of quasimodular forms of weight $k$ by $\widetilde{\Mrm}_k$ and the associated graded ring by $\widetilde{\Mrm}_*$. The definition gives a surjective graded ring homomorphism $\widehat{\Mrm}_*\to\widetilde{\Mrm}_*$ and one has $\widehat{\Mrm}_k \cap \widetilde{\Mrm}_k = \Mrm_k$.
 
 \begin{expl}
 
@@ -117,21 +117,21 @@ Now, since $Y^{-1}(\gamma\tau)=(c\tau+d)^2Y(\tau)^{-1}+\frac{c(c\tau+d)}{2\pi i}
 
 \end{expl}
 
-\begin{prop} The space $\widetilde{\M}_*$ of quasimodular forms satisfies the following properties.
+\begin{prop} \label{pr:derivative} The space $\widetilde{\Mrm}_*$ of quasimodular forms satisfies the following properties.
  \begin{enumerate}
-  \item The canonical graded homomorphism $\widehat{\M}_* \to \widetilde{\M}_*$ is an isomorphism.
-  \item There is an isomorphism of graded rings $\M_* \otimes \Cbb[X_2] \simeq \Cbb[X_2, X_4, X_6]\to \widetilde{\M}_*$ mapping $X_i$ to $E_i$, where the former ring is graded by assigning to $X_i$ the degree $i$.
-  \item Quasimodular forms are closed under taking derivatives.
+  \item The canonical graded homomorphism $\widehat{\Mrm}_* \to \widetilde{\Mrm}_*$ is an isomorphism.
+  \item There is an isomorphism of graded rings $\Mrm_* \otimes \Cbb[X_2] \simeq \Cbb[X_2, X_4, X_6]\to \widetilde{\Mrm}_*$ mapping $X_i$ to $E_i$, where the former ring is graded by assigning to $X_i$ the degree $i$.
+  \item Quasimodular forms are closed under taking derivatives. More precisely, the derivative of a quasimodular form of weight $k$ is a quasimodular form of weight $k$+2.
  \end{enumerate}
 \end{prop}
 \begin{proof}
  \begin{enumerate}
-  \item The map $\widehat{\M}_* \to \widetilde{\M}_*$ is surjective by definition. Injectivity follows from Calculation \ref{cp:almost-holomorphic-modular-form-no-constant-term}. Given an almost holomorphic modular form $F(\tau)=\sum_{m=1}^Mf_m(\tau)Y^{-m}$ with constant term zero, the strategy is to solve the modularity equation for the coefficients $f_m$. This way, one finds for a fixed argument $\tau$ a polynomial equation in the lower row components  $c,d$ of any transformation $\gamma \in \SL_2(\Zbb)$, involving the coefficients $f_m(\tau)$. By varying the transformation $\gamma$, one may force these coefficients to be zero.
-  \item Express the map $\Cbb[X_2, X_4, X_6]\to \widetilde{\M}_*$ as the composition \[\Cbb[X^*_2, X_4, X_6]\to \widehat{\M}_* \to \widetilde{\M}_*,\] where the first map takes $X^*_2$ to $E_2^*$ and $X_i$ to $E_i$, and the second map is the canonical map, which is an isomorphism by the first point above.
+  \item The map $\widehat{\Mrm}_* \to \widetilde{\Mrm}_*$ is surjective by definition. Injectivity follows from Calculation \ref{cp:almost-holomorphic-modular-form-no-constant-term}. Given an almost holomorphic modular form $F(\tau)=\sum_{m=1}^Mf_m(\tau)Y^{-m}$ with constant term zero, the strategy is to solve the modularity equation for the coefficients $f_m$. This way, one finds for a fixed argument $\tau$ a polynomial equation in the lower row components  $c,d$ of any transformation $\gamma \in \SL_2(\Zbb)$, involving the coefficients $f_m(\tau)$. By varying the transformation $\gamma$, one may force these coefficients to be zero.
+  \item Express the map $\Cbb[X_2, X_4, X_6]\to \widetilde{\Mrm}_*$ as the composition \[\Cbb[X^*_2, X_4, X_6]\to \widehat{\Mrm}_* \to \widetilde{\Mrm}_*,\] where the first map takes $X^*_2$ to $E_2^*$ and $X_i$ to $E_i$, and the second map is the canonical map, which is an isomorphism by the first point above.
   
   To prove the surjectivity of the first map, let $F(\tau)=\sum_{m=0}^Mf_m(\tau)Y^{-m}$ be an almost holomorphic modular form. Then $f_M (E_2^*/12)^M$ is an almost holomorphic modular form of weight $k$, since $f_M$ is modular of weight $k-2M$, and the difference $F - f_M (E_2^*/12)^M$ has degree smaller than $M$. Now use induction on $M$.
   
-  To get injectivity, let $F=\sum_{\alpha=0}^{k/2}(E_2^*)^\alpha f_{k-2\alpha}$ be an almost holomorphic modular form of weight $k$, in the image of the first map, where the $f_m$ are modular of weight $m$. If $F=0$, then by comparing the coefficients of $Y^{-k/2}$ one obtains $0=f_0$. Now it follows by induction on $k$ that the other coefficients $f_m$ are zero. Hence $F$ was the image of the zero element in $\M_* \otimes \Cbb[X^*_2]$.
+  To get injectivity, let $F=\sum_{\alpha=0}^{k/2}(E_2^*)^\alpha f_{k-2\alpha}$ be an almost holomorphic modular form of weight $k$, in the image of the first map, where the $f_m$ are modular of weight $m$. If $F=0$, then by comparing the coefficients of $Y^{-k/2}$ one obtains $0=f_0$. Now it follows by induction on $k$ that the other coefficients $f_m$ are zero. Hence $F$ was the image of the zero element in $\Mrm_* \otimes \Cbb[X^*_2]$.
   \item To prove the last statement, one verifies that $(6/\pi i) E'_2-E_2^2$ is modular of weight $4$, and that if $f$ is modular of weight $k$, then $(6/\pi i)f' - kE_2f$ is modular of weight $2+k$. Now use the second point above.
  \end{enumerate}
 

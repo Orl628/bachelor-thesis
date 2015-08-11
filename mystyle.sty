@@ -8,7 +8,7 @@
 \usepackage{rotating}
 
 \usepackage[centertableaux,boxsize=1.2em]{ytableau} % for young diagrams
-%\usepackage{xltxtra} % xelatex
+\usepackage{xltxtra} % xelatex
 \usepackage{ellipsis} % right ellipsis when using \dots, include after xltxtra
 \usepackage{tikz-cd}
 \usepackage{subdepth} % consistent use of simultaneous subscripts and supscripts
@@ -16,6 +16,11 @@
 %\usepackage{tgschola} % fancy, bookman-style typeface
 \usepackage{lmodern} % standard computer modern typeface
 \usepackage{microtype} % better everything
+
+
+%\usepackage[libertine]{newtxmath}
+%\usepackage[no-math]{fontspec}
+%\setmainfont{Linux Libertine O}
 
 \numberwithin{equation}{subsection} % number eq's within sections
 \renewcommand\theequation{\arabic{equation}}
@@ -101,6 +106,7 @@
 \newcommand{\closure}[2][3]{%
   {}\mkern#1mu\overline{\mkern-#1mu#2}}
 \newcommand{\smatrix}[1]{\left(\begin{smallmatrix}#1\end{smallmatrix}\right)}
+\newcommand{\floor}[1]{\left \lfloor #1 \right\rfloor}
 
 %1.1 -> 1.1.
 \renewcommand{\thesection}{\arabic{section}.}
