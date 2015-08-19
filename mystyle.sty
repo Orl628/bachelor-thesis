@@ -11,6 +11,9 @@
 \usepackage{xltxtra} % xelatex
 \usepackage{ellipsis} % right ellipsis when using \dots, include after xltxtra
 \usepackage{tikz-cd}
+\usepackage{tikz}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{calc}
 \usepackage{subdepth} % consistent use of simultaneous subscripts and supscripts
 %\usepackage{fouriernc} % math mode typeface for below typeface
 %\usepackage{tgschola} % fancy, bookman-style typeface
@@ -22,12 +25,12 @@
 %\usepackage[no-math]{fontspec}
 %\setmainfont{Linux Libertine O}
 
-\numberwithin{equation}{subsection} % number eq's within sections
+\numberwithin{equation}{subsection} % number eq's within subsections
 \renewcommand\theequation{\arabic{equation}}
 
 %\setmainfont{Linux Libertine O}
 
-\if
+\if 0
 \usetikzlibrary{external} % storing tikz figures externially to reduce build time
 \tikzexternalize[prefix=tikz/]
 \tikzset{external/system call={
@@ -84,8 +87,10 @@
 \newcommand{\scl}{\,;\;} % semicolon for set conditions {a; P(a)}
 \newcommand{\cms}{,\,} % comma-space (works better with subscripts)
 \newcommand{\nscms}{\!,\,} % negative space-comma-space
-\newcommand{\pr}{^\textrm{\,,}} % better ``prime'' symbol for small letters.
-\newcommand{\prpr}{^{\textrm{\,,}\textrm{,}}} % prime prime
+%\newcommand{\pr}{^\textrm{\,,}} % better ``prime'' symbol for small letters.
+\newcommand{\pr}{'} % sadly, my advisor vetoed the last command
+%\newcommand{\prpr}{^{\textrm{\,,}\textrm{,}}} % prime prime
+\newcommand{\prpr}{''}
 \newcommand{\ie}{i.\,e.\ }
 \newcommand{\eg}{e.\,g.\ }
 \newcommand{\cf}{cf.\ }
@@ -93,6 +98,7 @@
                      \raisebox{0.3ex}{$\m@th\cdot$}}%
                      \raisebox{-0.3ex}{$\m@th\cdot$}}%
                      =}
+\newcommand{\isom}{\xrightarrow{\sim}}
 
 % shortcuts that accept parameters
 \newcommand{\dblbrack}[1]{\left[\!\left[#1\right]\!\right]}

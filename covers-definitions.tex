@@ -2,34 +2,53 @@
 
 In this section we define the central notions and objects of interest, \ie finite covers of an elliptic curve with simple ramification type, the weighted counts of isomorphism classes thereof, and the generating functions associated to such weighted counts.
 
-In the following, let $\Cbb$ be the ground field for all varieties considered.
+In the following, let $\Cbb$ be the ground field for all varieties considered. We begin by recalling some basic properties of complex curves.
+
+\begin{prop} \label{prop:curves-to-fields}
+The assignment $C\mapsto K(C)$ defines a contravariant equivalence of categories between the category of irreducible smooth curves over $\Cbb$ 
+and the 
+category of finitely generated field extensions of $\Cbb$ of trascendence degree one. By definition, degree $d$ maps of curves correspond 
+to degree $d$ field extensions.
+\end{prop}
+
+\begin{proof}
+ See \cite[pp.20-22]{Silverman2009}
+\end{proof}
+
+\begin{prop}[Riemann--Hurwitz formula] \label{prop:hurwitz}
+ Let $\varphi \cl C_1 \to C_2$ be a finite, degree $d$ map of smooth curves of genera $g_1$ and $g_2$, respectively. Then \[2g_1-2 = d(2g_2-2) + 
+\sum_{x\in C_1}(\e_{\varphi}(x)-1),\] where $\e_\varphi(x)$ is the ramification index of $\varphi$ at $x$.
+\end{prop}
+
+\begin{proof}
+ See \cite[Thm.~5.9]{Silverman2009} or \cite[7.2.1]{Lamotke2005}.
+\end{proof}
 
 \if 0
 \begin{defi} Let $E$ be an elliptic curve. 
- \begin{enumerate}
-  \item A \emph{(degree d, genus g, connected) cover of $E$} is a finite, degree $d$ morphism $p\cl C\to E$ of an irreducible smooth curve $C$ of genus $g$ onto $E$. Denote such a cover by $(C,p)$, possibly omitting the structure map $p$.
+ 
+  1. A \emph{(degree d, genus g, connected) cover of $E$} is a finite, degree $d$ morphism $p\cl C\to E$ of an irreducible smooth curve $C$ of genus $g$ onto $E$. Denote such a cover by $(C,p)$, possibly omitting the structure map $p$.
 
-  \item If $S={b_1,\dotsc,b_{2g-2}}$ is a set of $2g-2$ distinct points of $E$, call a cover $C$ \emph{simply branched over $S$}, if it is simply branched over each point of $S$. This means that for all points $b$ of $S$ there is exacly one point $x$ in $p^{-1}(b)$ with ramification index $\e_p(x)=2$, the others having a ramification index one.
+  2. If $S={b_1,\dotsc,b_{2g-2}}$ is a set of $2g-2$ distinct points of $E$, call a cover $C$ \emph{simply branched over $S$}, if it is simply branched over each point of $S$. This means that for all points $b$ of $S$ there is exacly one point $x$ in $p^{-1}(b)$ with ramification index $\e_p(x)=2$, the others having a ramification index one.
   
   It follows from the Riemann-Hurwitz formula of Proposition \ref{prop:hurwitz} that every point not in the pre-image of $S$ has a ramification index of one. This justifies the choice of the number of points in $S$.
 
-  \item Two covers $C_1, C_2$ are to be considered isomorphic, if there is an isomorphism $C_1\to C_2$ commuting with the respective structure maps into $E$. Accordingly, define the automorphism group $\Aut_p(C)=\Aut(C)$ of the cover $(C,p)$ to be the group of cover isomorphisms $C\to C$. 
- \end{enumerate}
+  3. Two covers $C_1, C_2$ are to be considered isomorphic, if there is an isomorphism $C_1\to C_2$ commuting with the respective structure maps into $E$. Accordingly, define the automorphism group $\Aut_p(C)=\Aut(C)$ of the cover $(C,p)$ to be the group of cover isomorphisms $C\to C$. 
+ 
 \end{defi}
 \fi
 
 \begin{defi} Let $E$ be an elliptic curve.
- \begin{enumerate}
-  \item A \emph{cover} of $E$ is a finite morphism $p\cl C\to E$ of a disjoint union $C=\cup_{i=1}^k C_i$ of $k$ irreducible smooth curves $C_i$. We shall denote the genus of $C$ by $g$ and the degree of $p$ by $d$. Often a cover will be referred to by its source $C$.
+ 
+  1. A \emph{cover} of $E$ is a finite morphism $p\cl C\to E$ of a disjoint union $C=\cup_{i=1}^k C_i$ of $k$ irreducible smooth curves $C_i$. We shall denote the genus of $C$ by $g$ and the degree of $p$ by $d$. Often a cover will be referred to by its source $C$.
   
-  \item Let $S=\{b_1,\dotsc,b_{2g-2}\}$ be a set of $2g-2$ distinct points of $E$. A cover $C$ of genus $g$ is \emph{simply branched over $S$}, if it is simply branched over each point of $S$. This means that for all points $b$ of $S$ there is exacly one point $x$ in $p^{-1}(b)$ with ramification index $\e_p(x)=2$, the others having a ramification index one.
+  2. Let $S=\{b_1,\dotsc,b_{2g-2}\}$ be a set of $2g-2$ distinct points of $E$. A cover $C$ of genus $g$ is \emph{simply branched over $S$}, if it is simply branched over each point of $S$. This means that for all points $b$ of $S$ there is exacly one point $x$ in $p^{-1}(b)$ with ramification index $\e_p(x)=2$, the others having a ramification index one.
   
   It follows from the Riemann-Hurwitz formula of Proposition \ref{prop:hurwitz} that for a simply branched cover $C\to E$, every point not in the pre-image of $S$ has a ramification index one. This justifies the choice of the number of points in $S$.
   
-  \item Two covers $C_1, C_2$ are to be considered isomorphic, if there is an isomorphism $C_1\to C_2$ commuting with the respective structure maps into $E$. Accordingly, define the automorphism group $\Aut(C)$ of the cover $C$ to be the group of cover isomorphisms $C\to C$.
+  3. Two covers $C_1, C_2$ are to be considered isomorphic, if there is an isomorphism $C_1\to C_2$ commuting with the respective structure maps into $E$. Accordingly, define the automorphism group $\Aut(C)$ of the cover $C$ to be the group of cover isomorphisms $C\to C$.
   
-  \item A \emph{connected cover} is a cover with connected source $C$, \ie with only one irreducible component.
- \end{enumerate}
+  4. A \emph{connected cover} is a cover with connected source $C$, \ie with only one irreducible component.
 \end{defi}
 
 \begin{rmk}
@@ -45,7 +64,7 @@ In the following, let $\Cbb$ be the ground field for all varieties considered.
  By Proposition \ref{prop:curves-to-fields}, if $C$ is a connected cover of $E$, then the elements of the group $\Aut(C)$ correspond to the automorphisms of the finite field extension $K(C)/K(E)$, of which only finitely many exist.
 \end{proof}
 
-\begin{prop}
+\begin{prop} \label{pr:automorphism-group}
  Let $C=C_1 \cup \dotsb \cup C_k$ be a cover, and $p_i\defeq p|_{C_i}$. Then the automorphism group of $C$ is given by the semidirect product \[\Aut(C) = \prod_i \Aut(C_i) \rtimes \Gamma,\] where $\Gamma \subset \Symm\{C_1, \dotsc, C_k\}$ is the subgroup generated by the automorphisms that permute isomorphic components. In particular, $\Aut(C)$ is finite.
 \end{prop}
  
@@ -58,19 +77,21 @@ In the following, let $\Cbb$ be the ground field for all varieties considered.
  If the cover $C$ is simply branched over $S$, then no two components of genus greater than one are isomorphic as connected covers, since any isomorphism would have to preserve ramification indices (see for example \cite[II, Prop. 2.6]{Silverman2009}), but no two components share a branched point over $E$. In particular, if there are no components of genus one, then $\Gamma=\{1\}$.
  
  On the other hand, each component of genus one is unramified over $E$, and could be isomorphic to other components of genus one, in which case $\Gamma$ is nontrivial.
+ 
+ Furthermore, note that the $C_k$ need not be connected for the statement of the previous proposition to hold.
 \end{rmk}
+
 \begin{defi} Let $E$ be an elliptic curve, $S=\{b_1,\dotsc,b_{2g-2}\}$ a set of $2g-2$ distinct points of $E$.
- \begin{enumerate}
-  \item Let $\Cov(E,S)_{g,d}$ be the set of isomorphism classes of covers of $E$ of genus $g$ and degree $d$ that are simply branched over $S$.
+
+  1. Let $\Cov(E,S)_{g,d}$ be the set of isomorphism classes of covers of $E$ of genus $g$ and degree $d$ that are simply branched over $S$.
   
-  \item Any isomorphism of two equivalent covers defines a bijection of their automorphism groups. This allows one to define the \emph{weight} of the class $[C]$ to be the number $1/|\Aut(C)|$.
+  2. Any isomorphism of two equivalent covers defines a bijection of their automorphism groups. This allows one to define the \emph{weight} of the class $[C]$ to be the number $1/|\Aut(C)|$.
   
-  \item Define $\what N_{g,d}$ to be the weighted count \[\what N_{g,d}\defeq\sum_{C\in \Cov(E,S)_{g,d}} \frac{1}{|\Aut(C)|}\] of the (classes of) covers of $E$.
+  3. Define $\what N_{g,d}$ to be the weighted count \[\what N_{g,d}\defeq\sum_{C\in \Cov(E,S)_{g,d}} \frac{1}{|\Aut(C)|}\] of the (classes of) covers of $E$.
   
-  \item Let $\Cov(E,S)^{\circ}_{g,d}\subset\Cov(E,S)_{g,d}$ be the subset of classes $[C]$ such that $C$ is connected.
+  4. Let $\Cov(E,S)^{\circ}_{g,d}\subset\Cov(E,S)_{g,d}$ be the subset of classes $[C]$ such that $C$ is connected.
   
-  \item Similarly, define $N_{g,d}$ to be the the weighted count \[N_{g,d}\defeq\sum_{C\in \Cov(E,S)^{\circ}_{g,d}} \frac{1}{\abs{\Aut(C)}}\] of the connected covers of $E$.
- \end{enumerate}
+  5. Similarly, define $N_{g,d}$ to be the the weighted count \[N_{g,d}\defeq\sum_{C\in \Cov(E,S)^{\circ}_{g,d}} \frac{1}{\abs{\Aut(C)}}\] of the connected covers of $E$.
  To shorten the notation, the elliptic curve $E$ and the set of points $S$ are omitted from the notation. It will turn out that $\what N_{g,d}$ and $N_{g,d}$ are finite and do not depend on the choice of $E$ and $S$.
 \end{defi}
 
@@ -78,7 +99,7 @@ In the following, let $\Cbb$ be the ground field for all varieties considered.
  For any $g\geq 1$, define $F_g$ to be the generating series \[F_g(q)\defeq\sum_{d\geq 1}N_{g, d}\,q^d\] counting connected covers of genus $g$.
 \end{defi}
 
-\begin{expl}
+\begin{expl} \label{ex:genus-one}
  By the theory of elliptic curves we have $N_{1,d}=\sum_{j|d}1/j$. To see this, we use the fact that the covers of degree $d$ and genus $1$ of an elliptic curve defined by a lattice $\Gamma$ of $\Cbb$ correspond to the subgroups of $\Gamma$ of index $d$. If $d$ is prime, then the number of such subgroups is $d+1$. Furthermore, any such cover has exactly $d$ automorphisms.
  
  Let $\mc{R}$ be the set of lattices of $\Cbb$ and $\Zbb\mc{R}$ the free abelian group generated by the set $\mc{R}$. For $n\in\Nbb$, define the endomorphism $T(n)\cl\Zbb\mc{R}\to\Zbb\mc{R}$ by
@@ -128,7 +149,9 @@ The proof is subdivided into three parts. First, some notation and terminology i
  \[
   \what{N}_{g,d}=\sum_{\abs{\kappa}=(\chi,d)}\what{N}_\kappa,
  \]
- where $\abs{\kappa}$ is defined as the tuple $(\sum_j k_j\chi_j,\;\sum_j k_jd_j)$, for $\kappa=(k_j,g_j,d_j)_j$.
+ where $\abs{\kappa}$ is defined as the tuple $(\sum_j k_j\chi_j,\;\sum_j k_jd_j)$, for $\kappa=(k_j,g_j,d_j)_j$. For any $j$, we also define the ``unweighted'' count $\wtilde{N}_{g_j,d_j}$ of connected covers of degree of genus $g_j$ and degree $d_j$ by
+ \[\wtilde{N}_{g_j,d_j}\defeq\abs{\Cov(E,S')^{\circ}_{g_j,d_j}},\]
+ where $S'\subset S$ is any subset of cardinality $\chi_j$.
  Finally, note that the relation
  \[
   q^d\lam^\chi=\prod_{j=1}^r q^{k_jd_j}\lam^{k_j\chi_j}
@@ -150,12 +173,16 @@ The proof is subdivided into three parts. First, some notation and terminology i
  \]
 %3
 
- It remains to prove that $a_\kappa$ = $\what{N}_\kappa$ for each combinatorial type $\kappa$. Sketch:
- \begin{itemize}
-  \item The product $N_{g_1,d_1}^{k_1}\dotsm N_{g_r,d_r}^{k_r}$ represents a choice of connected components of a cover. One has to modify this product to account for the automorphisms of the components and the choice of ramification points.
-  \item There are $\binom{\chi}{\chi_1,\chi_1\dotsc,\chi_r}=\chi\prod_{j=1}^r 1/(\chi_j!)^{k_j}$ ways to subdivide $S$ into subsets that serve as the ramification locus of the connected components. Here, each $\chi_j$ appears in the binomial coefficient $k_j$ times.
-  \item For components of genus $\geq 2$, we get a factor of $1/k_j!$ to account for overcounting.
-  \item For components of genus $1$ we also get a factor of $1/k_j!$, since we either overcount (if some genus $1$ covers are non-isomorphic) or get extra automorphisms as permutations (if some genus $1$ covers are isomorphic).
-  \item Putting this all together, we get that the weighted count of covers of type $\kappa$ is $a_\kappa$.
- \end{itemize}
+ It remains to prove that $a_\kappa$ = $\what{N}_\kappa/(2g-2)!$ for each combinatorial type $\kappa$. Here, we shall often make implicit use of Proposition \ref{pr:automorphism-group} and the remark after it.
+  
+  There are $\binom{\chi}{\chi_1,\chi_1,\dotsc,\chi_r}=\chi!\prod_{j=1}^r 1/(\chi_j!)^{k_j}$ ways to subdivide the ramification locus $S$ into subsets that serve as the ramification loci of the connected components. Here, each $\chi_j$ appears in the binomial coefficient $k_j$ times. Fix one such decomposition, say $S=S_1 \cup \cdots \cup S_r$. Subdivide the decomposition further into subpartions such as $(S_{k_{j-1}+1},\dotsc,S_{k_{j-1}+k_j})$, where all subsets belong to one type $(g_j,d_j,k_j)$ and have cardinality $\chi_j$.
+
+  For $g_j\geq 2$, the number of covers of type $(g_j,d_j,k_j)$ which ramify according to the subpartition $(S_{k_{j-1}+1},\dotsc,S_{k_{j-1}+k_j})$ is exactly $(1/k_j!) \wtilde{N}_{g_j,d_j}^{k_j}$. By tracking the automorphism group of the components involved in each choice, we obtain a weighted count of $(1/k_j!) N_{g_j,d_j}^{k_j}$.
+
+  For $g_j\geq1$, there is no ramification locus.
+  Instead, divide the $k_j$ components of genus $1$ into isomorphism classes, so that there are, say, $\ell$ isomorphism classes with cardinalities $t_1,\dotsc,t_\ell$.
+  There are $\binom{k_j}{t_1,\dotsc,t_\ell}=k_j!\prod_{i=1}^\ell  1/t_j!$ ways to perform such a subdivision, so that the number of of covers of type $(g_j,d_j,k_j)$ is $(1/k_j!)(\prod_{i=1}^\ell t_j!)\wtilde{N}_{g_j,d_j}^{k_j}$.
+  Applying the weighting to an isomorphism class with $t_i$ elements gives an additional factor of $1/t_i!$ in the weighting, since the cardinality of its automorphism group as a cover has an additional factor of $t_i!$. Hence, the weighted count of covers of type $(g_j,d_j,k_j)$ is $(1/k_j!)(\prod_{i=1}^\ell t_j!)(\prod_{i=1}^\ell 1/t_j!){N}_{g_j,d_j}^{k_j}$, which is equal to $(1/k_j!) N_{g_j,d_j}^{k_j}$.
+
+  Since covers of different types $(g_j,d_j,k_j)$ are not isomorphic, we deduce that the weighted count of covers with ramification type determined by the partition $(S_1, \dotsc, S_r)$ of $S$ is $\prod_{j=1}^r(N^{k_j}_{g_j,d_j}/k_j!)$. Finally, since covers belonging to different partitions are not isomorphic and since the number of such partitions is $\chi!\prod_{j=1}^r 1/(\chi_j!)^{k_j}$, we deduce that $\what{N}_\kappa=\chi a_\kappa$, as required.
 \end{proof}

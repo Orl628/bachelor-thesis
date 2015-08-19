@@ -1,84 +1,150 @@
 \section{Classifying covers via the fundamental group}
 
-Let $E$ be an elliptic curve, $S=\{b_1,\dotsc,b_{2g-2}\}$ a set of $2g-2$ distinct points of $E$. Fix a basis point $b_0\in E\smallsetminus S$, and denote the fundamental group $\pi_1(E\smallsetminus S, b_0)$ by $\pi_1$.
-Recall the equivalence of categories from \ref{sec:covering-spaces}:
-\[
- \begin{tikzcd}
-  \begin{Bmatrix}\text{Finite ramified covers of }E\\\text{ with ramification locus contained in $S$}\end{Bmatrix} \arrow{r} & \{\pi_1\text{-sets}\}.
- \end{tikzcd}
-\]
-The goal of this section is to use this equivalence of categories to classify those $\pi_1$-sets giving rise to unbranched covers that, after adding the branched points, become the covers we are interested in, i.e. the over $S$ simply branched, genus $g$, degree $d$ covers. Note that a simply branched cover of genus $g$ is ramified over exactly $2g-2$ points of $E$. It follows that if its ramification locus $S_0$ is contained in $S$, then $S_0 = S$.
+The goal of this section is to use the theory of covering spaces to classify the covers we are interested in, \ie the covers of genus $g$ and degree $d$ that are simply branched over $S$. This will get us to the first step to understanding their weighted count $\what{N}_{g,d}$.
 
-To obtain natural $\pi_1$-actions on the set of $d$ fibre points of $b_0$, it is convenient to introduce markings on the set of fibres.
+\subsection{Covering spaces} \label{sec:covering-spaces}
+
+\begin{defi}
+ Let $X$ be a topological space, $F$ a set endowed with the discrete topology, and $G$ a group acting on both $X$ and $F$. Define the fibred product $X \times_{G} F$ to be the topological space $(X\times F)\; /\sim$, where $(x,f)\sim (gx,gf)$ for all $g$ in $G$.
+\end{defi}
+
+\if 0
+\begin{joke} \ 
+ \begin{enumerate}
+ \item [Q: ] How do you call a team of actors in a Hollywood studio?
+ \item [A: ] A group acting on a set.
+ \end{enumerate}
+\end{joke}
+\fi
+
+\begin{prop} \label{pr:classifying-covers}
+
+ Let $X$ be a connected, locally pathwise connected, and semi-locally simply connected topological space. Let $p\cl\widetilde{X}\to X$ be a universal cover. Furthermore, choose a point $\widetilde{x}_0$ of $\widetilde{X}$, and let $x_0$ be the image of $\widetilde{x}_0$ in $X$. Denote the fundamental group $\pi_1(X,x_0)$ by $\pi_1$. Then there is an eqivalence of categories
+ \[
+ \begin{tikzcd}
+  \{\text{Unbranched covers of X}\} \arrow{r} & \{\pi_1\text{-sets}\},
+ \end{tikzcd}
+ \]
+ defined by the pair of quasi-inverse functors \[(p_Y\cl Y\to X) \mapsto p^{-1}_Y(x_0)\;\text{ and }\;F \mapsto \widetilde{X} \times_{\pi_1} F.\]
+\end{prop}
+\begin{proof}
+ One verifies by hand that the given functors are mutually quasi-inverse, by using elementary covering theory. Nonetheless, the needed isomorphisms between objects are given below.
+ % Denote the group action of $\pi_1$ on $\widetilde X$ by $(\gamma,x)\mapsto \gamma\ldot x$.
+ 
+ Let $F$ be a $\pi_1$-set and $p_F\cl \widetilde{X} \times_{\pi_1} F \to X$ the associated covering. Define a map $\zeta_F\cl F\to p_F^{-1}(x_0)$ by sending an element $f$ to the class of $(\widetilde{x}_0,f)$.
+ % This map is surjective by definition, and is injective since the $\pi_1$-action on $\widetilde{X}$ is free.
+ 
+ On the other hand, let $p_Y\cl Y\to X$ be a cover of $X$. Define a map \[\eta_Y\cl \widetilde{X}\times_{\pi_1} p_Y^{-1} \to Y\] as follows. For a given class $(\widetilde{x},f)$, let $\beta\cl [0,1] \to \widetilde{X}$ be a path starting in $\widetilde{x}_0$ and ending in $\widetilde{x}$. Consider the projection $p\beta$ of $\beta$ to $X$ and lift the path $p\beta$ to a path $\widetilde{\beta}_f$ in $Y$, with starting point $f$. Finally, set $\eta_Y(\widetilde{x},f)=\widetilde{\beta}_f(1)$. Note that since $\widetilde{X}$ is simply connected, this is independent of the choice of the path $\beta$. Also, the map is well-defined, since $p\beta \widetilde{\gamma} = p\beta$ for any lift $\widetilde{\gamma}$ of a loop in $X$.
+ \if 0
+ $\eta_Y$ is surjective: for $y \in Y$, let $\beta$ be a path in $X$ with starting point $p_Y(y)$ and endpoint $x_0$. Let $f=\widetilde{\beta}_{y}(1)$, be the endpoint of the lift of $\beta$ to $Y$ with starting point $y$. Then $y$ is the image of $(\widetilde{\beta}_{\widetilde{x}_0}(1),f)$ under $\eta_Y$, where $\widetilde{\beta}_{\widetilde{x}_0}$ is a lift of $\beta$ to $\widetilde{X}$ with starting point $\widetilde{x}_0$. To see that the map is injective, given any two points $(\widetilde{x}_1,f),(\widetilde{x}_2,g)$ mapping to the same point in $Y$, define a path in $\widetilde{X}$ connecting $\widetilde{x}_1$ to $\widetilde{x}_2$, and use the paths given by the definition of $\eta_Y$ to construct the loop in $X$ that will take $(\widetilde{x}_1,f)$ to $(\widetilde{x}_2,g)$
+ \fi
+\end{proof}
+
+\begin{rmk} \label{pr:extending-covers}
+ In the above proposition, if $X$ has the structure of a Riemann surface, then the first category may be taken to be the category of unbranched covers of Riemann surfaces over $X$. Indeed, every cover inherits a complex structure from $X$ such that the structure map becomes holomorphic, and morphisms of covers of $X$ are automatically holomorphic. Indeed, if $g\cl C'\to C$ is a continuous map and $f\cl C\to X$ is an open and holomorphic map such that $f\circ g$ is holomorphic, then $g$ is holomorphic; see \cite[1.3.7]{Lamotke2005}.
+ 
+ Furthermore, let $X$ be a Riemann surface, let $S\subset X$ be a finite set. Then putting $(C,p)\mapsto (C\ssm p^{-1}(S),p)$ defines an equivalence of categories between the category of finite covers of $X$ with ramification locus contained in $S$ and the category of finite unbranched covers of $X\ssm S$. The reason is roughly that the local data of an unbranched cover around a ``missing'' branch point uniquely characterizes that of any extention of that cover to a ramified one, \eg the local degree of the cover map will correspond to the ramification index. The topic of extending unbranched covers to branched ones is discussed in detail in \cite[4.6]{Lamotke2005}.
+\end{rmk}
+
+\begin{cor} \label{pr:eq-of-cats}
+ Let $X$ be a connected Riemann surface, $S\subset X$ a finite set, $x_0\in X\ssm S$ a point. Denote the fundamental group $\pi_1(X\ssm S,x_0)$ by $\pi_1$. There is an equivalence of categories
+ \[
+  \begin{tikzcd}
+   \begin{Bmatrix}\text{Finite ramified covers of }X\\\text{ with ramification locus contained in $S$}\end{Bmatrix} \arrow[<->]{r} & \{\pi_1\text{-sets}\}.
+  \end{tikzcd}
+ \]
+\end{cor}
+
+\begin{rmk} \label{pr:branching-and-actions}
+Let $p\cl C\to X$ be a ramified cover with ramification locus contained in $S$. Let $x_0\in X\ssm S$ and $s\in S$. Let $\gamma\in\pi_1$ be a loop of degree one about $s$ and $\theta\cl p^{-1}(x_0)\to p^{-1}(x_0)$ the permutation induced by $\gamma$. If $\theta$ decomposes in $\ell$ cycles, say $\theta = \theta_1\dotsm\theta_\ell$, having lengths $k_1,\dotsc,k_\ell$ respectively, then the preimage $p^{-1}(s)$ consists of $\ell$ points $s_1,\dotsc,s_\ell$ with ramification indices $k_1,\dotsc,k_\ell$ respectively.
+\end{rmk}
 
 \subsection{Marked covers and the monodromy map}
 
+Let $E$ be an elliptic curve, $S=\{b_1,\dotsc,b_{2g-2}\}$ a set of $2g-2$ distinct points of $E$. Fix a basis point $b_0\in E\ssm S$, and denote the fundamental group $\pi_1(E\ssm S, b_0)$ by $\pi_1$.
+The equivalence of categories from the previous corollary is the equivalence
+\[
+ \begin{tikzcd}
+  \begin{Bmatrix}\text{Finite ramified covers of }E\\\text{ with ramification locus contained in $S$}\end{Bmatrix} \arrow[<->]{r} & \{\pi_1\text{-sets}\}.
+ \end{tikzcd}
+\]
+
+Note that a simply branched cover of genus $g$ is ramified over exactly $2g-2$ points of $E$. It follows that if its ramification locus $S_0$ is contained in $S$, then $S_0 = S$.
+
 \begin{defi}
- A \emph{marked (degree $d$, genus $g$, simply branched over $S$) cover} of $E$ is a triple $(C,p,m)$, where $(C,p)\in \Cov(E,S)_{g,d}$ and $m\cl p^{-1}(b_0)\to \{1,\dotsc,d\}$ is a bijective map, the \emph{marking} of $(C,p,m)$.
+ A \emph{marking} $m$ on a cover $(C,p)\in \Cov(E,S)_{g,d}$ is a bijective map $m\cl p^{-1}(b_0)\to \{1,\dotsc,d\}$. A \emph{marked cover} is a triple $(C,p,m)$, where $(C,p)$ is a cover and $m$ is a marking on it.
  
- Two marked covers $(C_1,p_1,m_1)$ and $(C_2,p_2,m_2)$ are considered equivalent, if there is an isomorphism of covers $\phi\cl C_1 \to C_2$ such that $m_1=m_2\phi$. Let $\widetilde{\Cov}(E,S)_{g,d}$ denote the set of equivalence classes of marked covers with respect to this relation.
+ Two marked covers $(C_1,p_1,m_1)$ and $(C_2,p_2,m_2)$ are considered equivalent, if there is an isomorphism of covers $\psi\cl C_1 \to C_2$ such that $m_1=m_2\psi$. Let $\widetilde{\Cov}(E,S)_{g,d}$ denote the set of equivalence classes of marked covers with respect to this relation.
 \end{defi}
 
 \begin{defi}
- Let $(C,p)$ be a cover of $E$. Denote the group operation of $\pi_1$ on the fibre of $p^{-1}(b_0)$ by $(\gamma,x)\mapsto \gamma\ldot x$. Define the monodromy map \[\mon\cl \widetilde{\Cov}(E,S)_{g,d} \to \Hom(\pi_1, \Sym_d)\]
+ Let $(C,p)$ be a cover of $E$. Denote the group action of $\pi_1$ on the fibre of $p^{-1}(b_0)$ by $(\gamma,x)\mapsto \gamma\ldot x$. Define the monodromy map \[\mon\cl \widetilde{\Cov}(E,S)_{g,d} \to \Hom(\pi_1, \Sym_d)\]
  by $\mon(C,p,m)(\gamma)(i)=m(\gamma\ldot m^{-1}(i))$.
 \end{defi}
 
-Let the symmetric group $\Sym_d$ operate on the first set by $\sigma \ldot (C,p,m)=(C,p,\sigma m)$, and on the second by $\sigma \ldot \psi = \inn(\sigma) \psi$, i.e. by inner automorphisms. Then $\mon$ becomes a morphism of $\Sym_d$-sets.
-Furthermore, for an element $\psi=\mon(C,p,m)$ of the image of $\mon$, the group action ``forgetting the marking'' \[m^{-1}\psi(\underline{\ \ })m\cl\pi_1\to \Aut(p^{-1}(b_0))\] on the fiber of $b_0$ is the same as the one defined by the above equivalence of categories.
+Let the symmetric group $\Sym_d$ act on the first set by $\sigma \ldot (C,p,m)=(C,p,\sigma m)$, and on the second by $\sigma \ldot \varphi = \inn(\sigma) \varphi$, i.e. by inner automorphisms. Then $\mon$ becomes a morphism of $\Sym_d$-sets.
+Furthermore, for $\varphi=\mon(C,p,m)$ in the image of $\mon$, the group action ``forgetting the marking'' \[m^{-1}\varphi(\underline{\ \ })m\cl\pi_1\to \Aut(p^{-1}(b_0))\] on the fiber of $b_0$ is the same as the one defined by the above equivalence of categories.
 
 \begin{defi}
- The $\Sym_d$-set $\widehat{T}_{g,d}$ is defined by
+ Let $t$ denote the set of simple transpositions in $\Sym_d$. Define the set
  \begin{align*}
- \widehat{T}_{g,d} = \{(\tau_1,\dotsc,\tau_{2g-2},\sigma_1,\sigma_2)\in \Sym_d^{2g} \scl &\text{each }\tau_i\text{ is a simple transposition,}\\ &\tau_1\dotsm\tau_{2g-2}=\sigma_1\sigma_2\sigma_1^{-1}\sigma_2^{-1}\},
+  \widehat{T}_{g,d} = \{(\tau_1,\dotsc,\tau_{2g-2},\sigma_1,\sigma_2)\in \Sym_d^{2g} \scl \tau_i\in t \text{ for all $i$, } &\tau_1\dotsm\tau_{2g-2}=\sigma_1\sigma_2\sigma_1^{-1}\sigma_2^{-1}\}.
  \end{align*}
-  where the $\Sym_d$-action is defined by conjugation in each component, after noting that conjugates of transpositions are transpositions.
+ We define an $\Sym_d$-action on $\what{T}_{g,d}$ by conjugation in each component. This action is well-defined, since conjugates of transpositions are transpositions, and makes $\what{T}_{g,d}$ into an $\Sym_d$-set.
 \end{defi}
 
-\begin{prop} \label{prop:classifying-set}
- The image of $\mon$ is isomorphic as a $\Sym_d$-set to $\what{T}_{g,d}$.
+\begin{rmk}
+ We can describe the fundamental group $\pi_1$ of $E\ssm S$ using generators and relations. Choose a generating set $\{\alpha_1,\alpha_2\}$ of $\pi_1(E,b_0)$ such that the images of the $\alpha_i$ in $E$ do not intersect the ramification locus $S$. Furthermore, for $i\in\{1,\dotsc,2g-2\}$ let $\gamma_i'$ be a simple loop about the point $b_i$ in $S$. For each $i$, there is a homotopy with image in $E\ssm S$ transforming $\gamma_i'$ into a loop $\gamma_i$ about $b_i$ that contains the point $b_0$. The picture below illustrates the situation.
+ \input{picture-fund-group}
+ The loops we defined satisfy the relation $\gamma_1\dotsm\gamma_{2g-2}=\alpha_1\alpha_2\alpha_1^{-1}\alpha_2^{-1}$. From the Seifert–Van Kampen theorem, it follows that the fundamental group $\pi_1$ is described by the following generating set and relation:
+ \[\pi_1=\gen{\gamma_1,\dotsc,\gamma_{2g-2},\alpha_1,\alpha_2\scl \gamma_1\dotsm\gamma_{2g-2}=\alpha_1\alpha_2\alpha_1^{-1}\alpha_2^{-1}}.\]
+ In particular, any homomorphism of the group $\pi_1$ into any group $H$ is uniquely determined by the images of the elements $\gamma_1,\dotsc,\gamma_{2g-2},\alpha_1$, and $\alpha_2$. On the other hand, any tuple $(\tau_1,\dotsc,\tau_{2g-2},\sigma_1,\sigma_2)$ of elements of $H$ satisfying the relation $\tau_1\dotsm\tau_{2g-2}=\sigma_1\sigma_2\sigma_1^{-1}\sigma_2^{-1}$ defines a homomorphism of $\pi_1$ into $H$.
+\end{rmk}
+
+\begin{prop} \label{pr:classifying-set}
+ The image of $\mon$, as a $\Sym_d$-set, is isomorphic to $\what{T}_{g,d}$.
 \end{prop}
 
 \begin{proof}
- The fundamental group $\pi_1$ of $E\smallsetminus S$ is described by the following generating set and relation:
-
- \[\pi_1=\gen{\gamma_1,\dotsc,\gamma_{2g-2},\alpha_1,\alpha_2\scl \gamma_1\dotsm\gamma_{2g-2}=\alpha_1\alpha_2\alpha_1^{-1}\alpha_2^{-1}}.\]
-
- For over $S$ simply branched covers, the image of each loop $\gamma_i$ under the monodromy map is a simple transposition $\tau_i$. Namely, there is over $b_i$ exactly one branch point of index $2$, and $\tau_i$ interchanges the two fiber points corresponding to the two sheets of the branching, leaving the other fiber points unchanged.
+ Define the set $\widehat{T}_{g,d}'$ by
+ \[\widehat{T}_{g,d}' = \{(\tau_1,\dotsc,\tau_{2g-2},\sigma_1,\sigma_2)\in \Sym_d^{2g} \scl \tau_1\dotsm\tau_{2g-2}=\sigma_1\sigma_2\sigma_1^{-1}\sigma_2^{-1}\}.\]
+ By the previous remark there is a bijection $\psi\cl\Hom(\pi_1,\Sym_d)\to \what{T}_{g,d}'$ given by $\varphi\mapsto(\varphi(\gamma_1),\dotsc,\varphi(\gamma_{2g-2}),\varphi(\alpha_1),\varphi(\alpha_2))$. The map $\psi$ is also a morphism of \mbox{$\Sym_d$-sets}, where the $\Sym_d$-action on $\what{T}_{g,d}$ is defined by compenent-wise conjugation. The preimage of $\what{T}_{g,d}$ under $\psi$ consists of the homomorphisms $\varphi\cl\pi_1\to\Sym_d$ such that for all $i$, the permutation $\varphi(\gamma_i)$ is a simple transposition.
  
- Combining these remarks, one finds that putting
- \[\psi \mapsto (\psi(\gamma_1),\dotsc,\psi(\gamma_{2g-2}),\psi({\alpha_1}),\psi({\alpha_2}))\]
- defines the required isomorphism, which is compatible with the $\Sym_d$-action.
+ For covers that are simply branched over $S$, the image $\tau_i$ of each loop $\gamma_i$ under the monodromy map is a simple transposition of the points in the fiber. Namely, there is over $b_i$ exactly one branch point of index $2$, and $\tau_i$ interchanges the two fiber points corresponding to the two sheets of the branching, leaving the other fiber points unchanged. Hence, the image of $\mon$ is contained in $\psi^{-1}(\what{T}_{g,d})$.
+ 
+ It is left to show that $\Img(\mon)$ contains $\psi^{-1}(\what{T}_{g,d})$. Let $\varphi\cl\pi_1\to\Sym_d$ be a homomorphism such that $\varphi(\gamma_i)$ is a simple transposition for all $i$. By the equivalence of categories at the beginning of the section, the $\pi_1$-action on $\{1,\dotsc,d\}$ defined by $\varphi$ gives a finite, branched cover of Riemann surfaces $p\cl C\to E$. The cover $(C,p)$ also comes with a natural marking $m\cl p^{-1}(b_0)\to\{1,\dotsc,d\}$, namely the inverse of the map $\zeta_{\{1,\dotsc,d\}}$ defined in the proof of Proposition~\ref{pr:classifying-covers}. By the same proposition, for all $\theta\in\pi_1$ and all $k,k'\in\{1,\dotsc,d\}$, if $\theta\ldot m^{-1}(k)=m^{-1}(k')$ then $k'=\varphi(\theta)(k)$. This shows that the $\pi_1$-action defined by $(C,p,m)$ on the set $\{1,\dotsc,d\}$ is the same as the action defined by $\phi$. Finally, the condition that $\varphi(\gamma_i)$ be a simple transposition for all $i$ implies by Remark \ref{pr:branching-and-actions} that the cover $(C,p)$ is simply branched over $S$. Therefore, we have $(C,p,m)\in\wtilde{\Cov}(E,S)_{g,d}$ and $\mon(C,p,m)=\varphi$.
 \end{proof}
 
+Define the morphism of $\Sym_d$-sets $\rho\cl \widetilde{\Cov}(E,S)_{g,d} \to \widehat{T}_{g,d}$ to be the composition of $\mon$ with the isomorphism $\Img(\mon)\isom\what{T}_{g,d}$ of the previous proposition.
+
+\begin{prop} \label{prop:correspondence-automorphism-group}
+ Let $(C,p,m)$ be a marked cover and $\theta$ its image under $\rho$. Then there is a group isomorphism $\Aut_p(C)\isom \Stab_{\Sym_d}(\theta)$.
+\end{prop}
+
+\begin{proof}
+ Let $\varphi\cl\pi_1\to \Sym_d$ be the preimage of $\theta$ in the isomorphism of Proposition \ref{pr:classifying-set}. By the equivalence of categories, the group $\Aut_p(C)$ is isomorphic to the group $H$ of automorphisms of the $\pi_1$-action on $\{1,\dotsc,d\}$ defined by $\varphi$. The group $H$ consists of all elements $\sigma\in\Sym_d$ commuting with $\varphi$, \ie such that $\varphi = \inn(\sigma)\varphi$. Since the isomorphism of Proposition \ref{pr:classifying-set} is $\Sym_d$-equivariant, we have $H=\Stab_{\Sym_d}(\theta)$.
+\end{proof}
+
+
 \begin{prop} \label{prop:classification-of-covers}
- The morphism of $\Sym_d$-sets $\rho\cl \widetilde{\Cov}(E,S)_{g,d} \to \widehat{T}_{g,d}$ induces a bijection on the sets of orbits
- \[\Sym_d\backslash\wtilde{\Cov}(E,S)_{g,d}\to \Sym_d\backslash\what{T}_{g,d}.\] 
+ The morphism $\rho$ induces a bijection on the sets of orbits
+ \[{_{\Sym_d}\backslash\wtilde{\Cov}(E,S)_{g,d}}\isom {_{\Sym_d}\backslash\what{T}_{g,d}.}\] 
  
  %which is naturally isomorphic to the restriction of the above equivalence of categories to the subcategory of unbranched covers $C'$ of E such %that there exist a $(C,p)\in\Cov(E,S)_{g,d}$ with $C'=C\ssm p^{-1}(S)$.
 \end{prop}
 
 \begin{proof}
- To see that $\rho$ is surjective, let $t\in\what{T}_{g,d}$, and let $\psi_t:\pi_1\to\Sym_d$ be the corresponding group homomorphism. By the above equivalence of categories, the $\pi_1$-action on $\{1,\dotsc,d\}$ defined by $\psi_t$ gives a finite, unbranched cover of Riemann surfaces $C'\to E\ssm S$, which may be extended to a branched cover $C\to E$, see the remark in \ref{sec:covering-spaces}. The $\pi_1$-action on $\{1,\dotsc,d\}$ gives the $\pi_1$-action on the fiber of the basis point $b_0$ associated to $(C,p)$, showing that the extension $C$ has the right branching.
+ The map $\rho$ is surjective as the composition of surjective maps, hence the induced map on the sets of orbits is surjective too.
  
- For the injectivity on the sets of orbits, let $\rho(C_1,p_1,m_1)=t$ and $\rho(C_2,p_2,m_2)=\sigma\ldot \psi_t$, for some $t\in \what{T}_{g,d}$ and $\sigma \in \Sym_d$. Then $\rho(C_2,p_2,\sigma^{-1}m_2)=t$. Let $\psi_t$ define the associated group action on $\{1,\dotsc,d\}$, hence the group action on the fibers. From the equivalence of categories follows that the two marked covers differ only by the marking: $C_1\simeq C_2$. Hence, the two marked covers are in the same orbit.
+ For the injectivity on the sets of orbits, let $\rho(C_1,p_1,m_1)=\theta$ and $\rho(C_2,p_2,m_2)=\sigma\ldot \theta$, for some $\theta\in \what{T}_{g,d}$ and $\sigma \in \Sym_d$. Then $\rho(C_2,p_2,\sigma^{-1}m_2)=\theta$. It follows from the equivalence of categories that $(C_1,p_1)\simeq (C_2,p_2)$, and hence the that the two marked covers only differ by the marking, so that they are in the same $\Sym_d$-orbit.
 \end{proof}
 
-\begin{rmk}
- The $\Sym_d$-orbits of $\wtilde{\Cov}(E,S)_{g,d}$ are in one-to-one correspondence with the elements of $\Cov(E,S)_{g,d}$. The above proposition gives thus a bijection of $\Cov(E,S)_{g,d}$ with the set of $\Sym_d$-orbits of $\what{T}_{g,d}$.
-\end{rmk}
-
-
-\subsection{Counting covers}
-
-By the above discussion, we get an algebraic description of the weighted count $\what{N}_{g,d}$ of genus $g$, degree $d$, simply branched over $S$, covers of $E$.
-
-\begin{prop} \label{prop:correspondence-automorphism-group}
- Let $(C,p,m)$ be a marked cover and $t$ its image under $\rho$. Then there is a group isomorphism $\Aut_p(C)\to \Stab(t)$.
-\end{prop}
+\begin{cor} \label{pr:final-classification}
+ The morphism $\rho$ induces a bijection between $\Cov(E,S)_{g,d}$ and the set of $\Sym_d$-orbits of $\what{T}_{g,d}$. In particular, the set $\Cov(E,S)_{g,d}$ is finite.
+\end{cor}
 
 \begin{proof}
- Let $\phi_t$ be the group homomorphism $\pi_1\to \Sym_d$ corresponding to $t$. By the equivalence of categories, $\Aut_p(C)$ is isomorphic to the group of automorphisms of the $\pi_1$-action on $\{1,\dotsc,d\}$ defined by $\psi_t$, i.e. those elements $\sigma$ in the symmetry group $\Sym_d$ commuting with $\psi_t$, i.e. such that $\psi_t = \inn(\sigma)\psi_t$. This condition translates under the isomorphism of $\Sym_d$-sets in \ref{prop:classifying-set}
+ The statement follows from the last proposition, since the $\Sym_d$-orbits of $\wtilde{\Cov}(E,S)_{g,d}$ are in one-to-one correspondence with the elements of $\Cov(E,S)_{g,d}$.
 \end{proof}
 
 \begin{lemma} \label{prop:first-reduction-step}
@@ -86,5 +152,5 @@ By the above discussion, we get an algebraic description of the weighted count $
 \end{lemma}
 
 \begin{proof}
- By propositions \ref{prop:classification-of-covers} and \ref{prop:correspondence-automorphism-group}, the weighted count $\what{N}_{g,d}$ is equal to the weighted count of the $\Sym_d$-orbits of $\what{T}_{g,d}$, where each orbit is weighted by $1/|\Stab(t)|$, for any element $t$ in the orbit (this is well-defined since elements of the same orbits have isomorphic stabilizer subgroups). Now, it follows from the formula $|\Orb(t)|=|\Sym_d|/|\Stab(t)|$ that this weighted count equals $|\what{T}_{g,d}|/d!$.
+ By Corollary \ref{pr:final-classification} and Proposition \ref{prop:correspondence-automorphism-group}, the weighted count $\what{N}_{g,d}$ is equal to the weighted count of the $\Sym_d$-orbits of $\what{T}_{g,d}$, where each orbit is weighted by $1/|\Stab_{\Sym_d}(\theta)|$, for any element $\theta$ in the orbit. Now, it follows from the formula $|\Sym_d\ldot\theta|=|\Sym_d|/|\Stab(\theta)|$ that this weighted count equals $|\what{T}_{g,d}|/d!$.
 \end{proof}

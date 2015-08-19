@@ -15,28 +15,28 @@ Let $\Cbb[\Sym_d]$ be the group algebra of the symmetric group, let $\mathcal{Z}
  The elements $z_c$ lie in the centre since $\alpha c=c\alpha$ for all conjugacy classes $c$ and elements $\alpha$ of $\Sym_d$. Further, the $z_c$ form a basis of $\mc{Z}_d$. Indeed, linear independence follows from the linear independence of the distinct elements $\sigma\in\Sym_d\subset\Cbb[\Sym_d]$. Further, if $z\in\mc{Z}_d$, then the equalities $\alpha z\alpha^{-1}=z$ show that the $\Cbb$-coefficients of elements in the same conjugacy class are equal. Hence $\mc{Z}_d$ is $r$-dimensional, with $r=\partit{(d)}$.
 \end{rmk}
 
-Recall the definition of $M_d$ from the previous section. There, we fixed a system of representatives for the equivalence classes of $\Sym_d$. However, since the definition does not depend from the chosen representatives, we may also define $M_d$ to be a matrix indicised by the conjugacy classes of $\Sym_d$, ordered in the same way as before. The new, equivalent definition is as follows.
+Recall the definition of $M_d$ from the previous section. There, we fixed a system of representatives for the conjugacy classes of $\Sym_d$. However, since the definition does  not depend on the chosen representatives, wemay also define $M_d$ to be a matrix indexed by the conjugacy classes of $\Sym_d$, ordered in the same way as before. The new, equivalent definition is as follows.
 
 \begin{defi} Let $c\pr,c$ be conjugacy classes of $\Sym_d$. Define the matrix $M_d$ by
-\[(M_d)_{c\pr\nscms c} = |\{\tau\scl \tau\text{ is a transposition such that }\tau\sigma_2\in c\pr\}|,\] where $\sigma_2$ is any representative of $c$.
+\[(M_d)_{c\pr\nscms c} = |\{\tau\scl \tau\text{ is a transposition such that }\tau\sigma\in c\pr\}|,\] where $\sigma$ is any representative of $c$.
 \end{defi}
 
-From now on, we choose the ordering of the basis $\{z_c\}_c$ and the ordering of the columns of $M_d$ to be compatible, i.e. coming from the same fixed ordering of the conjugacy classes $\{c\}$.
+From now on, we choose the ordering of the basis $\{z_c\}_c$ and the ordering of the columns of $M_d$ to be compatible, \ie coming from the same fixed ordering of the conjugacy classes $\{c\}$.
 
 \begin{prop} \label{prop:transpose-correspondence}
- Let $t$ be the conjugation class containing all transpositions, $z_t$ the corresponding basis element of $\mc{Z}_d$. Let $M_t$ be the size $r$ square matrix matrix representing the $\Cbb$-linear map $(z_t\,\cdot):\mc{Z}_d\to\mc{Z}_d$ given by multiplication with $z_t$. Then $M_t=(M_d)^{\top}$.
+ Let $t$ be the conjugacy class containing all transpositions, often just denoted by $t$ for convenience. Let $z_t$ the corresponding basis element of $\mc{Z}_d$. Let $M_t$ be the size $r$ square matrix matrix representing the $\Cbb$-linear map $(z_t\,\cdot):\mc{Z}_d\to\mc{Z}_d$ given by multiplication with $z_t$. Then the matrix $M_t$ is the transpose of $M_d$.
 \end{prop}
 \begin{proof}
- Let $c,c\pr$ be conjugacy classes. Note that if $z=\sum_{\sigma\in\Sym_d}\lam_\sigma \sigma=\sum_{c\prpr}\lam_{c\prpr} z_{c\prpr}$, then the coefficient $\lam_{c\prpr}$ is equal to the coefficient $\lam_{\sigma_2}$, for any $\sigma_2\in c\prpr$. Now let $\sigma_2\in c$, and consider the product
+ Let $c,c\pr$ be conjugacy classes. Note that if $z=\sum_{\sigma\in\Sym_d}\lam_\sigma \sigma=\sum_{\tilde c}\lam_{\tilde c} z_{\tilde c}$, then the coefficient $\lam_{\tilde c}$ is equal to the coefficient $\lam_{\sigma}$, for any $\sigma\in \tilde c$. Now let $\sigma\in c$, and consider the product
  \[
-  z_tz_{c\pr}=(\sum_{\tau\in t}\tau)(\sum_{\sigma\pr\in c\pr}\sigma\pr)=\sum_{\sigma\in\Sym_d}(\sum_{\tau \sigma\pr=\sigma}1)\sigma.
+  z_tz_{c\pr}=\bigl(\sum_{\tau\in t}\tau\bigr)\bigl(\sum_{\sigma\pr\in c\pr}\sigma\pr\bigr)=\sum_{\sigma\in\Sym_d}\sum_{\tau\sigma\in c'}\sigma.
  \]
- In this expansion, the coefficient $\lam_{\sigma_2}$ of any element $\sigma_2\in c$ is the quantity $|\{\tau\in t\scl \tau^{-1}\sigma_2\in c\pr\}|$. It follows that $(M_t)_{c\pr\nscms c}=\lambda_c=\lambda_{\sigma_2}=(M,d)_{c\cms c\pr}$
+ In this expansion, the coefficient $\lam_{\sigma}$ of any element $\sigma\in c$ is the quantity \[|\{\tau\in t\scl \tau\sigma\in c\pr\}|\]. It follows that $(M_t)_{c\pr\nscms c}=\lambda_c=\lambda_{\sigma}=(M_d)_{c\cms c\pr}$.
 \end{proof}
 
 \subsection{Irreducible characters of the symmetric group}
 
-We have reduced our problem of computing the eigenvalues of $M_d$ to the computation of the eigenvalues of $M_t$. More generally, we find that $\mc{Z}_d$ actually has a basis $\{w_\chi\}$, indicised by the irreducible characters of $\Sym_d$, such that each $w_\chi$ is an eigenvector for all linear maps defined by multiplication with any element of $\mc{Z}_d$, and such that the corresponding eigenvalues are easy to compute.
+We have reduced our problem of computing the eigenvalues of $M_d$ to the computation of the eigenvalues of $M_t$. More generally, we find that $\mc{Z}_d$ actually has a basis $\{w_\chi\}$, indexed by the irreducible characters of $\Sym_d$, such that each $w_\chi$ is an eigenvector for all linear maps defined by multiplication with any element of $\mc{Z}_d$, and such that the corresponding eigenvalues are easy to compute.
 
 \begin{defi}
  \begin{enumerate}
@@ -52,20 +52,20 @@ For brevity, we will refer to irreducible characters simply as characters.
 \end{rmk}
 
 \begin{rmk}
- The number of irreducible representations of a finite group, up to isomorphism, is equal to the number of its conjugacy classes (see for example \cite{Serre77}, p. 19, Thm. 7). In the case of the symmetric group, both the set of conjugacy classes and the set of irreducible representations are indicised by the set of Young diagrams, in a natural way. The irreducible representations are recovered from the Young diagrams via Specht modules.
+ The number of irreducible representations of a finite group, up to isomorphism, is equal to the number of its conjugacy classes (see for example \cite{Serre77}, p. 19, Thm. 7). In the case of the symmetric group, both the set of conjugacy classes and the set of irreducible representations are indexed by the set of Young diagrams, in a natural way. The irreducible representations are recovered from the Young diagrams via Specht modules.
 \end{rmk}
 
-\begin{prop}
- Let $\chi, \chi\pr$ be characters. Then
+\begin{prop}\label{pr:orthogonalities}
+ Let $\chi, \chi\pr$ be characters, let $\sigma_1\in\Sym_d$. Then
  \[
   \sum_{\sigma\in\Sym_d}\chi(\sigma)\chi\pr(\sigma^{-1}\sigma_1) = 
    \begin{cases} \frac{d!}{\dim(\chi)}\chi(\sigma_1) &\mbox{if } \chi = \chi\pr \\
                                      0 &\mbox{else.}
    \end{cases} 
  \]
- Further, if $c, c\pr$, then
+ Further for conjugacy classes $c$ and $c_1$ we have
  \[
-  \sum_{\chi}\chi(c)\chi(c\pr) =
+  \sum_{\chi}\chi(c)\chi(c_1^{-1}) =
    \begin{cases} \frac{d!}{\abs{c}} &\mbox{if } c = c\pr \\
                                   0 &\mbox{else,}
    \end{cases}
@@ -73,7 +73,7 @@ For brevity, we will refer to irreducible characters simply as characters.
  where the $\chi$ runs through the irreducible characters of $\Sym_d$.
 \end{prop}
 \begin{proof}
- ...
+ See \cite[Thm.\ 2.13 and Thm.\ 2.18]{Isaacs}.
 \end{proof}
 
 \begin{defi}
@@ -84,19 +84,19 @@ For brevity, we will refer to irreducible characters simply as characters.
 \end{defi}
 
 \begin{prop} \label{prop:simultaneous-eigenvectors}
- The $w_\chi$ form a basis of $\mc{Z}_d$. With respect to this basis, if $z=\sum_\chi a_\chi w_\chi$ is any element of $\mc{Z}_d$, then the linear map $(z\,\cdot)$ is represented by the matrix $\Diag((a_\chi)_\chi)$. With this notation, if $z=z_t$, then $a_\chi=\binom{d}{2} \chi({t})/\dim({\chi})$. 
+ The $w_\chi$ form a basis of $\mc{Z}_d$. With respect to this basis, if $z=\sum_\chi a_\chi w_\chi$ is any element of $\mc{Z}_d$, then the linear map $(z\,\cdot)$ is represented by the matrix $\Diag((a_\chi)_\chi)$. Moreover, the matrix representing the map $(z_t\,\cdot)$ has the diagonal entries $a_\chi=\binom{d}{2} \chi({t})/\dim({\chi})$. 
 \end{prop}
 \begin{proof}
- The two formulae in the above proposition lead to the formulae
+ The two formulae in Proposition \ref{pr:orthogonalities} lead to the formulae
  \begin{equation} \label{eq:lin-indep}
-  w_\chi w_\chi\pr =
+  w_\chi w_{\chi\pr} =
   \begin{cases} w_\chi &\mbox{if } \chi = \chi\pr \\
                      0 &\mbox{else}
   \end{cases}
  \end{equation}
  and
  \begin{equation} \label{eq:gen-sys}
-  z_c=\sum_{\chi}(\frac{\abs{c^{-1}}\chi(c^{-1})}{\dim(\chi)})w_\chi
+  z_c=\sum_{\chi}\left(\frac{\abs{c}\chi(c)}{\dim(\chi)}\right)w_\chi
  \end{equation}
  respectively.
  By \eqref{eq:lin-indep}, the $w_\chi$ are linearly independent (multiply a linear relation with one of the $w_\chi$), and by \eqref{eq:gen-sys} they span $\mc{Z}_d$.
@@ -104,8 +104,8 @@ For brevity, we will refer to irreducible characters simply as characters.
 \end{proof}
 
 \begin{lemma} \label{prop:eigenvalues}
- The eigenvalues of $M_d$ are given by \[\mu_{i,d}=\frac{\binom{d}{2} \chi(t)}{\dim(\chi)},\] where $\chi$ is the $i$-th character and $t$ is the conjugation class of $\Sym_d$ containing all transpositions.
+ With the notation from Lemma \ref{prop:counting-fct}, the eigenvalues of $M_d$ are given by \[\mu_{i,d}=\frac{\binom{d}{2} \chi(t)}{\dim(\chi)},\] where $\chi$ is the $i$-th character and $t$ is the conjugation class of $\Sym_d$ containing all transpositions.
 \end{lemma}
 \begin{proof}
- By proposition \ref{prop:transpose-correspondence}, the eigenvalues of $M_d$ are the same as the eigenvalues of $M_t$. Now the statement follows from the second and third statements of the above proposition, since the matrix $M_t$ represents multiplication with $z_t$.
+ By Proposition \ref{prop:transpose-correspondence}, the eigenvalues of $M_d$ are the same as the eigenvalues of $M_t$. By Proposition \ref{prop:simultaneous-eigenvectors}, the $w_\chi$ are eigenvectors for the map $(z_t\,\cdot)$, represenented by the matrix $M_t$. The eigenvalues are given by the $a_\chi$ from the same proposition.
 \end{proof}

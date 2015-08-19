@@ -1,82 +1,92 @@
 \section{Conjugacy classes of the symmetric group}
 
-In this section, we further the computation of $\widehat{N}_{g,d}$ by using similar techniques to the one applied when counting cycles in a graph. The rough picture is one of a graph with vertices the conjugacy classes of $\Sym_d$ and edges representing the passage from one class to another by multiplication with a simple transposition. We seek to count not cycles, but cycles starting and ending with the same representative, in the sense specified in the section. To do this, we make use of an analogon of the adjacency matrix for a graph.
+In this section, we further the computation of $\widehat{N}_{g,d}$ by using techniques inspired by graph theory. The rough picture is one of a graph with vertices the conjugacy classes of $\Sym_d$ and edges representing the passage from one class to another by multiplication with a simple transposition. We seek to count not cycles, but cycles starting and ending with the same representative, in the sense specified below. To do this, we make use of an analogue of the adjacency matrix for a graph.
 
-To abbreviate, we use the term ``transposition'' for simple transpositions.
+To abbreviate, we use the term ``transposition'' for simple transpositions. Again, we denote by $t$ the set of simple transpositions in $\Sym_d$.
 
 \subsection{Conjugacy cycles}
 
 Recall the definition
 \begin{align*}
- \widehat{T}_{g,d} = \{(\tau_1,\dotsc,\tau_{2g-2},\sigma_1,\sigma_2)\in \Sym_d^{2g} \scl &\text{each }\tau_i\text{ is a transposition,}\\ &\tau_1\dotsm\tau_{2g-2}=\sigma_1\sigma_2\sigma_1^{-1}\sigma_2^{-1}\}.
-\end{align*}
+  \widehat{T}_{g,d} = \{(\tau_1,\dotsc,\tau_{2g-2},\sigma_1,\sigma_2)\in \Sym_d^{2g} \scl \tau_i\in t \text{ for all $i$, } &\tau_1\dotsm\tau_{2g-2}=\sigma_1\sigma_2\sigma_1^{-1}\sigma_2^{-1}\}.
+ \end{align*}
 Our aim is now to rewrite this definition using conjugacy classes. Note that the condition in the definition is equivalent to
-\begin{equation} \label{eq:conj-cond}
+\begin{align*} \label{eq:conj-cond}
  (\tau_1 \dotsm \tau_{2g-2})\sigma_2=\sigma_1\sigma_2\sigma_1^{-1}.
-\end{equation}
+\end{align*}
+In particular, it is necessary for the product $(\tau_1 \dotsm \tau_{2g-2})\sigma_2$ to be conjugated to $\sigma_2$.
 
+For $\sigma\in\Sym_d$, denote the conjugacy class of $\sigma$ in $\Sym_d$ by $c(\sigma)$.
 \begin{defi}
- For $\sigma_2 \in \Sym_d$, define
+ For $\sigma \in \Sym_d$, define
  \begin{align*}
-  P_{g,d}(\sigma_2) = \{(\tau_1,\dotsc,\tau_{2g-2})\in \Sym_d^{2g-2} \scl &\text{each }\tau_i\text{ is a transposition,}\\ &\tau_1\dotsm\tau_{2g-2}\sigma_2\text{ is conjugate to }\sigma_2\}.
+  P_{g,d}(\sigma) = \{(\tau_1,\dotsc,\tau_{2g-2})\in \Sym_d^{2g-2} \scl \tau_i\in t \text{ for all $i$, } &c(\tau_1\dotsm\tau_{2g-2}\sigma)=c(\sigma)\}.
  \end{align*}
  If $g=1$, define $P_{g,d}$ to be the singleton set $\{\bullet\}$.
- Further, let $c(\sigma_2)$ denote the conjugacy class of $\sigma_2$.
+ Further, let $c(\sigma)$ denote the conjugacy class of $\sigma$.
 \end{defi}
 
 \begin{prop}
- Let $\mc{R}=(\sigma_2^{(1)},\dotsc,\sigma_2^{(r)})$ be a system of (distinct) representatives of the conjugacy classes of $\Sym_d$. Then \[\abs{\widehat{T}_{g,d}}=\sum_{\sigma_2\in\mc{R}}d!\abs{P_{g,d}(\sigma_2)}.\]
+ Let $\mc{R}=\{\sigma^{(1)},\dotsc,\sigma^{(r)}\}$ be a system of (distinct) representatives of the conjugacy classes of $\Sym_d$. Then \[\abs{\widehat{T}_{g,d}}=\sum_{\sigma\in\mc{R}}d!\abs{P_{g,d}(\sigma)}.\]
 \end{prop}
 \begin{proof}
- Let $\sigma_2 \in \Sym_d$, let $(\tau_1,\dotsc,\tau_{2g-2}) \in P_{g,d}(\sigma_2)$ and let $\sigma\pr_1$ be an element such that $(\tau_1 \dotsm \tau_{2g-2})\sigma_2=\sigma\pr_1\sigma_2(\sigma\pr_1)^{-1}$. Then there is a bijection of the set of elements $\sigma_1$ satisfying \eqref{eq:conj-cond} onto the set of elements commuting with $\sigma_2$, given by sending $\sigma_1$ to $(\sigma\pr_1)^{-1}\sigma_1$. The number of elements commuting with $\sigma_2$ is given by the cardinality of the stabilizer $\abs{\Stab(\sigma_2)}=\abs{\Sym_d}/\abs{c(\sigma_2)}=d!/\abs{c(\sigma_2)}$. Thus, one obtains 
+ We begin by noting that if $(\tau_1,\dotsc,\tau_{2g-2})\in P_{g,d}$ and $\sigma\in\Sym_d$, then there is a bijection
  \[
-  \abs{\widehat{T}_{g,d}}=\sum_{\sigma\in\Sym_d}\frac{d!}{\abs{c(\sigma)}}\abs{P_{g,d}(\sigma)}.
+  \{\sigma'\in\Sym_d\scl (\tau_1 \dotsm \tau_{2g-2})\sigma=\sigma'\sigma(\sigma')^{-1}\} \to
+  \Stab_{\Sym_d}(\sigma).
  \]
-Further, the function $\abs{P_{g,d}}:\Sym_d\to\Cbb$ is constant on conjugacy classes. Indeed, for $\sigma\in\Sym_d$ there is a bijection of $P_{g,d}(\sigma_2)$ onto $P_{g,d}(\sigma\sigma_2\sigma^{-1})$ given by conjugation with $\sigma$ in each component. From this follows the required equality.
-\end{proof}
-
-\begin{cor} \label{prop:first-second-reduction-step}
- The above proposition, together with Lemma \ref{prop:first-reduction-step}, give the equality
+ Indeed, choose an arbitrary element $\sigma'_0$ of the first set and define the bijection by sending $\sigma'$ to $(\sigma'_0)^{-1}\sigma'$.
+ 
+ To count the elements in $\what{T}_{g,d}$, we fix $\sigma$ and we ask first first how many tuples $(\tau_1,\dotsc,\tau_{2g-2})$ satisfy the necessary condition of $(\tau_1,\dotsc,\tau_{2g-2})\sigma$ being conjugate to $\sigma$, next we count the number of ways to realize such a conjugacy relation, which is exactly $\Stab_{\Sym_d}(\sigma)$. We obtain
+ 
  \[
-  \widehat{N}_{g,d}=\sum_{\sigma_2\in\mathcal{R}}\abs{P_{g,c}(\sigma_2)}.
+  \abs{\widehat{T}_{g,d}}=\sum_{\sigma\in\Sym_d}\abs{\Stab_{\Sym_d}}\abs{P_{g,d}(\sigma)}=\sum_{\sigma\in\Sym_d}\frac{d!}{\abs{c(\sigma)}}\abs{P_{g,d}(\sigma)}.
+ \]
+The function $\abs{P_{g,d}}:\Sym_d\to\Zbb$ is constant on conjugacy classes. Indeed, for $\sigma'\in\Sym_d$ there is a bijection of $P_{g,d}(\sigma)$ onto $P_{g,d}(\sigma'\sigma(\sigma')^{-1})$ given by conjugation with $\sigma'$ in each component. From this follows the required equality.
+\end{proof}
+The above proposition, together with Lemma \ref{prop:first-reduction-step}, give the following reduction step:
+\begin{cor} \label{prop:first-second-reduction-step}
+  We have the equality
+ \[
+  \widehat{N}_{g,d}=\sum_{\sigma\in\mathcal{R}}\abs{P_{g,c}(\sigma)}.
  \]
 \end{cor}
 
-From now on, let $\mc{R}=(\sigma_2^{(1)},\dotsc,\sigma_2^{(r)})$ be a fixed system of representatives of the conjugacy classes of $\Sym_d$. Then the cardinality $r=\partit(d)$ of $\mc{R}$ is the number of (unordered) partitions of $\{1,\dotsc,d\}$. This follows essentially from the fact that conjugation with a permutation acts on cycles by applying the permutation to the entries of the cycle.
+From now on, let $\mc{R}=\{\sigma^{(1)},\dotsc,\sigma^{(r)}\}$ be a fixed system of representatives of the conjugacy classes of $\Sym_d$. Then the cardinality $r=\partit(d)$ of $\mc{R}$ is the number of (unordered) partitions of $\{1,\dotsc,d\}$. This follows essentially from the fact that the conjugacy class of a permutation is uniquely determined by its \emph{cycle shape}, that is the multiset $\{a_{1},\dotsc,a_{s}\}$ whose elements are the respective sizes of the $s$ cycles making up the (reduced) cycle decomposition of the permutation. Such sets are in a one-to-one correspondence with the partitions of $d$, since each cycle entry $1,\dotsc,d$ must appear exactly once in the cycle decomposition.
 
 \subsection{Adjacency matrices}
 
 \begin{defi}
  Let $d\geq 1$ and $k\geq 0$.
- \begin{enumerate}
-  \item For $1\leq i,j\leq r$, define the sets $N_{d,i,j}^k$ by
+ 
+  1. For $1\leq i,j\leq r$, define the sets $E_{d,i,j}^k$ by
   \begin{align*}
-   N_{d,i,j}^k = \{(\tau_1,\dotsc,\tau_k)\in \Sym_d^{k} \scl &\text{each }\tau_i\text{ is a transposition,}\\ &\tau_1\dotsm\tau_k\sigma_2^{(i)}\in c(\sigma_2^{(j)})\}.
+   E_{d,i,j}^k = \{(\tau_1,\dotsc,\tau_k)\in \Sym_d^{k} \scl \tau_i\in t \text{ for all $i$, } &c(\tau_1\dotsm\tau_k\sigma^{(i)})= c(\sigma^{(j)})\}.
   \end{align*}
-  For $k=0$, define $N_{d,i,j}^0=\delta_{i,j}$ (Kronecker delta).
-  \item Define the size $r$ square matrix $M_d$ by
+  For $k=0$, define $E_{d,i,j}^0$ to be the empty set if $i\neq j$ and the singleton set if $i=j$.
+  
+  2. Define the square matrix $M_d$ by
   \[
-   (M_d)_{i,j}=\abs{N_{d,i,j}^1}.
+   (M_d)_{i,j}=\abs{E_{d,i,j}^1}.
   \]
-  This does not depend on the choice of system of representatives $\mc{R}$.
- \end{enumerate}
+  The matrix $M_d$ is a square matrix of size $r$, its definition does not depend on the choice of system of representatives $\mc{R}$.
 \end{defi}
 
 \begin{rmk}
- If $k$ is odd, applying the signum homomorphism to the defining condition shows that $N_{d,i,i}^k$ is empty. If $k=2g-2$ is even, then $N_{d,i,i}^{2g-2}=P_{g,d}(\sigma_2^{(i)})$.
+ If $k$ is odd, applying the signum to the defining condition shows that $E_{d,i,i}^k$ is empty. If $k=2g-2$ is even, then $E_{d,i,i}^{2g-2}=P_{g,d}(\sigma^{(i)})$.
 \end{rmk}
 
 \begin{prop}
- The entries of $M_d^k$ are given by $(M_d^k)_{i,j}=\abs{N_{d,i,j}^k}$.
+ The entries of $M_d^k$ are given by $(M_d^k)_{i,j}=\abs{E_{d,i,j}^k}$.
 \end{prop}
 \begin{proof}
- The proof is by induction on $k$. For $k=0,1$, there is nothing to show. For the induction step, note that if $i$ (resp. $j$) are fixed, the sets $N_{d,i,j}^k$ are pairwise disjoint for varying $j$ (reps. $i$). Now define a function
+ The proof is by induction on $k$. For $k=0,1$, there is nothing to show. For the induction step, note that if $i$ (resp. $j$) are fixed, the sets $E_{d,i,j}^k$ are pairwise disjoint for varying $j$ (reps. $i$). We seek to define a bijection
  \[
-  \coprod_{l=1}^r N_{d,i,l}^k \times N_{d,l,j}^1 \to N_{d,i,j}^{k+1}
+  \phi\cl\coprod_{l=1}^r E_{d,i,l}^k \times E_{d,l,j}^1 \to E_{d,i,j}^{k+1}.
  \]
- as follows: for a given element $((\tau_1,\dotsc,\tau_k),\tau_0)$, let $\sigma\in\Sym_d$ be the unique element such that $\tau_1\dotsm\tau_k\sigma_2^{(i)}=\sigma\sigma_2^{(l)}\sigma^{-1}$, and define the image of $((\tau_1,\dotsc,\tau_k),\tau_0)$ to be $(\sigma\tau_0\sigma^{-1},\tau_1,\dotsc,\tau_k)$. By the definition of matrix multiplication, it suffices to prove that this function is a bijection.
+ First, for each element $(\tau_1,\dotsc,\tau_k)$ of $E_{d,i,l}^k$, choose an element $\sigma\in\Sym_d$ such that $\tau_1\dotsm\tau_k\sigma^{(i)}=\sigma\sigma^{(l)}\sigma^{-1}$. Second, define the image of $((\tau_1,\dotsc,\tau_k),\tau_0)$ under $\phi$ to be $(\sigma\tau_0\sigma^{-1},\tau_1,\dotsc,\tau_k)$. By the definition of matrix multiplication, it suffices to prove that $\phi$ is a bijection.
  
- Injectivity is clear by the uniqueness of $\sigma$ in the definition. For surjectivity, given an element $(\tau^{\textrm{,}}_0,\tau_1,\dotsc,\tau_k)$ in the target, choose an $l$ such that $\tau_1\dotsm\tau_k\sigma_2^{(i)}$ is conjugate to $\sigma_2^{(l)}$, say $\tau_1\dotsm\tau_k\sigma_2^{(i)}=\sigma\sigma_2^{(l)}\sigma^{-1}$. Then $(\sigma^{-1}\tau_0\sigma)\sigma_2^{(l)}$ is conjugate to $\sigma_2^{(j)}$.
+ Injectivity is clear. For surjectivity, given an element $(\tau'_0,\tau_1,\dotsc,\tau_k)$ in the target, choose an $l$ such that $\tau_1\dotsm\tau_k\sigma^{(i)}$ is conjugate to $\sigma^{(l)}$, say $\tau_1\dotsm\tau_k\sigma^{(i)}=\sigma\sigma^{(l)}\sigma^{-1}$. Then $(\sigma^{-1}\tau_0\sigma)\sigma^{(l)}$ is conjugate to $\sigma^{(j)}$.
 \end{proof}
 
 \begin{lemma} \label{prop:counting-fct}
@@ -88,7 +98,7 @@ From now on, let $\mc{R}=(\sigma_2^{(1)},\dotsc,\sigma_2^{(r)})$ be a fixed syst
 \begin{proof}
  Recall the definition of $\widehat{Z}$:
  \[\widehat{Z}(q,\lam) = \sum_{g\geq 1}\sum_{d\geq 1} \frac{\widehat{N}_{g,d}}{(2g-2)!}q^d\lam^{2g-2}.\]
- The above proposition and remark give $(M_d^{2g-2})_{i,i}=\abs{P_{g,d}(\sigma_2^{(i)})}$ and $(M_d^k)_{i,i}=0$ if $k$ is odd, for all $i$. Hence, by \ref{prop:first-second-reduction-step} one has $\widehat{N}_{g,d}=\Tr(M_d^{2g-2})=\sum_{i=1}^r \mu_{i,d}^{2g-2}$, and since the terms for $k$ odd vanish,
+ The above proposition and remark give $(M_d^{2g-2})_{i,i}=\abs{P_{g,d}(\sigma^{(i)})}$ and $(M_d^k)_{i,i}=0$ if $k$ is odd, for all $i$. Hence, by \ref{prop:first-second-reduction-step} one has $\widehat{N}_{g,d}=\Tr(M_d^{2g-2})=\sum_{i=1}^r \mu_{i,d}^{2g-2}$, and since the terms for $k$ odd vanish,
  \begin{align*}
   \widehat{Z}(q,\lam)&=\sum_{g\geq1}\sum_{d\geq1}\frac{\Tr(M^{2g-2}_d)}{(2g-2)!)}q^d\lam^{2g-2}\\
   &=\sum_{d\geq1}\sum_{i=1}^r\sum_{g\geq1}\frac{\mu_{i,d}^{2g-2}}{(2g-2)!}\lam^{2g-2}q^d\\

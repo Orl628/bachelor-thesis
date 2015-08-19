@@ -1,0 +1,54 @@
+\begin{center}
+\begin{tikzpicture}
+\begin{scope}[decoration={markings,mark=at position 0.5 with {\arrow{>}}}]
+ \filldraw[black] (0,0) circle (2pt);
+ \node at (2,2) {$\cdots$};
+ \draw[very thick,postaction={decorate}] (0,4) -- (4,4);
+ \draw[very thick,postaction={decorate}] (4,0) -- (4,4);
+ \draw[very thick,postaction={decorate}] (0,0) -- (4,0);
+ \draw[very thick,postaction={decorate}] (0,0) -- (0,4);
+ %\draw (0,0) -- (0.75,2);
+ %\draw (0,0) -- (1.25,2);
+ %\draw[postaction={decorate}] (1.25,2) arc (0:180:0.25cm);
+ %\draw (0,0) -- (tangent cs:node=(1,2),point={(0,0)},solution=1)
+ \coordinate (o) at (0,0);
+ \node [circle,draw,white] (c) at (1,2) [minimum size=0.25cm] {};
+ \node [circle,draw,white] (d) at (3,2) [minimum size=0.25cm] {};
+ \coordinate (t1) at (tangent cs:node=c,point={(o)},solution=1);
+ \coordinate (t2) at (tangent cs:node=c,point={(o)},solution=2);
+ \coordinate (t3) at (tangent cs:node=d,point={(o)},solution=1);
+ \coordinate (t4) at (tangent cs:node=d,point={(o)},solution=2);
+\end{scope}
+\begin{scope}[decoration={markings,mark=at position 0.25 with {\arrow{>}}}]
+ \draw[postaction={decorate}] (1,2) circle (0.205cm);
+ \draw[postaction={decorate}] (3,2) circle (0.205cm);
+ \fill[white] (o) -- (t1) -- (t2) -- cycle;
+ \fill[white] (o) -- (t3) -- (t4) -- cycle;
+ \draw[very thick] (1,2) circle (2pt);
+ \draw[very thick] (3,2) circle (2pt);
+ \draw (o) -- (t1);
+ \draw (o) -- (t2);
+ \draw (o) -- (t3);
+ \draw (o) -- (t4);
+% \pgfsetstrokecolor{red}
+% \pgfpathmoveto{\pgfpoint{2cm}{2cm}}
+% \pgfpatharcto{20pt}{20pt}{0}{0}{0}{\pgfpoint{4cm}{4cm}}
+% \pgfusepath{draw}
+% \pgfsetstrokecolor{black}
+% \tkzMarkAngle[white, size=0.20cm](t1,c,t2);
+% \draw arc[red] (a) to[] (t1) -- (t2);
+% \pgfpatharcto{ 0.25cm }{ 0.25cm }{ rotation } { large arc flag }{ counterclockwise flag }
+%{ target point }
+% \draw (0,0) -- (2.75,2);
+% \draw (0,0) -- (3,1.75);
+% \draw[postaction={decorate}] (3,1.75) arc (-90:180:0.25cm);
+ \node[below] at (1.75,0) {\footnotesize$\alpha_1$};
+ \node[below] at (1.75,4) {\footnotesize$\alpha_1$};
+ \node[left] at (0,1.75) {\footnotesize$\alpha_2$};
+ \node[left] at (4,1.75) {\footnotesize$\alpha_2$};
+ \node[above] at (1,2.25) {\footnotesize$\gamma_1$};
+ \node[above] at (3,2.25) {\footnotesize$\gamma_{2g-2}$};
+ \node[below left] at (0,0) {\footnotesize$b_0$};
+\end{scope}
+\end{tikzpicture}
+\end{center}

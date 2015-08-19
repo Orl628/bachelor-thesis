@@ -16,17 +16,16 @@ Let $\mc{H}=\{\tau \in \Cbb \scl \Img(\tau)>0\}$ denote the upper half-plane. Fo
 %\footnotetext{To see that $\gamma \tau \in \mc{H}$, note that $\Im(\gamma\tau)=\Im(\tau)/|c\tau+d|^2$.}
 
 \begin{defi} Let $f\cl \mc{H} \to \Cbb$ be a function, let $k\in \Zbb$.
- \begin{enumerate} 
-  \item The function $f$ is \emph{$\Zbb$-periodic}, if it satisfies $f(\tau + 1) = f(\tau)$ for all $\tau \in \mc{H}$. In this case there exists a  function $\tilde f\cl B\setminus \{0\} \to \Cbb$, defined on the open unit ball $B\subset \Cbb$ with the origin removed, such that $f(\tau)=\tilde f(q)$ for all $\tau$. Now let $f$ be holomorphic. Then so is $\tilde f$. We say that $f$ is \emph{holomorphic at infinity}, if $\tilde f$ has a holomorphic continuation to the whole of $B$.
+
+  1. The function $f$ is \emph{$\Zbb$-periodic}, if it satisfies $f(\tau + 1) = f(\tau)$ for all $\tau \in \mc{H}$. In this case there exists a  function $\tilde f\cl B\setminus \{0\} \to \Cbb$, defined on the open unit ball $B\subset \Cbb$ with the origin removed, such that $f(\tau)=\tilde f(q)$ for all $\tau$. Now let $f$ be holomorphic. Then so is $\tilde f$. We say that $f$ is \emph{holomorphic at infinity}, if $\tilde f$ has a holomorphic continuation to the whole of $B$.
   
-  \item The function $f$ is said to satisfy the \emph{modular condition of weight $k$}, if \[f(\gamma\tau)=(c\tau+d)^kf(\tau)\] for all $\tau$ in $\mc{H}$ and all $\gamma \in \SL_2(\Zbb)$. Such a function is $\Zbb$-periodic, as can be seen by setting $\gamma = 
+  2. The function $f$ is said to satisfy the \emph{modular condition of weight $k$}, if \[f(\gamma\tau)=(c\tau+d)^kf(\tau)\] for all $\tau$ in $\mc{H}$ and all $\gamma \in \SL_2(\Zbb)$. Such a function is $\Zbb$-periodic, as can be seen by setting $\gamma = 
 \bigl(\begin{smallmatrix}
  1 & 1 \\
  0 & 1
 \end{smallmatrix}\bigr).$
   
-  \item The function $f$ is a \emph{modular form (of weight $k$)} if it is holomorphic, satisfies the modular condition and is holomorphic at infinity.
- \end{enumerate}
+  3. The function $f$ is a \emph{modular form (of weight $k$)} if it is holomorphic, satisfies the modular condition and is holomorphic at infinity.
 \end{defi}
 
 Note that if $k$ is odd, then any function satisfying the modular condition of weight $k$ is zero. This follows by using the modular condition with $\gamma = 
@@ -118,24 +117,79 @@ Now, since $Y^{-1}(\gamma\tau)=(c\tau+d)^2Y(\tau)^{-1}+\frac{c(c\tau+d)}{2\pi i}
 \end{expl}
 
 \begin{prop} \label{pr:derivative} The space $\widetilde{\Mrm}_*$ of quasimodular forms satisfies the following properties.
- \begin{enumerate}
-  \item The canonical graded homomorphism $\widehat{\Mrm}_* \to \widetilde{\Mrm}_*$ is an isomorphism.
-  \item There is an isomorphism of graded rings $\Mrm_* \otimes \Cbb[X_2] \simeq \Cbb[X_2, X_4, X_6]\to \widetilde{\Mrm}_*$ mapping $X_i$ to $E_i$, where the former ring is graded by assigning to $X_i$ the degree $i$.
-  \item Quasimodular forms are closed under taking derivatives. More precisely, the derivative of a quasimodular form of weight $k$ is a quasimodular form of weight $k$+2.
- \end{enumerate}
+
+  \itemrm{1.} The canonical graded homomorphism $\widehat{\Mrm}_* \to \widetilde{\Mrm}_*$ is an isomorphism.
+  
+  \itemrm{2.} There is an isomorphism of graded rings $\Mrm_* \otimes \Cbb[X_2] \simeq \Cbb[X_2, X_4, X_6]\to \widetilde{\Mrm}_*$ mapping $X_i$ to $E_i$, where the former ring is graded by assigning to $X_i$ the degree $i$.
+  
+  \itemrm{3.} Quasimodular forms are closed under taking derivatives. More precisely, the derivative of a quasimodular form of weight $k$ is a quasimodular form of weight $k$+2.
 \end{prop}
-\begin{proof}
- \begin{enumerate}
-  \item The map $\widehat{\Mrm}_* \to \widetilde{\Mrm}_*$ is surjective by definition. Injectivity follows from Calculation \ref{cp:almost-holomorphic-modular-form-no-constant-term}. Given an almost holomorphic modular form $F(\tau)=\sum_{m=1}^Mf_m(\tau)Y^{-m}$ with constant term zero, the strategy is to solve the modularity equation for the coefficients $f_m$. This way, one finds for a fixed argument $\tau$ a polynomial equation in the lower row components  $c,d$ of any transformation $\gamma \in \SL_2(\Zbb)$, involving the coefficients $f_m(\tau)$. By varying the transformation $\gamma$, one may force these coefficients to be zero.
-  \item Express the map $\Cbb[X_2, X_4, X_6]\to \widetilde{\Mrm}_*$ as the composition \[\Cbb[X^*_2, X_4, X_6]\to \widehat{\Mrm}_* \to \widetilde{\Mrm}_*,\] where the first map takes $X^*_2$ to $E_2^*$ and $X_i$ to $E_i$, and the second map is the canonical map, which is an isomorphism by the first point above.
+\begin{proof}\ 
+
+  1. The map $\widehat{\Mrm}_* \to \widetilde{\Mrm}_*$ is surjective by definition. Injectivity follows from Calculation \ref{cp:almost-holomorphic-modular-form-no-constant-term} below. Given an almost holomorphic modular form $F(\tau)=\sum_{m=1}^Mf_m(\tau)Y^{-m}$ with constant term zero, the strategy is to solve the modularity equation for the coefficients $f_m$. This way, one finds for a fixed argument $\tau$ a polynomial equation in the lower row components  $c,d$ of any transformation $\gamma \in \SL_2(\Zbb)$, involving the coefficients $f_m(\tau)$. By varying the transformation $\gamma$, one may force these coefficients to be zero.
+  
+  2. Express the map $\Cbb[X_2, X_4, X_6]\to \widetilde{\Mrm}_*$ as the composition \[\Cbb[X^*_2, X_4, X_6]\to \widehat{\Mrm}_* \to \widetilde{\Mrm}_*,\] where the first map takes $X^*_2$ to $E_2^*$ and $X_i$ to $E_i$, and the second map is the canonical map, which is an isomorphism by the first point above.
   
   To prove the surjectivity of the first map, let $F(\tau)=\sum_{m=0}^Mf_m(\tau)Y^{-m}$ be an almost holomorphic modular form. Then $f_M (E_2^*/12)^M$ is an almost holomorphic modular form of weight $k$, since $f_M$ is modular of weight $k-2M$, and the difference $F - f_M (E_2^*/12)^M$ has degree smaller than $M$. Now use induction on $M$.
   
   To get injectivity, let $F=\sum_{\alpha=0}^{k/2}(E_2^*)^\alpha f_{k-2\alpha}$ be an almost holomorphic modular form of weight $k$, in the image of the first map, where the $f_m$ are modular of weight $m$. If $F=0$, then by comparing the coefficients of $Y^{-k/2}$ one obtains $0=f_0$. Now it follows by induction on $k$ that the other coefficients $f_m$ are zero. Hence $F$ was the image of the zero element in $\Mrm_* \otimes \Cbb[X^*_2]$.
-  \item To prove the last statement, one verifies that $(6/\pi i) E'_2-E_2^2$ is modular of weight $4$, and that if $f$ is modular of weight $k$, then $(6/\pi i)f' - kE_2f$ is modular of weight $2+k$. Now use the second point above.
- \end{enumerate}
-
+  
+  3. To prove the last statement, one verifies that $(6/\pi i) E'_2-E_2^2$ is modular of weight $4$, and that if $f$ is modular of weight $k$, then $(6/\pi i)f' - kE_2f$ is modular of weight $2+k$. Now use the second point above.
 \end{proof}
+
+\begin{calc} \label{cp:almost-holomorphic-modular-form-no-constant-term}
+ This calculation follows the one found in \cite{Bloch-Okounkov}.
+ Let $F(\tau)=\sum_{m=1}^Mf_m(\tau)Y^{-m}$ be an almost holomorphic modular form, $\gamma=
+ \bigl(\begin{smallmatrix}
+ a&b\\ c&d
+ \end{smallmatrix} \bigr)
+ \in \SL_n(\Zbb)$,
+ and $\tau \in \mc{H}$.
+ Write $j=c\tau+d$, and $a=6cj/2\pi i$. Then $Y^{-1}(\gamma\tau)=a+j^2Y(\tau)^{-1}$. Hence,
+ \begin{align*}
+  F(\gamma\tau)&=\sum_{m=1}^Mf_m(\gamma\tau)(a+j^2Y^{-1})^m\\
+               &=\sum_{m=1}^M\sum_{l=0}^m\binom{m}{l}f_m(\gamma\tau)a^{m-l}j^{2l}Y^{-l}\\
+               &=\sum_{m=1}^Mf_m(\gamma\tau)a^m + \sum_{l=1}^M\sum_{m=l}^M\binom{m}{l}f_m(\gamma\tau)a^{m-l}j^{2l}y^{-l}.
+ \end{align*}
+ On the other hand,
+ \[F(\gamma\tau)=\sum_{l=1}^Mf_l(\tau)j^kY^{-l},\]
+ by the modularity condition. By comparing the coefficients of $Y^{-l}$, one obtains the equalities
+ \begin{equation} \label{eq:coeff-zero}
+ \sum_{m=1}^Mf_m(\gamma\tau)a^m=0
+ \end{equation} and \[j^kf_l(\tau)=\sum_{m=l}^M\binom{m}{l}f_m(\gamma\tau)a^{m-l}j^{2l}.\]
+ Rewriting the second equality yields
+ \begin{equation} \label{eq:coeff-l}
+  f_l(\gamma\tau)=f_l(\tau)j^{k-2l}-\sum_{m=l+1}^M\binom{m}{l}f_m(\gamma\tau)a^{m-l}.
+ \end{equation}
+
+ The latter may be solved recursively, starting by $f_M$, to get equalities of the form
+ \begin{equation}
+  f_l(\gamma\tau)=\text{(a polynomial in the $f_{\geq l}(\tau)$ , $j$ and $c$)}.
+ \end{equation}
+ The first two equalities are
+ \begin{align*}
+  f_M(\gamma\tau)&=f_M(\tau)j^{k-2M}\\
+  f_{M-1}(\gamma\tau)&=f_{M-1}(\tau)j^{k-2M+2}-\text{const}\cdot f_M(\tau)j^{k-2M+1}c.
+ \end{align*}
+ In general, a straightforward inductive argument shows that in the summands of the expression \eqref{eq:coeff-l} for $f_l(\gamma\tau)$, the variable $j$ appears with a power lower than or equal to $k-2l$.
+ Now let $r$ be the greatest index such that $f_r \neq 0$. Equation \eqref{eq:coeff-zero} finally gives, after substituting back the expressions for $j$ and $a$ and using \eqref{eq:coeff-l} for $l=r$, the relation
+ \begin{align*}
+ 0&=\kappa_1 f_r(\gamma\tau)(c\tau+d)^rc^r+\sum_{l=r+1}^M\kappa_3 f_l(\gamma\tau)(c\tau+d)^lc^l\\
+  &=\kappa_1 f_r(\tau)(c\tau+d)^{k-r}c^r- \\
+  &- \sum_{m=r+1}^M\kappa_2\binom{m}{r}f_m(\gamma\tau)(c\tau+d)^{m-r}c^{m-r} + \sum_{l=r+1}^M\kappa_3 f_l(\gamma\tau)(c\tau+d)^lc^l,
+ \end{align*}
+ where the $\kappa_i$ are some nonzero constants.
+ To obtain a contradiction, choose a point $\tau$ in the upper half-plane and consider the last relation as a polynomial equation in $c$ and $d$, letting $P(c,d)$ denote the right-hand side of the equation. First look for the possible coefficients of monomials of the form $c^rd^{\geq1}$. This excludes the third summand from the picture, since there $c$ will always appear with a power greater than $r$. Next look for the possible coefficients of the monomial $c^rd^{k-r}$. As seen when recursively solving the equations for $f_l(\gamma\tau)$, the second summand will include only terms where $(c\tau+d)$ appears with a power lower than $k-r$. Hence the coefficient of $c^rd^{k-r}$ in $P(c,d)$ is $\kappa_1f_r(\tau)$.
+ 
+ Now, if $c\in \Zbb$, then there are infinitely many $d\in \Zbb$ such that $P(c,d)=0$. Indeed, there are infinitely many $d$ with $\gcd(c,d)=1$. For these $d$, find $a,b \in \Zbb$ such that $ad-bc=1$. Since
+ $\bigl(\begin{smallmatrix}
+ a&b\\ c&d
+ \end{smallmatrix} \bigr)
+ \in \SL_2(\Zbb)$,
+ it follows that $P(c,d)=0$. Similarly, for all $d\in \Zbb$, there are infinitely many $c$ such that $P(c,d)=0$. It this follows that $P(c,d)=0$ holds for all $c,d\in \Cbb$. These remarks may be summarized by the statement that the set of all $c,d$ belonging to the lower row of some matrix in $\SL_2(\Zbb)$ is Zariski-dense in $\Cbb^2$.
+ 
+ Concluding, since $P$ is zero as a function on $\Cbb^2$, it is also zero as a polynomial, hence the coefficient $\kappa_1f_r(\tau)$ is zero. Since $\tau$ was arbitrary, one finds $f_r=0$, a contradiction.
+\end{calc}
 
 %\subsection{A criterium for being quasimodular}
 
