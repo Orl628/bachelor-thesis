@@ -1,0 +1,14 @@
+\documentclass{standalone}
+\usepackage{tikz}
+\begin{document}
+\begin{tikzpicture}
+\draw (-10,0) -- (10,0);
+\draw (0,-10) -- (0,10);
+\pgfsetlinewidth{2pt}
+% Flags 0 0: red
+\pgfsetstrokecolor{red}
+\pgfpathmoveto{\pgfpoint{0cm}{0cm}}
+\pgfpatharcto{20pt}{20pt}{0}{1}{1}{\pgfpoint{2cm}{2cm}}
+\pgfusepath{stroke}
+\end{tikzpicture}
+\end{document}

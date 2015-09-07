@@ -1,4 +1,4 @@
-\section{Quasimodular forms}
+\section{Quasimodular forms} \label{quasimodular-forms}
 
 This section introduces quasimodular forms as described in \cite{Kaneko-Zagier1995}.
 
@@ -51,13 +51,26 @@ In \cite{Serre1973}, the space of modular forms of weight $2k$ is denoted by $\M
 
 \footnotetext{In \cite{Serre1973}, the Eisenstein series of weight $k$ as defined below is denoted by $E_{k/2}$. A similar remark applies to the function $G_k$ below.}
 
-\begin{prop}
- There is an isomorphism of graded rings \[\Cbb[X_4, X_6]\xrightarrow{\sim} \Mrm_*\] mapping $X_i$ to $E_i$, where the former ring is graded by assigning to $X_i$ the degree $i$. In particular, there are no nonzero modular forms of negative weight.
+\begin{prop} \label{baby-dimension-formula}
+ We have the following dimension formula:
+ \[
+  \dim(\Mrm_k(\SL_2(\Zbb)))=\begin{dcases}
+                      \floor{{k}/{12}} & \text{ if $k\geq 0$ and $k\equiv 2 \pmod{12}$}\\
+                      \floor{{k}/{12}}+1 & \text{ if $k\geq 0$ and $k\not\equiv 2 \pmod{12}$}\\
+                      0 & \text{ if $k<0$}
+                     \end{dcases}.
+ \]
 \end{prop}
 \begin{proof}
- See \cite[Ch.~VII, 3.1, 3.2]{Serre1973}
+ An elementary approach is given in \cite[Ch.~VII, Corollary 1]{Serre1973}. Alternatively, this formula arises as a corollary (\ref{dimension-formula}) to a more general formula proven in the Appendix, Theorem \ref{g-dimension-formula}.
 \end{proof}
 
+\begin{prop}
+ There is an isomorphism of graded rings \[\Cbb[X_4, X_6]\xrightarrow{\sim} \Mrm_*\] mapping $X_i$ to $E_i$, where the former ring is graded by assigning to $X_i$ the degree $i$.
+\end{prop}
+\begin{proof}
+ See \cite[Ch.~VII, Corollary 2]{Serre1973}.
+\end{proof}
 
 \subsection{The space of quasimodular forms}
 
@@ -100,7 +113,7 @@ The almost holomorphic modular forms of weight $k$ form a vector space, denoted 
  An element in the image of the map $\widehat{\Mrm}_k\to\mc{O}(\mc{H})$ taking an almost holomorphic modular form $F=\sum_{m=0}^Mf_mY^{-m}$ of weight $k$ to $f_0$ is called a \emph{quasimodular form of weight $k$}. Hence a quasimodular form is a holomorphic function on the upper plane appearing as the constant term of an almost holomorphic modular form.
 \end{defi}
 
-Again, denote the vector space of quasimodular forms of weight $k$ by $\widetilde{\Mrm}_k$ and the associated graded ring by $\widetilde{\Mrm}_*$. The definition gives a surjective graded ring homomorphism $\widehat{\Mrm}_*\to\widetilde{\Mrm}_*$ and one has $\widehat{\Mrm}_k \cap \widetilde{\Mrm}_k = \Mrm_k$.
+Again, denote the vector space of quasimodular forms of weight $k$ by $\widetilde{\Mrm}_k$ and the associated graded ring by $\widetilde{\Mrm}_*$. The definition gives a surjective graded ring homomorphism $\widehat{\Mrm}_*\to\widetilde{\Mrm}_*$ and one has $\widehat{\Mrm}_k \cap \widetilde{\Mrm}_k = \Mrm_k$, the intersection being taken in the set of functions $\mc{H}\to\Cbb$.
 
 \begin{expl}
 
