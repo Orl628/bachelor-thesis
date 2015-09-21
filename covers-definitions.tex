@@ -16,7 +16,7 @@ to degree $d$ field extensions.
 \end{proof}
 
 \begin{prop}[Riemann--Hurwitz formula] \label{prop:hurwitz}
- Let $\varphi \cl C_1 \to C_2$ be a finite, degree $d$ map of smooth curves of genera $g_1$ and $g_2$, respectively. Then \[2g_1-2 = d(2g_2-2) + 
+ Let $\varphi \cl C_1 \to C_2$ be a finite map of smooth curves of genera $g_1$ and $g_2$, respectively. Let $d$ be the degree of $\varphi$. Then \[2g_1-2 = d(2g_2-2) + 
 \sum_{x\in C_1}(\e_{\varphi}(x)-1),\] where $\e_\varphi(x)$ is the ramification index of $\varphi$ at $x$.
 \end{prop}
 
@@ -42,9 +42,9 @@ to degree $d$ field extensions.
  
   1. A \emph{cover} of $E$ is a finite morphism $p\cl C\to E$ of a disjoint union $C=\cup_{i=1}^k C_i$ of $k$ irreducible smooth curves $C_i$. We shall denote the genus of $C$ by $g$ and the degree of $p$ by $d$. Often a cover will be referred to by its source $C$.
   
-  2. Let $S=\{b_1,\dotsc,b_{2g-2}\}$ be a set of $2g-2$ distinct points of $E$. A cover $C$ of genus $g$ is \emph{simply branched over $S$}, if it is simply branched over each point of $S$. This means that for all points $b$ of $S$ there is exacly one point $x$ in $p^{-1}(b)$ with ramification index $\e_p(x)=2$, the others having a ramification index one.
+  2. Let $S=\{b_1,\dotsc,b_{2g-2}\}$ be a set of $2g-2$ distinct points of $E$. A cover $C$ of genus $g$ is \emph{simply branched over $S$}, if it is simply branched over each point of $S$. This means that for all points $b$ of $S$ there is exacly one point $x$ in $p^{-1}(b)$ with ramification index $\e_p(x)=2$, the others having ramification index one.
   
-  It follows from the Riemann-Hurwitz formula of Proposition \ref{prop:hurwitz} that for a simply branched cover $C\to E$, every point not in the pre-image of $S$ has a ramification index one. This justifies the choice of the number of points in $S$.
+  It follows from the Riemann-Hurwitz formula of Proposition \ref{prop:hurwitz} that for a simply branched cover $C\to E$, every point not in the pre-image of $S$ has ramification index one. This justifies the choice of the number of points in $S$.
   
   3. Two covers $C_1, C_2$ are to be considered isomorphic, if there is an isomorphism $C_1\to C_2$ commuting with the respective structure maps into $E$. Accordingly, define the automorphism group $\Aut(C)$ of the cover $C$ to be the group of cover isomorphisms $C\to C$.
   
@@ -125,7 +125,7 @@ This thesis shall present a proof  the following result.
  Let $g\geq 2$, and for $\tau\in\Cbb$ let $q(\tau)=\exp(2\pi i\tau)$. Then the function $F_g(q)$ is a quasimodular form of weight $6g-6$.
 \end{thm}
 
-The function $F_1$ cannot be quasimodular. Indeed, if $F_1$ was quasimodular of some weight $k\geq0$, then by Proposition \ref{pr:derivative} the derivative $F_1'$ would be quasimodular of weight $k+2$. We have $F_1'(q)=2\pi i\sum_{d}\sigma_1(d)q^d$, so $1+(24/2\pi i)F_1'=E_2$. This is a contradiction since by the same proposition the sum of two quasimodular forms of different weights cannot be quasimodular.
+The function $F_1$ cannot be quasimodular. Indeed, if $F_1$ was quasimodular of some weight $k\geq0$, then by Proposition \ref{pr:derivative} the derivative $F_1'$ would be quasimodular of weight $k+2$. We have $F_1'(q)=2\pi i\sum_{d}\sigma_1(d)q^d$, so $1+(24/2\pi i)F_1'=E_2$. This is a contradiction since the same proposition implies that the sum of two quasimodular forms of different weights cannot be quasimodular.
 
 The strategy to prove the main theorem will involve considering a more general generating function counting all covers of genus $g$ and degree $d$. This generating function will be easier to compute.
 

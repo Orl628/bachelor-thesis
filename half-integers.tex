@@ -36,10 +36,14 @@ We will make use of the set of \emph{positive half integers} $\pai$.
  The counting function $\what{Z}(q,\lam)$ is the coefficient of $\zeta^0$ in the series $\theta(\zeta,q,\lam)-1$.
 \end{lemma}
 \begin{proof}
- By expanding the product, one finds that $\theta(\zeta,q,\lam)=\sum_{U,V\subset\pai}a_{U,V}$, where \[a_{U,V}=\zeta^k q^d \exp(\mu_{U,V}\lam).\] Here, \begin{enumerate} \item $k=\abs{U}-\abs{V}$
- \item $d=\sum_{u\in U}u + \sum_{v\in V}v$
- \item $\mu_{U,V}=\frac{1}{2}\left(\sum_{i=1}^s u_i^2 - \sum_{i=1}^s v_i^2\right)$.
- \end{enumerate}
+ By expanding the product, one finds that $\theta(\zeta,q,\lam)=\sum_{U,V\subset\pai}a_{U,V}$, where \[a_{U,V}=\zeta^k q^d \exp(\mu_{U,V}\lam).\] Here,
+ 
+ 1. $k=\abs{U}-\abs{V}$
+ 
+ 2. $d=\sum_{u\in U}u + \sum_{v\in V}v$
+ 
+ 3. $\mu_{U,V}=\frac{1}{2}\left(\sum_{i=1}^s u_i^2 - \sum_{i=1}^s v_i^2\right)$.
+
 Using the bijection in proposition \ref{prop:bijection-young}, let the eigenvalues of the matrix $M_d$ be indexed by pairs $(U,V)$ of subsets of $\pai$ such that $\abs{U}=\abs{V}$ and $d=\sum_{u\in U}u + \sum_{v\in V}v$. By lemma \ref{prop:eigenvalues} and proposition \ref{prop:frobenius-formula}, the eigenvalue indexed by the pair $(U,V)$ is equal to $\mu_{U,V}$.
 
 Now consider the coefficient of $\zeta^0$ in $\theta(\zeta,q,\lam)-1$. There, the coefficient of $q^d$ is $\sum_{U,V}\exp({\mu_{U,V}\lam})$, where the $\mu_{U,V}$ are the eigenvalues of $M_d$. By \ref{prop:counting-fct}, this sum is equal to the coefficient of $q^d$ in $\what{Z}(q,\lam)$. This proves the lemma.
@@ -51,7 +55,7 @@ Recall that $F_g$ was defined as the series
 
  \[Z(q,\lam) = \sum_{g\geq 1}\frac{F_g(q)}{(2g-2)!}\lam^{2g-2}.\]
  
-For an element $\tau$ of the upper half plane, set $q=\exp(2\pi i \tau)$ Sometimes $q$ will be viewed as a formal variable.
+For an element $\tau$ of the upper half plane, set $q=\exp(2\pi i \tau)$. Sometimes $q$ will be viewed as a formal variable.
 
 \begin{prop} \label{prop:exp-quasimodular}
  Let $a(x)=\sum_{k\geq 1} a_k x^k$ be a formal power series in $x$, with holomorphic functions $a_k$ on the upper half plane as coefficients. Let $\exp(a(x))=\sum_{k\geq 1} b_k x^k$ be its formal exponential. Assume that each of the coefficients $b_k$ is quasimodular of weight $kr$, for some $r$. Then the $a_k$ are also quasimodular of weight $kr$.

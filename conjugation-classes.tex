@@ -22,8 +22,7 @@ For $\sigma\in\Sym_d$, denote the conjugacy class of $\sigma$ in $\Sym_d$ by $c(
  \begin{align*}
   P_{g,d}(\sigma) = \{(\tau_1,\dotsc,\tau_{2g-2})\in \Sym_d^{2g-2} \scl \tau_i\in t \text{ for all $i$, } &c(\tau_1\dotsm\tau_{2g-2}\sigma)=c(\sigma)\}.
  \end{align*}
- If $g=1$, define $P_{g,d}$ to be the singleton set $\{\bullet\}$.
- Further, let $c(\sigma)$ denote the conjugacy class of $\sigma$.
+ If $g=1$, define $P_{g,d}(\sigma)$ to be the singleton set $\{\bullet\}$.
 \end{defi}
 
 \begin{prop}
@@ -37,12 +36,12 @@ For $\sigma\in\Sym_d$, denote the conjugacy class of $\sigma$ in $\Sym_d$ by $c(
  \]
  Indeed, choose an arbitrary element $\sigma'_0$ of the first set and define the bijection by sending $\sigma'$ to $(\sigma'_0)^{-1}\sigma'$.
  
- To count the elements in $\what{T}_{g,d}$, we fix $\sigma$ and we ask first first how many tuples $(\tau_1,\dotsc,\tau_{2g-2})$ satisfy the necessary condition of $(\tau_1,\dotsc,\tau_{2g-2})\sigma$ being conjugate to $\sigma$, next we count the number of ways to realize such a conjugacy relation, which is exactly $\Stab_{\Sym_d}(\sigma)$. We obtain
+ To count the elements in $\what{T}_{g,d}$, we fix $\sigma$ and we ask first first how many tuples $(\tau_1,\dotsc,\tau_{2g-2})$ satisfy the necessary condition of $(\tau_1,\dotsc,\tau_{2g-2})\sigma$ being conjugate to $\sigma$, next we count the number of ways to realize such a conjugacy relation, which is exactly $\abs{\Stab_{\Sym_d}(\sigma)}$. We obtain
  
  \[
   \abs{\widehat{T}_{g,d}}=\sum_{\sigma\in\Sym_d}\abs{\Stab_{\Sym_d}}\abs{P_{g,d}(\sigma)}=\sum_{\sigma\in\Sym_d}\frac{d!}{\abs{c(\sigma)}}\abs{P_{g,d}(\sigma)}.
  \]
-The function $\abs{P_{g,d}}:\Sym_d\to\Zbb$ is constant on conjugacy classes. Indeed, for $\sigma'\in\Sym_d$ there is a bijection of $P_{g,d}(\sigma)$ onto $P_{g,d}(\sigma'\sigma(\sigma')^{-1})$ given by conjugation with $\sigma'$ in each component. From this follows the required equality.
+The function $\abs{P_{g,d}}\cl\Sym_d\to\Zbb$ is constant on conjugacy classes. Indeed, for $\sigma'\in\Sym_d$ there is a bijection of $P_{g,d}(\sigma)$ onto $P_{g,d}(\sigma'\sigma(\sigma')^{-1})$ given by conjugation with $\sigma'$ in each component. From this follows the required equality.
 \end{proof}
 The above proposition, together with Lemma \ref{prop:first-reduction-step}, give the following reduction step:
 \begin{cor} \label{prop:first-second-reduction-step}

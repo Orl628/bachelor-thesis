@@ -54,7 +54,7 @@ In \cite{Serre1973}, the space of modular forms of weight $2k$ is denoted by $\M
 \begin{prop} \label{baby-dimension-formula}
  We have the following dimension formula:
  \[
-  \dim(\Mrm_k(\SL_2(\Zbb)))=\begin{dcases}
+  \dim(\Mrm_k)=\begin{dcases}
                       \floor{{k}/{12}} & \text{ if $k\geq 0$ and $k\equiv 2 \pmod{12}$}\\
                       \floor{{k}/{12}}+1 & \text{ if $k\geq 0$ and $k\not\equiv 2 \pmod{12}$}\\
                       0 & \text{ if $k<0$}
@@ -143,7 +143,7 @@ Now, since $Y^{-1}(\gamma\tau)=(c\tau+d)^2Y(\tau)^{-1}+\frac{c(c\tau+d)}{2\pi i}
   
   2. Express the map $\Cbb[X_2, X_4, X_6]\to \widetilde{\Mrm}_*$ as the composition \[\Cbb[X^*_2, X_4, X_6]\to \widehat{\Mrm}_* \to \widetilde{\Mrm}_*,\] where the first map takes $X^*_2$ to $E_2^*$ and $X_i$ to $E_i$, and the second map is the canonical map, which is an isomorphism by the first point above.
   
-  To prove the surjectivity of the first map, let $F(\tau)=\sum_{m=0}^Mf_m(\tau)Y^{-m}$ be an almost holomorphic modular form. Then $f_M (E_2^*/12)^M$ is an almost holomorphic modular form of weight $k$, since $f_M$ is modular of weight $k-2M$, and the difference $F - f_M (E_2^*/12)^M$ has degree smaller than $M$. Now use induction on $M$.
+  To prove the surjectivity of the first map, let $F(\tau)=\sum_{m=0}^Mf_m(\tau)Y^{-m}$ be an almost holomorphic modular form of weight $k$. Then $f_M (E_2^*/12)^M$ is an almost holomorphic modular form of weight $k$, since $f_M$ is modular of weight $k-2M$, and the difference $F - f_M (E_2^*/12)^M$ has degree smaller than $M$. Now use induction on $M$.
   
   To get injectivity, let $F=\sum_{\alpha=0}^{k/2}(E_2^*)^\alpha f_{k-2\alpha}$ be an almost holomorphic modular form of weight $k$, in the image of the first map, where the $f_m$ are modular of weight $m$. If $F=0$, then by comparing the coefficients of $Y^{-k/2}$ one obtains $0=f_0$. Now it follows by induction on $k$ that the other coefficients $f_m$ are zero. Hence $F$ was the image of the zero element in $\Mrm_* \otimes \Cbb[X^*_2]$.
   

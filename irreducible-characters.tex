@@ -12,10 +12,10 @@ Let $\Cbb[\Sym_d]$ be the group algebra of the symmetric group, let $\mathcal{Z}
 \end{defi}
 
 \begin{rmk}
- The elements $z_c$ lie in the centre since $\alpha c=c\alpha$ for all conjugacy classes $c$ and elements $\alpha$ of $\Sym_d$. Further, the $z_c$ form a basis of $\mc{Z}_d$. Indeed, linear independence follows from the linear independence of the distinct elements $\sigma\in\Sym_d\subset\Cbb[\Sym_d]$. Further, if $z\in\mc{Z}_d$, then the equalities $\alpha z\alpha^{-1}=z$ show that the $\Cbb$-coefficients of elements in the same conjugacy class are equal. Hence $\mc{Z}_d$ is $r$-dimensional, with $r=\partit{(d)}$.
+ The elements $z_c$ lie in the centre since $\alpha c=c\alpha$ for all conjugacy classes $c$ and elements $\alpha$ of $\Sym_d$. Further, the $z_c$ form a basis of $\mc{Z}_d$. Indeed, linear independence follows from the linear independence of the distinct elements $\sigma\in\Sym_d\subset\Cbb[\Sym_d]$. Furthermore, if $z\in\mc{Z}_d$, then the equalities $\alpha z\alpha^{-1}=z$ show that the $\Cbb$-coefficients of elements in the same conjugacy class are equal. Hence $\mc{Z}_d$ is $r$-dimensional, with $r=\partit{(d)}$.
 \end{rmk}
 
-Recall the definition of $M_d$ from the previous section. There, we fixed a system of representatives for the conjugacy classes of $\Sym_d$. However, since the definition does  not depend on the chosen representatives, wemay also define $M_d$ to be a matrix indexed by the conjugacy classes of $\Sym_d$, ordered in the same way as before. The new, equivalent definition is as follows.
+Recall the definition of $M_d$ from the previous section. There, we fixed a system of representatives for the conjugacy classes of $\Sym_d$. However, since the definition does  not depend on the chosen representatives, we may also define $M_d$ to be a matrix indexed by the conjugacy classes of $\Sym_d$, ordered in the same way as before. The new, equivalent definition is as follows.
 
 \begin{defi} Let $c\pr,c$ be conjugacy classes of $\Sym_d$. Define the matrix $M_d$ by
 \[(M_d)_{c\pr\nscms c} = |\{\tau\scl \tau\text{ is a transposition such that }\tau\sigma\in c\pr\}|,\] where $\sigma$ is any representative of $c$.
@@ -24,25 +24,25 @@ Recall the definition of $M_d$ from the previous section. There, we fixed a syst
 From now on, we choose the ordering of the basis $\{z_c\}_c$ and the ordering of the columns of $M_d$ to be compatible, \ie coming from the same fixed ordering of the conjugacy classes $\{c\}$.
 
 \begin{prop} \label{prop:transpose-correspondence}
- Let $t$ be the conjugacy class containing all transpositions, often just denoted by $t$ for convenience. Let $z_t$ the corresponding basis element of $\mc{Z}_d$. Let $M_t$ be the size $r$ square matrix matrix representing the $\Cbb$-linear map $(z_t\,\cdot):\mc{Z}_d\to\mc{Z}_d$ given by multiplication with $z_t$. Then the matrix $M_t$ is the transpose of $M_d$.
+ Let $t$ be the conjugacy class containing all transpositions. Let $z_t$ be the corresponding basis element of $\mc{Z}_d$. Let $M_t$ be the size $r$ square matrix representing the $\Cbb$-linear map $(z_t\,\cdot):\mc{Z}_d\to\mc{Z}_d$ given by multiplication with $z_t$. Then the matrix $M_t$ is the transpose of $M_d$.
 \end{prop}
 \begin{proof}
  Let $c,c\pr$ be conjugacy classes. Note that if $z=\sum_{\sigma\in\Sym_d}\lam_\sigma \sigma=\sum_{\tilde c}\lam_{\tilde c} z_{\tilde c}$, then the coefficient $\lam_{\tilde c}$ is equal to the coefficient $\lam_{\sigma}$, for any $\sigma\in \tilde c$. Now let $\sigma\in c$, and consider the product
  \[
-  z_tz_{c\pr}=\bigl(\sum_{\tau\in t}\tau\bigr)\bigl(\sum_{\sigma\pr\in c\pr}\sigma\pr\bigr)=\sum_{\sigma\in\Sym_d}\sum_{\tau\sigma\in c'}\sigma.
+  z_tz_{c\pr}=\bigl(\sum_{\tau\in t}\tau\bigr)\bigl(\sum_{\sigma\pr\in c\pr}\sigma\pr\bigr)=\sum_{\sigma\in\Sym_d}\;\sum_{\tau\sigma\in c'}\sigma.
  \]
- In this expansion, the coefficient $\lam_{\sigma}$ of any element $\sigma\in c$ is the quantity \[|\{\tau\in t\scl \tau\sigma\in c\pr\}|\]. It follows that $(M_t)_{c\pr\nscms c}=\lambda_c=\lambda_{\sigma}=(M_d)_{c\cms c\pr}$.
+ In this expansion, the coefficient $\lam_{\sigma}$ of any element $\sigma\in c$ is the quantity \[|\{\tau\in t\scl \tau\sigma\in c\pr\}|.\] It follows that $(M_t)_{c\pr\nscms c}=\lambda_c=\lambda_{\sigma}=(M_d)_{c\cms c\pr}$.
 \end{proof}
 
 \subsection{Irreducible characters of the symmetric group}
 
 We have reduced our problem of computing the eigenvalues of $M_d$ to the computation of the eigenvalues of $M_t$. More generally, we find that $\mc{Z}_d$ actually has a basis $\{w_\chi\}$, indexed by the irreducible characters of $\Sym_d$, such that each $w_\chi$ is an eigenvector for all linear maps defined by multiplication with any element of $\mc{Z}_d$, and such that the corresponding eigenvalues are easy to compute.
 
-\begin{defi}
- \begin{enumerate}
-  \item Let $\rho$ be an irreducible representation of $\Cbb[\Sym_d]$, i.e. a group homomorphism $\rho\cl \Sym_d\to \GL(\Cbb^n)$ such that for each $\sigma\in\Sym_d$ there are no $\rho(\sigma)$-invariant subspaces. The \emph{irreducible character associated to $\rho$} is defined as the map $\chi_\rho\cl \Sym_d\to\Cbb\cms \sigma\mapsto\Tr(\rho(\sigma))$
-  \item An \emph{irreducible character} of $\Sym_d$ is a map $\chi\cl \Sym_d\to\Cbb$ of the form $\chi=\chi_\rho$ for some irreducible representation $\rho$. Its \emph{dimension} $\dim(\chi)$ is defined as the dimension of the associated representation $\dim\rho=\chi(1)$.
- \end{enumerate}
+\begin{defi} \ 
+
+  1. Let $\rho$ be an irreducible representation of $\Cbb[\Sym_d]$, \ie a group homomorphism $\rho\cl \Sym_d\to \GL(\Cbb^n)$ such that for each $\sigma\in\Sym_d$ there are no $\rho(\sigma)$-invariant subspaces. The \emph{irreducible character associated to $\rho$} is defined as the map $\chi_\rho\cl \Sym_d\to\Cbb\cms \sigma\mapsto\Tr(\rho(\sigma)).$
+  
+  2. An \emph{irreducible character} of $\Sym_d$ is a map $\chi\cl \Sym_d\to\Cbb$ of the form $\chi=\chi_\rho$ for some irreducible representation $\rho$. Its \emph{dimension} $\dim(\chi)$ is defined as the dimension of the associated representation $\dim\rho=\chi(1)$.
 \end{defi}
 
 For brevity, we will refer to irreducible characters simply as characters. 
@@ -52,7 +52,7 @@ For brevity, we will refer to irreducible characters simply as characters.
 \end{rmk}
 
 \begin{rmk}
- The number of irreducible representations of a finite group, up to isomorphism, is equal to the number of its conjugacy classes (see for example \cite{Serre77}, p. 19, Thm. 7). In the case of the symmetric group, both the set of conjugacy classes and the set of irreducible representations are indexed by the set of Young diagrams, in a natural way. The irreducible representations are recovered from the Young diagrams via Specht modules.
+ The number of irreducible representations of a finite group, up to isomorphism, is equal to the number of its conjugacy classes (see for example \cite[p. 19, Thm. 7]{Serre77}). In the case of the symmetric group, both the set of conjugacy classes and the set of irreducible representations are indexed by the set of Young diagrams, in a natural way. The irreducible representations are recovered from the Young diagrams via Specht modules.
 \end{rmk}
 
 \begin{prop}\label{pr:orthogonalities}
